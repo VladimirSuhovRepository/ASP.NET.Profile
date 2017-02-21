@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Логин - Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../images/favicon.jpg" type="image/jpeg">
+  <!-- Connection font Roboto -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,500italic,700,700italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+  <!-- Connection styles of bootstrap.css-->
+  <link href="../Content/bootstrap.min.css" rel="stylesheet">
+  <!-- Connection styles of styles.css -->
+  <link href="../Content/styles.css" rel="stylesheet">
+  <!-- Connection of jQuery -->
+  <script src="../Scripts/jquery-2.1.4.min.js"></script>
+  <script src="../Scripts/bootstrap.min.js"></script>  
+</head>
+<body>
+   <div class="prf-wrapper">
+     <!-- All Content except Footer -->      
+     <div class="prf-content">
+     
+     <!-- Header -->
+      <header class="prf-main-header">
+         <!-- Navbar -->
+          <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                      <img src="../images/logo2_1.png" alt="IT-Academy">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav">
+                        <li class="prf-first-line"><a href="#">КОМПАНИЯМ</a></li>
+                        <li><a href="#">НОВОСТИ</a></li>
+                        <li><a href="#">О НАС</a></li>
+                        <li class="active"><a href="#">PROFILE</a></li>                      
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                       <li class="dropdown">
+                         <a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Логин В.П.<span class="caret"></span></a>
+                         <ul class="dropdown-menu">
+                            <li><a href="#">Личный кабинет</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Выйти</a></li>
+                         </ul>
+                       </li>                      
+                    </ul>
+                </div>
+            </div>
+          </nav>
+        <!-- end of Navbar -->
+        
+      </header>
+     <!-- end of Header -->
+     
+     <!-- Main Content -->
+      <div class="container">
+       <div class="prf-main">
+      
+       <!-- Main Login -->
+       <section class="prf-main-login">
+         <h1>Добро пожаловать в&nbsp;<span class="prf-name">Profile</span></h1>
+
+         <form class="form-horizontal well" action="javascript: alert('Submit');" method="POST" role="form"  >
+         <fieldset>
+           <legend>Вход</legend>
+          <div class="form-group">
+            <label for="Login" class="col-sm-4 control-label">Имя пользователя</label>
+            <div class="col-sm-7 ">
+              <input type="text" class="form-control" id="Login" maxlength="64" autofocus required>
+                <span class="prf-error-box">
+                    <span>Поле обязательно для заполнения.</span>
+                </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Password" class="col-sm-4 control-label">Пароль</label>
+            <div class="col-sm-7">
+              <input type="password" class="form-control" id="Password" maxlength="14" required>
+                <span class="prf-error-box">
+                    <span>Поле обязательно для заполнения.</span>
+                </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-7">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" disabled> Запомнить меня
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-7">
+              <button type="submit" class="btn btn-info prf-submit">Войти</button>
+              <a href="#" class="prf-forgot">Забыли пароль?</a>            
+            </div>
+          </div>
+          </fieldset>
+       <!--
+          <div id="globalError">
+            <span class="prf-global-error">Введено неправильное имя пользователя / пароль. Попробуйте еще раз</span>
+          </div>
+       -->
+        </form>
+       
+       </section>
+      <!-- end of Main Login -->
+                 
+       
+     </div>
+     <!-- end of Main Content -->
+      
+
+      
+   
+      </div> 
+     </div>
+     <!-- end of All Content -->      
+     
+     
+     <!-- Footer -->
+     <footer class="prf-main-footer">
+       <div class="container">
+        <p>&copy; 2016 - Образовательный центр Парка высоких технологий</p>        
+       </div>
+     </footer>
+     <!-- end of Footer -->
+     
+   </div>  
+   <script src="../Scripts/Custom/login.js"></script>
+</body>
+</html>

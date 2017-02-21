@@ -1,0 +1,200 @@
+@tableOdd: #d4eeff;
+@lightText: #999;
+@checkedColor:#2da3da;
+
+.inputStyle(){
+	padding: 0.4em 1em;
+	border:1px solid @lightText;
+	border-redius: 0;
+
+	&.filled{
+		border:1px solid transparent;
+		border-bottom:1px solid @lightText;
+	}
+}
+
+.button{
+
+	&:active{
+		background: #25BDFF;
+		border: 2px solid #25BDFF;
+		box-shadow:none;
+
+		&:hover{
+			background: #25BDFF;
+			border: 2px solid #25BDFF;
+			box-shadow:none;
+		}
+	}
+}
+
+.scrumReview{
+
+	.error{
+		position: absolute;
+		color:red;
+		font-size: 10px;
+		top: -7px;
+    	right: 4%;
+	}
+
+	.table-responsive{
+		overflow: visible;
+
+		.scrumTeamTable{
+			overflow: visible;
+			margin-bottom: 50px;
+
+			thead{
+				tr{
+					th{
+						vertical-align: top;
+						padding: 0;
+
+						& > *{
+							display: inline-block;
+							padding: 1.5em 1em;
+							font-size: 16px;
+						}
+					}
+				}
+			}
+
+			tbody{
+				tr{
+					td{
+						padding: 0.5em 1em;
+						// border:1px solid black;
+						max-height: 50px;
+						vertical-align: top;
+						position: relative;
+
+						.mark{
+							font-size: 16px;
+							font-weight: bold;
+						}
+
+						.fa{
+							color:@checkedColor;
+						}
+
+						select{
+							.inputStyle();
+							cursor: pointer;
+
+							&:hover{
+								border:1px solid @checkedColor;
+							}
+
+							&.errorField{
+								border:1px solid red;
+							}
+						}
+
+						textarea{
+							width: 100%;
+							.inputStyle();
+							vertical-align: top;
+							resize:none;
+							overflow:hidden;
+							word-break: break-all;
+							height: 2.2em;
+							transition:0.3s ease;
+
+							&.edited{
+								height: 13*1.5em;
+								font-weight: normal;
+								overflow: auto;
+							}
+
+							&.errorField{
+								border:1px solid red;
+							}
+
+						}
+
+						.reviewItemWrapper{
+							display: inline-block;
+							width: 100%;
+							vertical-align: middle;
+							position: relative;
+							margin: 0;
+
+							.dots{
+								display: none;
+							}
+
+							.fullComment{
+								position: absolute;
+								left:0;
+								top: 100%;
+								padding: 1em;
+								background: white;
+								width: 100%;
+								border:1px solid @checkedColor;
+								z-index: 10;
+								text-align: left;
+								display: none;
+								
+							}
+
+							@media screen and (min-height: 767px){
+
+								.fullComment{
+
+									left: 0;
+								}
+							}
+
+							.filled{
+
+								font-weight: bold;
+
+								+ .dots {
+									display: inline-block;
+									position: absolute;
+									right: .5em;
+									font-weight: bold;
+		    						bottom: 4px;
+		    						text-align: center;
+								}
+							}
+						}
+
+						&:first-child{
+							text-align: left;
+							padding: 0;
+
+							> a{
+								display: block;
+								height: 100%;
+								padding: 1em;
+								vertical-align: middle;
+
+								&:hover{
+									background: darken(white, 10%);
+								}
+							}
+						}
+
+						.button{
+							margin: 0;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	
+	.scrumReview{
+
+		.table-responsive{
+			overflow-x: auto;
+			overflow-y: visible;
+		}
+	}
+}

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Profile.UI.Models.Profile.FileViewModel>
+
+<!-- Files list -->
+@foreach (var file in Model)
+{
+    <a class="prf-artifact prf-file" href="#artifacts" data-file-id="@file.Id" data-file-name="@file.Name" data-file-size="@file.Size">
+        <span class="prf-artifact-back">
+            <span class="prf-artifact-icon">
+                <img src="/images/file-other.png" alt="">
+                <button class="prf-trash btn-link" type="button" id="" title="Удалить" disabled="disabled">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </span>
+        </span>
+        <span class="prf-signature">@file.Description</span>
+    </a>
+}
+<!-- end of Files list -->

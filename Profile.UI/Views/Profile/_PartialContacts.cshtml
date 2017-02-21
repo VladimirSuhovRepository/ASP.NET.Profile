@@ -1,0 +1,27 @@
+﻿@model Profile.UI.Models.Profile.ContactsViewModel
+
+<div class="prf-avatar-big">
+    <img src="~/images/avatar-big.gif" alt="">
+</div>
+
+<ul class="prf-contacts">
+    <li>
+        <a class="prf-phone" href="tel:@Html.DisplayFor(model => model.Phone)">@Model.Phone</a>
+    </li>
+
+    @if(!string.IsNullOrEmpty(Model.Skype)){
+        <li>
+            <a class="prf-skype" href="skype:@Html.DisplayFor(model => model.Skype)?chat">@Model.Skype</a>
+        </li>
+    }
+
+    <li>
+        <a class="prf-email" href="mailto:@Html.DisplayFor(model => model.Email)">@Model.Email</a>
+    </li>
+
+    @if (!string.IsNullOrEmpty(Model.LinkedIn)){
+        <li>
+            <a class="prf-linkedin" href="@Html.DisplayFor(model => model.LinkedIn)">@Model.LinkedIn</a>
+        </li>
+    }
+</ul>

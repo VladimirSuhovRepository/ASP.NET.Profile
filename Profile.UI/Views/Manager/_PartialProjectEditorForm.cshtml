@@ -1,0 +1,219 @@
+﻿@using Profile.UI.ModelEnums;
+
+@model Profile.UI.Models.Manager.TeamProjectInputViewModel
+
+@{ 
+    var value = "";
+    HtmlString formHeader = null;
+    HtmlString disabledClass = new HtmlString("");
+    HtmlString datepicker_hereClass = new HtmlString("");
+    string dateFormat = "dd-MM-yyyy";
+    var isEditProjectForm = ManagerFormType.UpdateProjectAndTeam == Model.FormType;
+    var traineeCount = (isEditProjectForm && Model.Group.Trainees.Count > 10) ? Model.Group.Trainees.Count : 10;
+    switch (Model.FormType)
+    {
+        case ManagerFormType.AddProjectAndTeam:
+            formHeader = new HtmlString("<div class='col-xs-11 heading'> <p>Добавить проект <span></span></p></div>");
+            datepicker_hereClass = new HtmlString("datepicker-here");
+            break;
+        case ManagerFormType.UpdateProjectAndTeam:
+            formHeader = new HtmlString("<div class='col-xs-11 heading'> <p>Редактировать проект <span>" +
+                                        Model.Project.Name + "</span>, команду <span>" +
+                                        Model.Group.Number + "</span></p></div>");
+            disabledClass = new HtmlString("disabled");
+            break;
+        case ManagerFormType.AddTeam:
+            formHeader = new HtmlString("<div class='col-xs-11 heading'><p>Добавить команду в проект <span>" + Model.Project.Name + "</span></p></div>");
+            break;
+        default:
+            throw new Exception("Invalid FormType parameter for model");
+            break;
+    }
+}
+
+<div class="container-fluid popupManager">
+    <div class="row head">
+        <div class="col-xs-1 back"><i id="back" class="material-icons">arrow_back</i></div>
+        @formHeader
+    </div>
+    <section class="@disabledClass">
+        @if (isEditProjectForm)
+        {
+            <div class="row changeName">
+                <div class="col-xs-11 col-xs-offset-1">
+                    <div class="changeButton">
+                        <i class="material-icons">mode_edit</i>
+                        <span>Изменить</span>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (Model.FormType != ManagerFormType.AddTeam)
+        {
+            <div class="row field projName">
+                <label class="col-sm-8 col-sm-offset-1 col-xs-12">
+                    <p>Название проекта</p>
+                    @{ value = (isEditProjectForm) ? Model.Project.Name : ""; }
+                    <input type="text" @disabledClass value="@value" />
+                </label>
+            </div>
+            <div class="row field projDate">
+                <label class="col-sm-3 col-sm-offset-1  col-xs-11">
+                    <p>Дата начала</p>
+                    @{ value = (isEditProjectForm) ? Model.Project.StartDate.ToString(dateFormat) : ""; }
+                    <input type="text" class="@datepicker_hereClass start" value="@value" readonly="readonly" />
+                    <i class="material-icons">date_range</i>
+                </label>
+                <label class="col-sm-3 col-sm-offset-1 col-xs-11">
+                    <p>Дата окончания</p>
+                    @{ value = (isEditProjectForm) ? Model.Project.FinishDate.ToString(dateFormat) : ""; }
+                    <input type="text" class="@datepicker_hereClass end" value="@value" readonly="readonly" />
+                    <i class="material-icons">date_range</i>
+                </label>
+            </div>
+        }
+    </section>
+    <section>
+        <div class="row field teamName">
+            <label class="col-sm-8 col-sm-offset-1 col-xs-12">
+                <p>Название команды</p>
+                @{ value = (isEditProjectForm) ? Model.Group.Number : ""; }
+                <input type="text" value="@value" />
+            </label>
+        </div>
+        <div class="row field teamDate">
+            <label class="col-sm-3 col-sm-offset-1 col-xs-11">
+                <p>Дата начала</p>
+                @{ value = (isEditProjectForm) ? Model.Group.StartDate.ToString(dateFormat) : ""; }
+                <input type="text" class="datepicker-here start" value="@value" readonly="readonly" />
+                <i class="material-icons">date_range</i>
+            </label>
+            <label class="col-sm-3 col-sm-offset-1 col-xs-11">
+                <p>Дата окончания</p>
+                @{ value = (isEditProjectForm) ? Model.Group.FinishDate.ToString(dateFormat) : ""; }
+                <input type="text" class="datepicker-here end" value="@value" readonly="readonly" />
+                <i class="material-icons">date_range</i>
+            </label>
+        </div>
+    </section>
+    <section>
+        <div class="row field scrumName">
+            <label class="col-sm-5 col-sm-offset-1 col-xs-12">
+                <p>Скрам-мастер</p>
+                <select>
+                    <option class="placeholder" selected disabled hidden></option>
+                    @foreach (var scrum in Model.ScrumMasters)
+                    {
+                        var selected = (isEditProjectForm && scrum.Id == Model.Group.ScrumMasterId) ? "selected" : "";
+                        <option class="mainList @(scrum.HasProject ? "busy" : "")" value="@scrum.Id" @selected>@scrum.FullName</option>
+                    }
+                </select>
+                <span class="errorText">У выбранного скрам-мастера есть действующий проект</span>
+                <i class="material-icons">announcement</i>
+            </label>
+        </div>
+    </section>
+    <section>
+        <h3 class="row">
+            <span class="col-sm-11 col-sm-offset-1 col-xs-12">Команда</span>
+        </h3>
+        @for (int i = 0; i < traineeCount; i++)
+            {
+
+                var curTrainee = (isEditProjectForm) ? Model.Group.Trainees.ElementAtOrDefault(i) : null;
+                HtmlString selectDisabled = new HtmlString((curTrainee == null) ? "disabled='disabled'" : "");
+            <div class="row traineeToTeam">
+                <div class="col-sm-1 col-xs-12 counter"><span> @(i + 1) </span></div>
+                <div class="col-sm-3 col-xs-12 spec">
+                    <label>
+                        <select>
+                            <option class="placeholder" selected disabled hidden>Специальность</option>
+                            @foreach (var s in Model.Specializations)
+                            {
+                                if (curTrainee != null && curTrainee.Specialization == s.Name)
+                                {
+                                    <option class="mainList" value="@s.Id" selected>@s.Name</option>
+                                }
+                                else
+                                {
+                                    <option class="mainList" value="@s.Id">@s.Name</option>
+                                }
+                            }
+                        </select>
+                    </label>
+                </div>
+                <div class="col-sm-3 col-xs-12 trainee">
+                    <label>
+                        <select data-request="trainee" @selectDisabled>
+                            <option class="placeholder" selected disabled hidden>Стажер</option>
+                            @if (curTrainee != null)
+                            {
+                                var selectTrainees = Model.TraineesForSelect.Where(t => t.Specialization == curTrainee.Specialization).ToList();
+                                foreach (var t in selectTrainees)
+                                {
+                                    if (t.Id == curTrainee.Id)
+                                    {
+                                        <option class="mainList" value="@t.Id" selected>@t.FullName</option>
+                                    }
+                                    else
+                                    {
+                                        if (Model.Group.Trainees.Any(tr => tr.Id == t.Id))
+                                        {
+                                            <option class="mainList" value="@t.Id" disabled>@t.FullName</option>
+                                        }
+                                        else
+                                        {
+                                            <option class="mainList" value="@t.Id">@t.FullName</option>
+                                        }
+                                    }
+                                }
+                            }
+                        </select>
+                    </label>
+                </div>
+                <div class="col-sm-3 col-xs-12 mentor">
+                    <label>
+                        <select data-request="mentor" @selectDisabled>
+                            <option class="placeholder" selected disabled hidden>Ментор</option>
+                            @if (curTrainee != null)
+                            {
+                                var selectedMentors = Model.MentorsForSelect.Where(m => m.Specialization == curTrainee.Specialization).ToList();
+                                foreach (var m in selectedMentors)
+                                {
+                                    if (curTrainee.MentorId == m.Id)
+                                    {
+                                        <option class="mainList" value="@m.Id" selected>@m.FullName</option>
+                                    }
+                                    else
+                                    {
+                                        <option class="mainList" value="@m.Id">@m.FullName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </label>
+                </div>
+                <div class="col-sm-2 col-xs-12 delete">
+                    <span><i class="material-icons">delete</i> Удалить</span>
+                </div>
+            </div>
+        }
+        <div class="row addTrainee">
+            <div class="col-sm-11 col-sm-offset-1 col-xs-12">
+                <div id="addTraineeRow">
+                    <span><i class="material-icons">add</i> Добавить стажера</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row popupButtons">
+            <div class="col-sm-2 col-sm-offset-7 col-xs-6">
+                <button id="save" class="button">Сохранить</button>
+            </div>
+            <div class="col-sm-2 col-xs-6">
+                <button id="exit" class="button">Отмена</button>
+            </div>
+        </div>
+    </section>
+</div>

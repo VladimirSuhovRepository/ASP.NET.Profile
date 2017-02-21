@@ -1,0 +1,7 @@
+﻿@using Profile.UI.HtmlHelpers
+
+@model Profile.UI.Models.Profile.ProfileMainInfoViewModel
+
+@Html.MenuItem("Анкета", "View", "Profile", new { Id = Model.TraineeId }, null)
+@Html.MenuItem("Отчет", "View", "Report", new { Id = Model.TraineeId }, null)
+@Html.MenuItem("Отзывы", "View", "Review", new { Id = Model.TraineeId }, null, Model.HasReviews)

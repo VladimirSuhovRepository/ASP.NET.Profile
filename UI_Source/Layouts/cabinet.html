@@ -1,0 +1,140 @@
+﻿
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проекты - Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=cyrillic" rel="stylesheet">
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet">
+    <link href="../../Content/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div class="prf-wrapper">
+        <header class="prf-main-header">
+            <nav class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="../../images/logo2_1.png" alt="IT-Academy">
+                        </a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                        <ul class="nav navbar-nav"></ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle header-avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../images/avatar-big.gif" width="45" height="45" alt="User"></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Контактные данные</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Мои стажеры</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Выйти</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="prf-main">
+                <section class="prf-main-content">
+                    <section class="prf-main-section cabinet">
+                        <div class="row headline">
+                            <div class="col-xs-12 pageTitle">
+                                <h1>Личный кабинет</h1>
+                            </div>
+                        </div>
+                        <div class="row dataPlace">
+                            <div class="col-sm-3 col-sm-offset-0 col-xs-8 col-xs-offset-2 cabinetPhoto">
+                                <div class="photoWrapper">
+                                    <img id="truePhoto" src="../../images/logo2_1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-0 col-xs-9 col-xs-offset-2 cabinetName">
+
+                                <div class="infoInput name">
+                                    <span>Ян Агеенко</span>
+                                </div>
+                                <div class="infoInput job">
+                                    <span>UI & UX design</span>
+                                </div>
+                                <!--<div class="infoInput scrumProject">
+                                    <span>Profile.Net</span>
+                                </div>-->
+                            </div>
+                            <div class="changePassword">
+                                <button href="#" class="button">Изменить пароль</button>
+                            </div>
+                        </div>
+                        <div class="row infoPlace">
+                            <div class="col-md-5 col-sm-7 col-xs-12 cabinetContact">
+                                <label>
+                                    <i class="material-icons">phone</i>
+                                    <input type="text" id="phone" class="infoInput" maxlength="15" disabled="disabled" value="8-029-123-45-67">
+                                </label>
+                                <label>
+                                    <i class="material-icons">email</i>
+                                    <input type="text" id="email" class="infoInput" disabled="disabled" value="example@email.com" maxlength="40">
+                                </label>
+                                <label>
+                                    <i class="fa fa-skype fa-2x"></i>
+                                    <input type="text" id="skype" class="infoInput" disabled="disabled" value="abdc" maxlength="30">
+                                </label>
+                                <label>
+                                    <i class="fa fa-linkedin-square fa-2x"></i>
+                                    <input type="text" id="linkedin" class="infoInput" disabled="disabled" value="linkedin.com/123456" maxlength="30">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 col-sm-7 col-xs-12 changeButtons">
+                                <button class="button" id="change">Редактировать данные</button>
+                            </div>
+                        </div>
+                        <div class="modal fade" tabindex="-1" id="confirm" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title"></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Ваши данные были изменены.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default closeModal" data-dismiss="modal">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <div class="prf-main-footer">
+            <div class="container">
+                <div class="row"><p>&copy; 2016 - Образовательный центр Парка высоких технологий</p></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/Custom/common/cabinetView.js"></script>
+</body>
+</html>

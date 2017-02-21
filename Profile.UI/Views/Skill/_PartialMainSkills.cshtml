@@ -1,0 +1,13 @@
+﻿@model Profile.UI.Models.Profile.SpecializationViewModel
+
+<div class="col-xs-6">
+    <div class="prf-skills-group prf-skills">
+        <h6>Основные</h6>
+        <ul class="prf-skill-list prf-info">
+            @foreach (var mainSkill in Model.MainSkills)
+            {
+                <li>@mainSkill.Name</li>
+            }
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,291 @@
+﻿@using Profile.UI.ModelEnums
+@model Profile.UI.Models.Manager.NewUsersSetRolesViewModel
+
+@{
+    ViewBag.Title = "Управление ролями и аккаунтами";
+    Layout = "~/Views/Shared/_LayoutManagerReleaseTabs.cshtml";
+}
+
+<ul class="row rights">
+    <li class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-2">
+        <div class="rightItem">
+            <a href="#set">Назначить права</a>
+        </div>
+    </li>
+    <li class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0">
+        <div class="rightItem active">
+            <a href="#edit">Изменить права</a>
+        </div>
+    </li>
+</ul>
+
+<section class="classTab set">
+    <div class="row thead">
+        <div class="col-xs-12 col-sm-8">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="">
+                        <div class="col-xs-6 col-xs-offset-1 th"><span>Имя</span></div>
+                        <div class="col-xs-5 th"><span>Почта</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <article class="row setRights">
+        <div class="col-xs-12 col-sm-8 accountsList">
+            <div class="container-fluid">
+                <div class="table-responsive row">
+                    <table class="table">
+                        <tbody>
+                            @foreach (var user in Model.Users)
+                            {
+                                var email = "mailto:" + user.Email;
+                            <tr>
+                                <td class="col-xs-1">
+                                    <input class="checkInput" type="checkbox" id="k_@user.Id" value="@user.Id" data-name="@user.FullName" class="accountsChecker" />
+                                    <label class="checkAcc" for="k_@user.Id"><i class="material-icons">done</i></label>
+
+                                </td>
+                                <td class="col-xs-6">
+                                    <a href="#">@user.FullName</a>
+                                </td>
+                                <td class="col-xs-5">
+                                    <a href="@email">@user.Email</a>
+                             </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0 buttonsSets">
+            <div class="container-fluid">
+                <div class="row delete">
+                    <div class="col-xs-12">
+                        <span>
+                            <i class="material-icons">delete</i> Удалить
+                        </span>
+                    </div>
+                </div>
+                <form class="row roleButtons">
+                    <h3 class="col-xs-12">
+                        <span>Роль</span>
+                    </h3>
+                    <div class="col-xs-6 check">
+                        <input id="role1" name="checkRoleButton" type="radio" data-roleName="Стажер" value="@UIRoleType.Trainee" />
+                        <label class="checkButton" for="role1">
+                            <span>Стажер</span>
+                        </label>
+                    </div>
+                    <div class="col-xs-6 check">
+                        <input id="role2" name="checkRoleButton" type="radio" data-roleName="Ментор" value="@UIRoleType.Mentor" />
+                        <label class="checkButton" for="role2">
+                            <span>Ментор</span>
+                        </label>
+                    </div>
+                    <div class="col-xs-6 check">
+                        <input id="role3" name="checkRoleButton" type="radio" data-roleName="Ментор/CM" value="@UIRoleType.MentorScrumMaster" />
+                        <label class="checkButton" for="role3">
+                            <span>Ментор/СМ</span>
+                        </label>
+                    </div>
+                    <div class="col-xs-6 check">
+                        <input id="role4" name="checkRoleButton" type="radio" data-roleName="СМ" value="@UIRoleType.ScrumMaster" />
+                        <label class="checkButton nospec" for="role4">
+                            <span>СМ</span>
+                        </label>
+                    </div>
+                    <div class="col-xs-6 check">
+                        <input id="role5" name="checkRoleButton" type="radio" data-roleName="HR" value="@UIRoleType.HR" />
+                        <label class="checkButton nospec" for="role5">
+                            <span>HR</span>
+                        </label>
+                    </div>
+                </form>
+                <form class="row specButtons">
+                    <h3 class="col-xs-12">
+                        <span>Специализация</span>
+                    </h3>
+                    
+                    @{ var counter = 0;}
+                    @foreach (var spec in Model.Specializations)
+                    {
+                        { counter++; }
+                        <div class="col-xs-6 check">
+                            <input id="spec_@counter" disabled="disabled" name="checkSpecButton" data-specName="@spec.Abbreviation" type="radio" value="@spec.Id" />
+                            <label class="checkButton disabled" for="spec_@counter">
+                                <span>@spec.Abbreviation</span>
+                            </label>
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </article>
+
+    <div class="row buttons">
+        <div class="col-sm-2 col-sm-offset-8 col-xs-4 col-xs-offset-2"><button class="button disabled" id="ready">Готово</button></div>
+        <div class="col-sm-2 col-xs-4 col-xs-offset-0 col-sm-offset-0"><button class="button" id="cancel">Отмена</button></div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="deleteTrainee" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Выбранные аккаунты будут удалены. Продолжить ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                    <button type="button" id="saveDeleting" class="btn btn-primary">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="saveTrainee" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Присвоить роль - <span class="roleSave"></span>, cпециализация - <span class="specSave"></span></p>
+                    <ul class="listSave"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                    <button type="button" id="saveRole" class="btn btn-primary">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="saveOk" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Данные были успешно добавлены</p>
+                    <ul class="listSave"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">ОК</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="classTab edit">
+    <div class="currentRoleBlock">
+        <div class="row">
+            <label class="col-xs-10 col-sm-5 col-sm-offset-2 selectWrapper">
+                <p>Текущая Роль</p>
+                <select class="currentRole">
+                    <option class="default" selected hidden></option>
+                    <option value="mentor">Ментор</option>
+                    <option value="SM">SM</option>
+                    <option value="SM/mentor">SM/Mentor</option>
+                    <option value="HR">HR</option>
+                </select>
+            </label>
+        </div>
+        <div class="row">
+            <label class="col-xs-10 col-sm-5 col-sm-offset-2 selectWrapper">
+                <p>Аккаунт</p>
+                <select class="currentAcc">
+                    <option class="default" selected hidden></option>
+                </select>
+            </label>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-offset-2 col-sm-3">
+                <button id="changeRole" class="button disabled">Изменить</button>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <button id="deleteRole" class="button disabled">Удалить</button>
+            </div>
+        </div>
+    </div>
+    <div class="newRoleBlock disabled">
+        <div class="row">
+            <label class="col-xs-10 col-sm-5 col-sm-offset-2 selectWrapper">
+                <p>Новая Роль</p>
+                <select class="newRole" disabled>
+                    <option class="default" selected hidden></option>
+                    <option class="specialization" value="mentor">Ментор</option>
+                    <option value="SM">SM</option>
+                    <option class="specialization" value="SM/mentor">SM/Mentor</option>
+                    <option value="HR">HR</option>
+                </select>
+            </label>
+        </div>
+        <div class="row">
+            <label class="col-xs-10 col-sm-5 col-sm-offset-2 selectWrapper">
+                <p>Специальность</p>
+                <select class="newSpec" disabled>
+                    <option class="default" selected hidden></option>
+                    <option value="FD">FD</option>
+                    <option value="BE.Net">BE.NET</option>
+                    <option value="BEAndroid">BE Android</option>
+                    <option value="BEJava">BE JAVA</option>
+                    <option value="BEPhp">BE PHP</option>
+                    <option value="BA">BA</option>
+                    <option value="QA">QA</option>
+                    <option value="UI/UX">UI/UX</option>
+                </select>
+            </label>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-offset-2 col-sm-3">
+                <button id="sendNewRole" class="button disabled">Готово</button>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <button id="clear" class="button disabled">Очистить</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="deleteModal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Аккаунт будет удален из списка. Продолжить ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Нет</button>
+                    <button type="button" class="btn btn-primary saveModal">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="saveModal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Роль была успешно изменена</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closeModal" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/manager-roles")
+}

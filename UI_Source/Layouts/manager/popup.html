@@ -1,0 +1,183 @@
+﻿<div class="container-fluid popupManager">
+    <div class="row head">
+        <div class="col-xs-1 back"><i id="back" class="material-icons">arrow_back</i></div>
+        <div class="col-xs-11 heading"> <p>Добавить проект <span></span></p></div>
+    </div>
+    <div class="row field projName">
+        <label class="col-sm-8 col-sm-offset-1 col-xs-12">
+            <p>Название проекта</p>
+            <input type="text" value="" />
+        </label>
+    </div>
+    <div class="row field projDate">
+        <label class="col-sm-3 col-sm-offset-1  col-xs-11">
+            <p>Дата начала</p>
+            <input type="text" class="datepicker-here start" value="" readonly="readonly" />
+            <i class="material-icons">date_range</i>
+        </label>
+        <label class="col-sm-3 col-sm-offset-1 col-xs-11">
+            <p>Дата окончания</p>
+            <input type="text" class="datepicker-here end" value="" readonly="readonly" />
+            <i class="material-icons">date_range</i>
+        </label>
+    </div>
+    <div class="row field teamName">
+        <label class="col-sm-8 col-sm-offset-1 col-xs-12">
+            <p>Название команды</p>
+            <input type="text" value="" />
+        </label>
+    </div>
+    <div class="row field teamDate">
+        <label class="col-sm-3 col-sm-offset-1 col-xs-11">
+            <p>Дата начала</p>
+            <input type="text" class="datepicker-here start" value="" readonly="readonly" />
+            <i class="material-icons">date_range</i>
+        </label>
+        <label class="col-sm-3 col-sm-offset-1 col-xs-11">
+            <p>Дата окончания</p>
+            <input type="text" class="datepicker-here end" value="" readonly="readonly" />
+            <i class="material-icons">date_range</i>
+        </label>
+    </div>
+    <div class="row field scrumName">
+        <label class="col-sm-5 col-sm-offset-1 col-xs-12">
+            <p>Скрам-мастер</p>
+            <select>
+                <option class="placeholder" selected disabled hidden></option>
+                <option class="mainList" value="id12345">Ким Чен Ын</option>
+                <option class="mainList" value="id12345">Ким Чен Ын</option>
+                <option class="mainList busy" value="id12345">Ким Ир Сен</option>
+                <option class="mainList" value="id12345">Ким Чен Ын</option>
+                <option class="mainList busy" value="id12345">Ким Чен Ын</option>
+                <option class="mainList" value="id12345">Пол Пот</option>
+                <option class="mainList" value="id12345">Ким Чен Ын</option>
+                <option class="mainList busy" value="id12345">Серафим Серафимовский</option>
+            </select>
+            <span class="errorText">У выбранного скрам-мастера есть действующий проект</span>
+            <i class="material-icons">announcement</i>
+        </label>
+    </div>
+    <h3 class="row">
+        <span class="col-sm-11 col-sm-offset-1 col-xs-12">Команда</span>
+    </h3>
+    <div class="row traineeToTeam">
+        <div class="col-sm-1 col-xs-12 counter"><span>1</span></div>
+        <div class="col-sm-3 col-xs-12 spec">
+            <label>
+                <select>
+                    <option class="placeholder" selected disabled hidden>Специальность</option>
+                    <option class="mainList" value="FE">FE</option>
+                    <option class="mainList" value="BE_Net">BE .NET</option>
+                    <option class="mainList" value="BE_Android">BE ANDROID</option>
+                    <option class="mainList" value="BE_Java">BE JAVA</option>
+                    <option class="mainList" value="BE_php">BE PHP</option>
+                    <option class="mainList" value="BA">BA</option>
+                    <option class="mainList" value="QA">QA</option>
+                    <option class="mainList" value="UI_UX">UI/UX</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-sm-3 col-xs-12 trainee">
+            <label>
+                <select data-request="trainee" disabled="disabled">
+                    <option class="placeholder" selected disabled hidden>Стажер</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-sm-3 col-xs-12 mentor">
+            <label>
+                <select data-request="mentor" disabled="disabled">
+                    <option class="placeholder" selected disabled hidden>Ментор</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-sm-2 col-xs-12 delete">
+            <span><i class="material-icons">delete</i> Удалить</span>
+        </div>
+    </div>
+    <div class="row traineeToTeam">
+        <div class="col-sm-1 col-xs-12 counter"><span>2</span></div>
+        <div class="col-sm-3 col-xs-12 spec">
+            <label>
+                <select>
+                    <option class="placeholder" selected disabled hidden>Специальность</option>
+                    <option class="mainList" value="FE">FE</option>
+                    <option class="mainList" value="BE_Net">BE .NET</option>
+                    <option class="mainList" value="BE_Android">BE ANDROID</option>
+                    <option class="mainList" value="BE_Java">BE JAVA</option>
+                    <option class="mainList" value="BE_php">BE PHP</option>
+                    <option class="mainList" value="BA">BA</option>
+                    <option class="mainList" value="QA">QA</option>
+                    <option class="mainList" value="UI_UX">UI/UX</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-sm-3 col-xs-12 trainee">
+            <label>
+                <select data-request="trainee" disabled="disabled">
+                    <option class="placeholder" selected disabled hidden>Стажер</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-sm-3 col-xs-12 mentor">
+            <label>
+                <select data-request="mentor" disabled="disabled">
+                    <option class="placeholder" selected disabled hidden>Ментор</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-sm-2 col-xs-12 delete">
+            <span><i class="material-icons">delete</i> Удалить</span>
+        </div>
+    </div>
+    <div class="row traineeToTeam">
+        <div class="col-sm-1 col-xs-12 counter"><span>3</span></div>
+        <div class="col-sm-3 col-xs-12 spec">
+            <label>
+                <select>
+                    <option class="placeholder" selected disabled hidden>Специальность</option>
+                    <option class="mainList" value="FE">FE</option>
+                    <option class="mainList" value="BE_Net">BE .NET</option>
+                    <option class="mainList" value="BE_Android">BE ANDROID</option>
+                    <option class="mainList" value="BE_Java">BE JAVA</option>
+                    <option class="mainList" value="BE_php">BE PHP</option>
+                    <option class="mainList" value="BA">BA</option>
+                    <option class="mainList" value="QA">QA</option>
+                    <option class="mainList" value="UI_UX">UI/UX</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-sm-3 col-xs-12 trainee">
+            <label>
+                <select data-request="trainee" disabled="disabled">
+                    <option class="placeholder" selected disabled hidden>Стажер</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-sm-3 col-xs-12 mentor">
+            <label>
+                <select data-request="mentor" disabled="disabled">
+                    <option class="placeholder" selected disabled hidden>Ментор</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-sm-2 col-xs-12 delete">
+            <span><i class="material-icons">delete</i> Удалить</span>
+        </div>
+    </div>
+    <div class="row addTrainee">
+        <div class="col-sm-11 col-sm-offset-1 col-xs-12">
+            <div id="addTraineeRow">
+                <span><i class="material-icons">add</i> Добавить стажера</span>
+            </div>            
+        </div>
+    </div>
+    <div class="row popupButtons">
+        <div class="col-sm-2 col-sm-offset-7 col-xs-6">
+            <button id="save" class="button">Сохранить</button>
+        </div>
+        <div class="col-sm-2 col-xs-6">
+            <button id="exit" class="button">Отмена</button>
+        </div>
+    </div>
+</div>

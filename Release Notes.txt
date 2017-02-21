@@ -1,0 +1,72 @@
+﻿Profile Release Notes
+
+v0.2 22.10.2016
+================================================================================
+Features
+	Landing Page view short description of all lab projects				PROF#5
+	Trainee - Rating													PROF#8 
+	Profile trainees - List of groupmates								PROF#12
+	Mentor - Filling review form on trainees							PROF#13
+	Mentor - list of trainees											PROF#453
+	Mentor - edit contact information									PROF#454
+	Profile trainee - View mentor's review								PROF#527
+	Profile trainee - View team's review								PROF#528
+	SM Filling review form												PROF#597
+	Profile trainees - Filling review form on trainees					PROF#598 
+	View SM's review													PROF#599
+	Home page - Password recovery										PROF#716
+	Home page - Main													PROF#718
+	Manager - List of projects and teams								PROF#728
+
+Known issues
+	[Mentor -> Личные данные] an excess error message appears when 
+	canceling loading a photo											PROF#605
+	[Mentor -> Личные данные] there is no confirmation when a user
+	leaves the page by means of browser button "Previous"				PROF#607
+	[Mentor -> Личные данные] there is no confirmation when a user 
+	leaves the page by means of the Tab key								PROF#613
+	[Review form] Skill's comment box allows unsupported symbols		PROF#659
+	[Review form] General comment box allows unsupported symbols.		PROF#660
+	[Profile edit -> Навыки] a deleted additional skill isn't 
+	displayed after clicking of a button "Отмена"						PROF#752
+	[Profile edit -> Навыки] the user profile can has no one skill		PROF#761
+	[Profile edit -> Артефакты] there is no default value in the 
+	field "Введите ссылку" of the pop-ups "Введите ссылку"				PROF#771
+	[Profile edit -> Артефакты] button "Отмена" is not cancelled 
+	a previous action of a user											PROF#775
+	[Отзывы] the area around the "Отзыв от..." links is clickable		PROF#854
+	[Отзыв от Ментора] the page isn't adaptive to the small width 
+	of a window															PROF#862
+	[Review form] Confirmation menu isn't visible.						PROF#940
+	[Review form] Input field supports copy/paste unallowed symbols.	PROF#941
+	Стажеры counter doesn't correspond the requirements					PROF#1071
+	[Редактор проектов] the "+ Добавить команду" button isn't 
+	highlighted on hover												PROF#1081
+	[Редактор проектов] team information stay when another project 
+	button is selected													PROF#1082
+	[Редактор проектов] width of columns of a list of trainees is 
+	different for different teams										PROF#1083
+	[Редактор проектов] the page isn't adapted for small window width	PROF#1088
+
+================================================================================
+
+v0.3 05.12.2016
+================================================================================
+Features
+	Home page - Permission												PROF#663
+	Project - Description page											PROF#726
+	Project - My project SM												PROF#722
+	Project - Edit project												PROF#723
+	Manager - add new project											PROF#822
+	Manager - Edit list of projects and teams							PROF#18
+
+Known issues
+	[Profile edit -> Навыки] a deleted additional skill isn't 
+	displayed after clicking of a button "Отмена"						PROF#752
+	[Profile edit -> Артефакты] button "Отмена" is not cancelled a 
+	previous action of a user											PROF#775
+	[Mentor -> Личные данные] there is no confirmation when a user 
+	leaves the page by means of browser button "Previous"				PROF#607
+	[Отзыв от Скрам-Мастера] scrum master link is not clickable			PROF#1117
+	[Mentor -> Личные данные] there is no confirmation when a user 
+	leaves the page by means of the Tab key								PROF#613

@@ -1,0 +1,170 @@
+﻿@model Profile.UI.Models.Manager.ManagerProjectsMenuViewModel
+
+@{
+    ViewBag.Title = "ManageProjects";
+    Layout = "~/Views/Shared/_LayoutManagerReleaseTabs.cshtml";
+}
+
+<div class="row">
+    <div class="editerWrapper">
+        <div class="col-sm-3 col-xs-12 navigation">
+            <a data-popupClass="addProj" class="button openPopup">Добавить проект</a>
+            <h3>Проекты</h3>
+            @Html.Partial("_PartialProjectsMenu", Model)
+        </div>
+        <div class="col-sm-9 col-xs-12 teamTable">
+            <div class="container-fluid">
+                <div class="row breadCrump">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <div class="crumps">
+                            <span class="project">Profile.NET</span>
+                            <span class="divider">/</span>
+                            <span class="team">team JP09a</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row table-responsive tableWrap">
+                    <table class="table traineeListTable">
+                        <caption>
+                            <div id="scrumMaster" class="col-xs-4 col-xs-offset-1 name"><a href="#">Бориско Антон</a></div>
+                            <div class="col-xs-7"><span>SM</span></div>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="col-xs-1"><span></span></th>
+                                <th class="col-xs-4"><span>Стажеры</span></th>
+                                <th class="col-xs-1 col-sm-2"><span></span></th>
+                                <th class="col-xs-5"><span>Менторы</span></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="row buttons">
+                    <div class="col-md-7 col-xs-12 col-md-offset-5"><span class="button openPopup" data-popupClass="editTeam">Редактировать</span><span class="button removeTeam">Удалить проект</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="addProjManagerExit" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p>Проект не будет сохранен. Продолжить ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Нет</button>
+                <button type="button" class="btn btn-primary saveModal">Да</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" id="addProjManagerSave" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p>Проект был успешно добавлен</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default okModal" data-dismiss="modal">Ок</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" id="addTeamManagerExit" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p>Проект не будет сохранен. Продолжить ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Нет</button>
+                <button type="button" class="btn btn-primary saveModal">Да</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" id="addTeamManagerSave" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p>Проект был успешно добавлен</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default okModal" data-dismiss="modal">Ок</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" id="editTeamManagerExit" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p>Отменить изменения ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Нет</button>
+                <button type="button" class="btn btn-primary saveModal">Да</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" id="editTeamManagerSave" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p>Изменения были успешно сохранены</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default okModal" data-dismiss="modal">Ок</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" id="deleteTeam" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p>Проект и все команды связанные с ним будут помещены в архив. Продолжить?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Нет</button>
+                <button type="button" class="btn btn-primary saveModal">Да</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/manager-projects")
+}

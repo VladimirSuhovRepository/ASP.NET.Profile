@@ -1,0 +1,165 @@
+// @forEffects2 - светло голубой
+// #25BDFF - голубой
+// #3DA2DA - темный синий
+
+@import "../var.less";
+
+.headerRestyle {
+
+
+    @media (min-width: 768px) {
+        .navbar {
+            background-color: @forEffects;
+            border-bottom: solid 6px @main;
+        }
+
+        .accountContainer {
+            color: @mainDecorative;
+
+            a {
+                background-color: @navBack;
+            }
+        }
+
+        .navbar>.container .navbar-brand img, 
+        .navbar>.container-fluid .navbar-brand img {
+            margin-left: -20px; 
+        }
+
+
+
+        .loginButtonMD {
+            display: none;
+        }
+
+        .nav > li > a {
+            background-color: @forEffects;
+            padding: 0;
+
+            &:hover {
+                background-color: @forEffects;
+            }
+
+            &:active {
+                background-color: @forEffects;
+            }
+        }
+
+        .roleNavContainer {
+            //padding-left: 30px;
+
+            li {
+                padding: 21px 0px 14px;
+                margin-left: 10px;
+                margin-right: 10px;
+                font-size: 22px;
+                font-weight: 300;
+                line-height: 18px;
+
+                &:hover {
+                    border-bottom: solid 5px @navBack;
+                }
+
+                a {
+                    padding: 0;
+                    text-transform: none;
+
+                    &:hover {
+                        background-color: @forEffects;
+                    }
+                }
+
+                &.active{
+                    border-bottom: solid 5px @navBack;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .navbar {
+            background-color: @forEffects;
+        }
+
+        .navbar-header {
+            border-bottom: solid 6px @main;
+        }
+
+        .navbar-collapse {
+            background-color: @forEffects2;
+        }
+
+        .navbar-inverse .navbar-nav > .open .dropdown-menu > li > a {
+            color: #fff;
+        }
+
+        .accountContainer {
+            font-size: 17px;
+            color: #fff;
+
+            a {
+                background-color: @forEffects2;
+            }
+        }
+
+        .loginButtonMD {
+            display: block;
+            float: right;
+        }
+
+        .loginButtonLG {
+            display: none;
+        }
+
+        .clear:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .dropdown-toggle {
+            margin-bottom: 15px;
+        }
+
+        .navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu > li > a {
+            padding-left: 0px;
+        }
+
+        .navbar-inverse .navbar-nav > .open a.dropdown-toggle {
+            background-color: @forEffects2;
+        }
+
+        .nav > li > a {
+            background-color: @forEffects2;
+            padding: 0;
+
+            &:hover {
+                background-color: @forEffects2;
+            }
+
+            &:active {
+                background-color: @forEffects2;
+            }
+        }
+
+        .roleNavContainer {
+            padding-left: 30px;
+
+            li {
+                padding: 21px 20px 14px;
+                font-size: 22px;
+                font-weight: 300;
+                line-height: 18px;
+
+                a {
+                    padding: 0;
+                    text-transform: none;
+
+                    &:hover {
+                        background-color: @forEffects2;
+                    }
+                }                
+            }
+        }
+    }
+}

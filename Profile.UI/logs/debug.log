@@ -1,0 +1,16 @@
+DEBUG [2016-12-14 04:01:46,373] [MvcApplication.Application_Start] Application started
+DEBUG [2016-12-14 04:01:48,320] [DropCreateSeedDatabaseAlways..ctor] Creating instance of initializer
+DEBUG [2016-12-14 04:01:49,217] [ProfileContext..ctor] Creating instance of context
+DEBUG [2016-12-14 04:01:49,331] [TraineeProvider..ctor] Creating instance of provider
+DEBUG [2016-12-14 04:01:49,556] [ProfileContext..ctor] Creating instance of context
+DEBUG [2016-12-14 04:01:49,557] [TraineeProvider..ctor] Creating instance of provider
+DEBUG [2016-12-14 04:01:53,991] [DropCreateSeedDatabaseAlways.Seed] Running Seed() method in initializer
+DEBUG [2016-12-14 04:01:54,045] [DropCreateSeedDatabaseAlways.FillDatabaseWithTestValues] Started filling database with test values
+DEBUG [2016-12-14 04:03:51,082] [DropCreateSeedDatabaseAlways.FillDatabaseWithTestValues] Database was successfully filled with test values
+DEBUG [2016-12-14 04:16:13,303] [ProfileContext..ctor] Creating instance of context
+DEBUG [2017-02-21 17:03:07,403] [MvcApplication.Application_Start] Application started
+DEBUG [2017-02-21 17:03:08,363] [DropCreateSeedDatabaseAlways..ctor] Creating instance of initializer
+DEBUG [2017-02-21 17:03:08,663] [ProfileContext..ctor] Creating instance of context
+DEBUG [2017-02-21 17:03:08,694] [TraineeProvider..ctor] Creating instance of provider
+DEBUG [2017-02-21 17:03:08,833] [ProfileContext..ctor] Creating instance of context
+DEBUG [2017-02-21 17:03:08,833] [TraineeProvider..ctor] Creating instance of provider

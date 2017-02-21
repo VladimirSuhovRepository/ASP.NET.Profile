@@ -1,0 +1,95 @@
+﻿@model List<Profile.UI.Models.ProjectTraineeViewModel>
+@{
+    ViewBag.Title = "Кабинет ментора";
+    Layout = "~/Views/Shared/_LayoutCommon.cshtml";
+}
+
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="trainee1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container" id="mentor-review">
+
+                    </div>  <!-- container -->
+                </div><!-- modal-body -->
+            </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+    </div><!-- modal -->
+
+    <div class="modal fade col-sm-4 confirmationPopupMR" id="readyConfirm" style="margin:0 auto;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close confirm_modal_btn" aria-label="Close"><span>&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Вы не сможете редактировать отзыв после сохранения. Сохранить?</h4>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default confirm_modal_btn">Нет</button>
+                    <button type="button" class="btn btn-primary submit_btn">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade col-sm-4 confirmationPopupMR" id="closeConfirm" style="margin:0 auto;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close close_btn_modal" aria-label="Close"><span>&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Введенные данные будут утеряны. Закрыть форму?</h4>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default close_btn_modal">Нет</button>
+                    <button type="button" class="btn btn-primary close_modal_btn">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row headline">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pageTitle">
+            <h1 class="text-center">Мои стажеры</h1>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mentorTraineeTable table">
+            <thead>
+                <tr>
+                    <th class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span></span></th>
+                    <th class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><span>Стажеры</span></th>
+                    <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span>Проекты</span></th>
+                    <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span></span></th>
+                    <th class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0, num = 1; i < Model.Count; i++, num++)
+            {
+                    <tr id="Trainee_@Model[i].Id">
+                        <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span>@num </span></td>
+                        <td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><a href="/Profile/View/@Model[i].Id">@Model[i].FullName</a></td>
+                        <td class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><a href="/Project/Index/@Model[i].Project.Id">@Model[i].Project.Name</a></td>
+                        @if (Model[i].IsReviewed)
+                        {
+                            <td class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><a href="#" class="btn btn-primary button disabled" type="button" data-toggle="modal" data-target="#trainee1" value=@Model[i].Id>Оставить отзыв</a></td>
+                            <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span class="checked glyphicon glyphicon-ok"></span></td>
+                        }
+                        else
+                        {
+                            <td class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><a href="#" class="btn btn-primary button btn-review" type="button" data-toggle="modal" data-target="#trainee1" value=@Model[i].Id>Оставить отзыв</a></td>}
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/Custom/reviewFormValidation.js")
+}
+
+

@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutCommon.cshtml";
+ 
+    var rolesUrl = "/Manager/ManageRoles";
+    var projectsUrl = "/Manager/ManageProjects";
+}
+
+<div class="container">
+    <div class="prf-main">
+        <section class="prf-main-content">
+            <section class="prf-main-section manageProject setRoles">
+                <ul class="row mainTabs">
+                    <li id="tab1" class="col-sm-3 col-xs-12 col-sm-offset-2 tabItem"><a class="active" @(Url.RequestContext.HttpContext.Request.RawUrl == rolesUrl ? "" : "href=" + rolesUrl)>Редактор прав</a></li>
+                    <li id="tab2" class="col-sm-3 col-xs-12 tabItem"><a class="active" @(Url.RequestContext.HttpContext.Request.RawUrl == projectsUrl ? "" : "href=" + projectsUrl)>Редактор проектов</a></li>
+                </ul>
+                @RenderBody()
+            </section>
+        </section>
+    </div>
+</div>
+
+@section Scripts
+{
+    @RenderSection("scripts", required: false)
+}

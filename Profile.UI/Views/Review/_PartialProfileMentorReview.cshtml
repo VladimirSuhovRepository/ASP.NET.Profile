@@ -1,0 +1,57 @@
+﻿@model Profile.UI.Models.Review.ProfileMentorReviewViewModel
+
+<section class="prf-main-section" id="MentorReview">
+    <div class="row info">
+        <div class="col-sm-2 col-xs-6 reviewBy">Отзыв оставил:</div>
+        <div class="col-sm-3 col-xs-6 name">
+            @Html.ActionLink(Model.MentorFullname, "View", "User", new { id = Model.MentorId }, null)
+        </div>
+    </div>
+    <div class="row tabRow">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="myTabs">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active tabJustify"><a href="#mainSkills" aria-controls="mainSkills" role="tab" data-toggle="tab">Основные навыки</a></li>
+                <li role="presentation" class="tabJustify"><a href="#softSkills" aria-controls="softSkills" role="tab" data-toggle="tab">Дополнительные навыки</a></li>
+                <li role="presentation" class="tabJustify"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab">Комментарий о работе</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="mainSkills">
+                    @foreach (var grade in Model.MainSkillGrades)
+                    {
+                        <div class="row">
+                            <div class="col-sm-11 col-xs-11">
+                                <h5 class="text-left">@grade.Skill.Name</h5>
+                                <p class="reviewText">@grade.Comment</p>
+                            </div>
+                            <div class="col-xs-1">
+                                <div class="markBox text-center">@grade.Mark</div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div role="tabpanel" class="tab-pane" id="softSkills">
+                    @foreach (var grade in Model.SoftSkillGrades)
+                    {
+                        <div class="row">
+                            <div class="col-sm-11 col-xs-11">
+                                <h5 class="text-left">@grade.Skill.Name</h5>
+                                    <p class="reviewText">@grade.Comment</p>
+                            </div>
+                            <div class="col-xs-1">
+                                <div class="markBox text-center">@grade.Mark</div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div role="tabpanel" class="tab-pane" id="comment">
+                    <div class="row">
+                        <div class="col-sm-11 col-xs-11">
+                            <h5 class="text-left">Итоговый комментарий</h5>
+                                <p class="reviewText">@Model.WorkComment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

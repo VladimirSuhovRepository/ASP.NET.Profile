@@ -1,0 +1,77 @@
+// @forEffects2 - светло голубой
+// #25BDFF - голубой
+// #3DA2DA - темный синий
+
+@import "../var.less";
+
+.headerRestyle {
+    .navbar {
+        box-shadow: none;
+    }
+
+    .navbar-header {
+        height: 60px;
+    }
+
+    .navbar-collapse {
+        background-color: @forEffects;
+    }
+
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+        border-color: @forEffects;
+        border-bottom: 6px;
+    }
+
+    .navbar>.container .navbar-brand img, 
+    .navbar>.container-fluid .navbar-brand img {
+        margin-top: 2px;
+    }
+
+    .navbar-toggle {
+        margin-top: 11px;
+        border: none;
+
+        &:focus {
+            background-color: @forEffects;
+        }
+
+        &:hover {
+            background-color: @forEffects;
+        }
+
+        &:active {
+            background-color: @forEffects;
+        }
+    }
+
+    .loginButton {
+        padding: 12px;
+    }
+
+    .dropdown {
+        padding: 7px 5px 7px;
+        padding-left: 50px;
+    }
+
+    .arrow-dropdown {
+        padding: 15px 41px;
+        float: right;
+    }
+
+
+    .navbar-inverse .navbar-nav > .open a.dropdown-toggle {
+        background-color: @forEffects;
+    }
+
+    .navbar-inverse .navbar-nav > .open .dropdown-menu > li > a {
+        color: @mainDecorative;
+    }
+
+    .accountContainer {
+        a {
+            &:hover {
+                background: @decorative;
+            }
+        }
+    }
+}

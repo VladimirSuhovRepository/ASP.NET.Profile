@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Profile.DAL.Entities.Course" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAASAAAAAAAAAAAAAAAAAAEAAAAAgAAAAAIAA=</HashCode>
+      <FileName>Entities\Course.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Profile.DAL.Entities.File" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACAAAAAQAggAAAAAAAAAQAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\File.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FileData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.FileData" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAEABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\FileData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Group">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Trainees" Type="Profile.DAL.Entities.Trainee" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="3.017" />
+        <Point X="3.75" Y="3.875" />
+        <Point X="5.75" Y="3.875" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAgAIAAACAAAAAEAACACABAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Entities\Group.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Project" />
+      <Property Name="ScrumMaster" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Trainees" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Issue" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <AssociationLine Name="Trainee" Type="Profile.DAL.Entities.Trainee" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.438" Y="4.312" />
+        <Point X="8.438" Y="4.656" />
+        <Point X="7.25" Y="4.656" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.06" Y="0.11" Height="0.182" Width="0.837" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AICCAAAEAABAAAQAACAAAAAgAAAAAAAEQAACAAAAAAA=</HashCode>
+      <FileName>Entities\Issue.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Trainee" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Language" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAQAAAAAEAABAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Language.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Link" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAgAAAAAAAAAAAAAAAAEAAACAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Link.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Profile.DAL.Entities.MainSkill">
+    <Position X="5.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Entities\MainSkill.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Specialization" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Project">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAgCAAAAAAAAAAQAABAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Entities\Project.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Groups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.SoftSkill">
+    <Position X="3" Y="8.5" Width="1.5" />
+    <InheritanceLine Type="Profile.DAL.Entities.Skill" FixedFromPoint="true">
+      <Path>
+        <Point X="5.5" Y="10.438" />
+        <Point X="5.125" Y="10.438" />
+        <Point X="5.125" Y="9.438" />
+        <Point X="4.5" Y="9.438" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\SoftSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Specialization" Collapsed="true">
+    <Position X="5.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABASAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Specialization.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="MainSkills" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Trainee">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <InheritanceLine Type="Profile.DAL.Entities.User" FixedToPoint="true">
+      <Path>
+        <Point X="9.25" Y="3.5" />
+        <Point X="7.25" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Issues" Type="Profile.DAL.Entities.Issue" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="4.812" />
+        <Point X="8.75" Y="4.812" />
+        <Point X="8.75" Y="4.312" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.193" Y="0.57" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Group" Type="Profile.DAL.Entities.Group" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="3.312" />
+        <Point X="5.375" Y="3.312" />
+        <Point X="5.375" Y="2.037" />
+        <Point X="4.5" Y="2.037" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ReviewsOnMe" Type="Profile.DAL.Entities.Review" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.188" Y="5.454" />
+        <Point X="7.188" Y="6.289" />
+        <Point X="9.25" Y="6.289" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAEAEAUAAAAACAAgAAAAAAAAAAAAAAAAAAAAAFEA=</HashCode>
+      <FileName>Entities\Trainee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TraineeProfile" />
+      <Property Name="Group" />
+      <Property Name="Specialization" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Issues" />
+      <Property Name="ReviewsOnMe" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.TraineeProfile">
+    <Position X="3" Y="4.25" Width="1.5" />
+    <AssociationLine Name="MainSkills" Type="Profile.DAL.Entities.MainSkill" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="7.062" />
+        <Point X="4.875" Y="7.062" />
+        <Point X="4.875" Y="8.25" />
+        <Point X="5.5" Y="8.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="SoftSkills" Type="Profile.DAL.Entities.SoftSkill" FixedToPoint="true">
+      <Path>
+        <Point X="3.688" Y="7.728" />
+        <Point X="3.688" Y="8.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgACAEAACAAAAAAIAAAIAAIgABBIBgAECAAAABAEAIA=</HashCode>
+      <FileName>Entities\TraineeProfile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Trainee" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Languages" />
+      <Property Name="Universities" />
+      <Property Name="Courses" />
+      <Property Name="MainSkills" />
+      <Property Name="SoftSkills" />
+      <Property Name="Files" />
+      <Property Name="Links" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.University" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAACAAAAAABACEAAAAAAAAAAAIEA=</HashCode>
+      <FileName>Entities\University.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Profile.DAL.Entities.User">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABCAAAAACAAAIAAAAQAAAAAAAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Entities\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Skill">
+    <Position X="5.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Skill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Grade">
+    <Position X="8.5" Y="9" Width="1.5" />
+    <AssociationLine Name="Skill" Type="Profile.DAL.Entities.Skill" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="10.08" />
+        <Point X="8.125" Y="10.08" />
+        <Point X="8.125" Y="11.062" />
+        <Point X="7" Y="11.062" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAACAAAEAAAAAAAAAAAAAAAAAAAAAQAAEACAAAAAAAA=</HashCode>
+      <FileName>Entities\Grade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Review" />
+      <Property Name="Skill" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.ScrumMaster">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Profile.DAL.Entities.User" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.25" Y="1.812" />
+        <Point X="8.125" Y="1.812" />
+        <Point X="8.125" Y="1.678" />
+        <Point X="8" Y="1.678" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ScrumMaster.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrentGroup" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Groups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Review">
+    <Position X="9.25" Y="5.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Reviewer" Type="Profile.DAL.Entities.User" FixedToPoint="true">
+      <Path>
+        <Point X="10.375" Y="5.25" />
+        <Point X="10.375" Y="3.95" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ReviewedTrainee" Type="Profile.DAL.Entities.Trainee" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.25" Y="5.729" />
+        <Point X="7.621" Y="5.729" />
+        <Point X="7.621" Y="5.062" />
+        <Point X="7.25" Y="5.062" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.547" Y="-0.503" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAABAAgAAgAAAAAAAEAAAAAAAAAAAAEAAEAAAA=</HashCode>
+      <FileName>Entities\Review.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Reviewer" />
+      <Property Name="ReviewedTrainee" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Grades" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Profile.DAL.Entities.Mentor">
+    <Position X="12.75" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="Profile.DAL.Entities.User" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.562" />
+        <Point X="12.75" Y="2.562" />
+        <Point X="12.75" Y="2.562" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Entities\Mentor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

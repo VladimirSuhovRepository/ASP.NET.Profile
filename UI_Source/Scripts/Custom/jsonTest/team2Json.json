@@ -1,0 +1,61 @@
+﻿{
+  "ScrumName": "Антонов Петр",
+  "ProjectName": "TEst",
+  "TeamName": "team pR12",
+  "Trainee": [
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон-Александр"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BABABABA",
+      "MentorName": "Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA BA-BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    }
+  ]
+}

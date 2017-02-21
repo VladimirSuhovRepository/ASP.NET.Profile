@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Profile</title>
+
+    <link rel="shortcut icon" href="@Url.Content("~/images/favicon.ico")" type="image/jpeg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Connection font Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="prf-wrapper">
+        <!-- All Content except Footer -->
+        <div class="prf-content">
+            <!-- Header -->
+            @Html.Action("GetHeader", "Navigation")
+            <!-- end of Header -->
+            <!-- Main Content -->
+            @RenderBody()
+            <!-- End of Main Content -->
+        </div>
+        <!-- end of All Content -->
+        <!-- Footer -->
+        <footer class="prf-main-footer">
+            <div class="container">
+                <div class="row">
+                    <p>&copy; 2016 - Образовательный центр Парка высоких технологий</p>
+                </div>
+            </div>
+        </footer>
+        <!-- end of Footer -->
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

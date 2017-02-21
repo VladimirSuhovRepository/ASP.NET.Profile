@@ -1,0 +1,73 @@
+﻿{
+  "ScrumName": "Антонов Петр",
+  "ProjectName": "Profile.NET",
+  "TeamName": "team pR12",
+  "Trainee": [
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    }
+  ]
+}

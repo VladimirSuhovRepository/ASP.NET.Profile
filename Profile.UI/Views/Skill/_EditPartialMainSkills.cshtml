@@ -1,0 +1,23 @@
+﻿@model Profile.UI.Models.Profile.SpecializationViewModel
+
+<div class="col-xs-6">
+    <div class="prf-skills-group prf-skills">
+        <h6>Основные</h6>
+        <div class="row">
+            <div>
+                <ul class="prf-skill-list prf-info prf-edit-skill prf-edit-1" data-spec-id="@Model.Id">
+                    @foreach (var mainSkill in @Model.MainSkills)
+                    {
+                        <li>
+                            <label class="prf-label-checkbox">
+                                <input type="checkbox" data-main-skill-id="@mainSkill.Id" @(mainSkill.Selected? "checked" : "")>
+                                <span>@mainSkill.Name</span>
+                            </label>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

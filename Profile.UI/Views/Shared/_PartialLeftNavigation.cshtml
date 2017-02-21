@@ -1,0 +1,19 @@
+﻿@using Profile.UI.HtmlHelpers
+@using Profile.DAL.Entities
+
+@model Profile.UI.Models.Profile.ProfileMainInfoViewModel
+
+<div class="col-xs-1  col-sm-1">
+    <div class="prf-humburger" id="toggleSidebar">
+        <span class="prf-bar"></span>
+        <span class="prf-bar"></span>
+        <span class="prf-bar"></span>
+        <!-- Left Sidebar -->
+        <aside id="leftSidebar">
+            <ul class="nav prf-nav-sidebar">
+                @Html.Action("GetTraineeProfileNavigationMenu", "Navigation", new { viewModel = Model})
+            </ul>
+        </aside>
+        <!-- end of Left Sidebar -->
+    </div>
+</div>

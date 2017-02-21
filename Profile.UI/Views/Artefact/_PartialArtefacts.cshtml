@@ -1,0 +1,13 @@
+﻿@model Profile.UI.Models.Profile.ArtefactsViewModel
+
+<div class="row">
+    <div class="prf-add-inform">
+        <h5>Артефакты</h5>
+    </div>
+</div>
+<div class="row prf-underline">
+    <div class="prf-add-inform prf-center-inline" id="FilesLinks">
+        @Html.Partial("~/Views/Artefact/_PartialFiles.cshtml", Model.Files)
+        @Html.Partial("~/Views/Artefact/_PartialLinks.cshtml", Model.Links)
+    </div>
+</div>

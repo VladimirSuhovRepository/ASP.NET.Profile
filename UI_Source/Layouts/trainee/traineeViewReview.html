@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>2v_Анкета стажера - Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../../images/favicon.jpg" type="image/jpeg">
+    <!-- Connection font Roboto -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,500italic,700,700italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet">
+    <link href="../../Content/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="prf-wrapper">
+        <div class="prf-content">
+            <header class="prf-main-header">
+                <nav class="navbar navbar-inverse">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">
+                                <img src="../../images/logo2_1.png" alt="IT-Academy">
+                            </a>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                            <ul class="nav navbar-nav">
+                                <li class="prf-first-line"><a href="#">Стажеры</a></li>
+                                <li><a href="#">Проекты</a></li>
+                                <li class="active"><a href="#">Мой профайл</a></li>
+                                <li><a href="#">Изменить профайл</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Логин В.П.<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Личный кабинет</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Выйти</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="prf-questionary-up" traineeId="12345">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-1  col-sm-1">
+                            <div class="prf-humburger" id="toggleSidebar">
+                                <span class="prf-bar"></span>
+                                <span class="prf-bar"></span>
+                                <span class="prf-bar"></span>
+                                <aside id="leftSidebar">
+                                    <ul class="nav prf-nav-sidebar">
+                                        <li class="active">
+                                            <a href="#">Мой профайл</a>
+                                            <ul class="nav prf-list-nav">
+                                                <li class="active"><a href="">Анкета</a></li>
+                                                <li><a href="">Отчет</a></li>
+                                                <li><a href="">Отзывы</a></li>
+                                                <li><a href="">Мой рейтинг</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Проекты</a></li>
+                                        <li><a href="#">Стажеры</a></li>
+                                        <li><a href="#">Изменить профайл</a></li>
+                                    </ul>
+                                </aside>
+                            </div>
+                        </div>
+                        <div class="col-xs-11  col-sm-5  prf-name-tr">
+                            <p class="">Семенов Алексей Олегович</p>
+                        </div>
+                        <div class="col-xs-6  col-sm-3">
+                            <div class="prf-direction">
+                                <p>Проект: Profile</p>
+                                <p>Направление: Бизнес аналитик</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-6  col-sm-3">
+                            <div class="prf-rating" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Описание расчёта рейтинга.">100</div>
+
+                            <div class="prf-direction  prf-team">
+                                <p>Команда 1.25</p>
+                                <p>
+                                    <a href="#" title="Скачать в pdf">
+                                        <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                                    </a>
+                                    <a id="callPrint" title="Распечатать анкету">
+                                        <i class="fa fa-print" aria-hidden="true"></i>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container viewReview">
+                <ul class="row roleTabs">
+                    <li class="col-xs-4 active"><a href="#teamreview&skill1"><span>Отзывы от Команды</span></a></li>
+                    <li class="col-xs-4"><a href="#mentorreview"><span>Отзыв от Ментора</span></a></li>
+                    <li class="col-xs-4"><a href="#scrumreview"><span>Отзыв от Скрам-Мастера</span></a></li>
+                </ul>
+                <div class="reviewWrapper">
+
+                </div>
+            </div>
+        </div>
+        <footer class="prf-main-footer">
+            <div class="container">
+                <div class="row">
+                    <p>&copy; 2016 - Образовательный центр Парка высоких технологий</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/Custom/viewReviews.js"></script>
+
+    <!-- ONLY FOR LOCAL -->
+
+     <script> $(".reviewWrapper").load("teamreview.html") </script>
+
+    <!-- ________ -->
+
+</body>
+</html>

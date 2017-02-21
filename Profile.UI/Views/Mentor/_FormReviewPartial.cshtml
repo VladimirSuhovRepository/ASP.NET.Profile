@@ -1,0 +1,120 @@
+﻿@model Profile.UI.Models.MentorReviewViewModel 
+
+<div class="row">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span></button>
+    <h4 class="modal-title" id="traineeLabel">Отзыв о работе <span class="traineeName">@Model.ReviewedTrainee.FullName</span> на проекте <span class="traineeProject">@Model.ReviewedTrainee.Project</span>  в качестве <span class="traineeRole">@Model.ReviewedTrainee.Specialization</span></h4>
+</div>	
+
+<form id="reviewForm" >
+    @{int skillCounter = 1; }
+    @Html.Hidden("TraineeId", Model.ReviewedTrainee.Id)
+    @Html.Hidden("MentorId", Model.MentorId)
+
+    <div class="row modalTitle">
+        <div class="col-lg-4">
+            <hr class="line">
+        </div>
+        <div class="col-lg-4">
+            <h2 class="modalSubTitle text-center">Основные навыки</h2>
+        </div>
+        <div class="col-lg-4">
+            <hr class="line">
+        </div>
+    </div>
+
+    @foreach (var grade in Model.MainSkillGrades)
+    {
+        <div class="row skillgrade">
+            <div class="col-lg-1 mainSkillNumber" id="mSkillNumber">@skillCounter</div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="mainSkillReview" id="mainSkillName">@grade.Skill.Name</label>
+                    @Html.Hidden("SkillId", grade.Skill.Id)
+                    <textarea class="form-control reviewField" id="mainSkillReview_@skillCounter" name="mSkillReviewText_@skillCounter" rows="8" placeholder="Ваш отзыв" maxlength="600" >@(grade.Comment != null ? grade.Comment : "")</textarea>
+                </div>
+            </div>
+            <div class="col-lg-1 text-left">
+                <div class="form-group">
+                    <select class="form-control markSelect" id="sel_@skillCounter" name="mMarkSelectInput_@skillCounter">
+                        <option disabled selected></option>
+                        <option>5</option>
+                        <option>4</option>
+                        <option>3</option>
+                        <option>2</option>
+                        <option>1</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        skillCounter = skillCounter + 1;
+    }
+
+    @if (Model.SoftSkillGrades.Count > 0)
+    {
+        <div class="row modalTitle">
+            <div class="col-lg-4">
+                <hr class="line">
+            </div>
+            <div class="col-lg-4">
+                <h2 class="modalSubTitle text-center">Дополнительные навыки</h2>
+            </div>
+            <div class="col-lg-4">
+                <hr class="line">
+            </div>
+        </div>
+    }
+
+    @{skillCounter = 1; }
+    @foreach (var grade in Model.SoftSkillGrades)
+    {
+        <div class="row skillgrade">
+            <div class="col-lg-1 additionalSkillNumber" id="aSkillNumber">@skillCounter</div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="additionalSkill" id="additionalSkillName">@grade.Skill.Name</label>
+                    @Html.Hidden("SkillId", grade.Skill.Id)
+                    <textarea class="form-control reviewField" id="additionalSkill_@skillCounter" name="aSkillReviewText_@skillCounter" rows="8" placeholder="Ваш отзыв" maxlength="600" ></textarea>
+                </div>
+            </div>
+            <div class="col-lg-1 text-left">
+                <div class="form-group">
+                    <select class="form-control markSelect" id="sel__@skillCounter" name="aMarkSelectInput_@skillCounter">
+                        <option disabled selected></option>
+                        <option>5</option>
+                        <option>4</option>
+                        <option>3</option>
+                        <option>2</option>
+                        <option>1</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        skillCounter = skillCounter + 1;
+    }
+
+    <div class="row modalTitle">
+        <div class="col-lg-3">
+            <hr class="line">
+        </div>
+        <div class="col-lg-6">
+            <h2 class="modalSubTitle text-center">Комментарий о работе стажера</h2>
+        </div>
+        <div class="col-lg-3">
+            <hr class="line">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-1">
+            <div class="form-group">
+                <textarea class="form-control commentField" id="comment" name="WorkComment" rows="11" placeholder="Ваш отзыв" maxlength="600" ></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5 text-right">
+            <button type="submit" class="btn btn-default" id="saveButton">Готово</button>
+            <button type="button" class="btn btn-default" id="cancelButton">Отмена</button>
+        </div>
+    </div>
+</form>

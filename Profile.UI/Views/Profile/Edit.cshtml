@@ -1,0 +1,213 @@
+﻿@model Profile.UI.Models.Profile.ProfileViewModel
+
+@{
+    ViewBag.Title = "Анкета стажера";
+    Layout = "~/Views/Shared/_LayoutTraineeProfile.cshtml";
+}
+
+<!-- Additional Questionary -->
+<div class="prf-questionary ">
+    <div class="container">
+        <form class="prf-efit-form" action="javascript: alert('Submit');" method="POST" role="form" name="mainTraineeInfo" data-action="/Profile/EditMainInfo/">
+            <button class="prf-edit btn-link" type="button" id="editMainTraineeInfo" title="Редактировать">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+            <div class="row ">
+                <!-- Contacts -->
+                <div class="col-sm-4  clearfix">
+                    @Html.Partial("_EditPartialContacts", Model.Contacts)
+                </div>
+                <!-- end of Contacts -->
+                <!-- Career Objective -->
+                <div class="col-sm-4  prf-add-inform">
+                    @Html.Partial("_EditPartialPosition", Model.Position)
+                </div>
+                <!-- end of Career Objective -->
+                <!-- Work Experience -->
+                <div class="col-sm-4  prf-add-inform">
+                    @Html.Partial("_EditPartialJob", Model.Job)
+                </div>
+                <!-- end of Work Experience -->
+            </div>
+            <!-- Block of Buttons -->
+            <div class="row  prf-underline prf-button-edit">
+                <button type="submit" class="btn btn-info prf-submit"><span>Сохранить</span></button>
+                <button type="button" class="btn btn-warning  prf-cansel">Отмена</button>
+            </div>
+            <!-- end of Block of Buttons -->
+        </form>
+    </div>
+    <!-- Education -->
+    <div class="container">
+        @Html.Action("Educations", "Education", new { profileId = Model.Id })
+    </div>
+    <!-- end of Education -->
+    <!-- Skills -->
+    <div class="container">
+        @Html.Action("Skills", "Skill", new { profileId = Model.Id })
+    </div>
+    <!-- end of Skills -->
+    <!-- Foreign languages -->
+    <div class="container">
+        @Html.Action("EditLanguages", "Language", new { profileId = Model.Id })
+    </div>
+    <!-- end of Foreign languages -->
+    <!-- Artifacts -->
+    <div class="container prf-efit-form" id="artifacts">
+        @Html.Partial("~/Views/Artefact/_PartialEditArtefacts.cshtml", Model.Artefacts)
+    </div>
+    <!-- end of Artifacts -->
+    <!-- Additional information -->
+    <div class="container">
+        <form class="prf-efit-form" action="javascript: alert('Submit');" method="POST" role="form" name="qualificationTraineeInfo" data-action="/profile/EditQualification">
+            <button class="prf-edit btn-link" type="button" id="" title="Редактировать">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+            <div class="row">
+                <div class="prf-add-inform">
+                    <h5>Квалификация</h5>
+                    @Html.Partial("_EditPartialQualification", Model.Qualification)
+                </div>
+            </div>
+            <!-- Block of Buttons -->
+            <div class="row  prf-underline prf-button-edit">
+                <button type="submit" class="btn btn-info prf-submit"><span>Сохранить</span></button>
+                <button type="button" class="btn btn-warning prf-cansel">Отмена</button>
+            </div>
+            <!-- end of Block of Buttons -->
+        </form>
+    </div>
+    <!-- end of Additional information -->
+</div>
+<!-- end of Additional Questionary -->
+
+<!-- Modal Windows-->
+<!-- Modal for File Load -->
+<div class="modal fade" id="loadFileModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog prf-file-load" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Загрузите файл</h4>
+            </div>
+            <form id="superForm" name="traineeFile" method="POST" enctype="multipart/form-data" action="javascript: alert('Submit');" data-action="url-traineeFile" data-file-id="0" class="prf-efit-form">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-group prf-modal-input">
+                                <label for="fileDescription" class="control-label">Название:</label>
+                                <span class="prf-restrictions" title="Обязательно для заполнения">*</span>
+                                <input type="text" id="fileDescription" class="form-control" name="description" maxlength="15">
+                                <div class="prf-required"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="prf-restrictions">
+                                <p>
+                                    Максимальный объем загрузочного файла:
+                                </p>
+                                <ul>
+                                    <li>Файл любого типа: - 300 кБ</li>
+                                    <li>Файл скриншот: - 500 кБ</li>
+                                    <li>Файл презентация: - 2,5 Мб</li>
+                                    <li>Файл таблица: - 200 кБ</li>
+                                </ul>
+                                <p>
+                                    Максимальный общий объем загрузочных файлов не более 4 Мб
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newFile" class="control-label">Выберите файл:</label>
+                        <span class="prf-restrictions" title="Обязательно для заполнения">*</span>
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-primary btn-file">
+                                    Загрузить <input type="file" id="newFile" name="file" value="Browse" />
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" readonly id="newFileName" />
+                        </div>
+                        <div class="prf-required"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="prf-attention"></div>
+                    <button type="submit" id="saveFile" class="btn btn-primary"><span>Сохранить</span></button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- end of Modal for File Load -->
+<!-- Modal for Link Load -->
+<div class="modal fade" id="loadLinkModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog prf-file-load" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <form name="traineeLink" enctype="multipart/form-data" action="javascript: alert('Submit');" data-action="url-traineeLink" data-link-id="0" class="prf-efit-form">
+                <div class="modal-body">
+                    <div class="form-group ">
+                        <label for="newLink" class="control-label">Введите ссылку:</label>
+                        <span class="prf-restrictions" title="Обязательно для заполнения">*</span>
+                        <input type="text" id="newLink" class="form-control" name="newLink" maxlength="500">
+                        <div class="prf-required"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkDescription" class="control-label">Введите имя ссылки:</label>
+                        <span class="prf-restrictions" title="Обязательно для заполнения">*</span>
+                        <input type="text" id="linkDescription" class="form-control" name="linkDescription" maxlength="15">
+                        <div class="prf-required"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="saveLink" class="btn btn-primary"><span>Сохранить</span></button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Отменить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- end of Modal for Link Load --> 
+<!-- Modal for Delete Confirmation -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog prf-confirm" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <div>Вы хотите удалить информацию?</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                <button type="button" class="btn btn-primary" id="confirmation"><span>Да</span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of Modal for Delete Confirmation -->
+
+<!-- end of Modal Windows-->
+
+@section TopArrow {
+    <!-- Arrow to Top of Page -->
+    <div id="toTop" class="prf-arrow-top">
+        <a href="#" title="Наверх">
+            <span class="glyphicon glyphicon-menu-up"></span>
+        </a>
+    </div>
+    <!-- end of Arrow to Top of Page -->
+}
+
+@section Scripts{
+    <script src="~/Scripts/Custom/fileTypeImage.js"></script>
+    <script src="~/Scripts/Custom/traineeProfileEdit.js"></script>
+    <script src="~/Scripts/Custom/jquery.maskedinput.min.js"></script>
+    <script src="~/Scripts/Custom/toTopPage.js"></script>
+}

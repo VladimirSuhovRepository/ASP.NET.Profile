@@ -1,0 +1,15 @@
+﻿@model Profile.UI.Models.Profile.PositionViewModel
+
+<h5>Желаемая должность</h5>
+<div class="form-group  prf-required">
+    <input class="form-control" id="DesirablePosition" name="DesirablePosition" type="text" placeholder="Должность" value="@Html.DisplayFor(model => model.DesirablePosition)" maxlength="50" required>
+    <span title="Обязательно для заполнения">*</span>
+</div>
+<div class="form-group  prf-required">
+    <textarea class="form-control" id="ExperienceAtITLab" name="ExperienceAtITLab" type="text" placeholder="Обязанности на проектах IT-lab и период работы на проектах" rows="5" maxlength="200" required>@Html.DisplayFor(model => model.ExperienceAtITLab)</textarea>
+    <span title="Обязательно для заполнения">*</span>
+</div>
+<div class="form-group  prf-required">
+    <textarea class="form-control" id="ProfessionalPurposes" name="ProfessionalPurposes" placeholder="Цели, профессиональные планы" rows="8" maxlength="500" required>@Html.DisplayFor(model => model.ProfessionalPurposes)</textarea>
+    <span title="Обязательно для заполнения">*</span>
+</div>

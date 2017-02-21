@@ -1,0 +1,38 @@
+﻿@model Profile.UI.Models.Manager.ManagerProjectsMenuViewModel
+
+<ul class="projects">
+    @foreach (var pr in Model.Projects)
+    {
+        var hasNewTeam = pr.Groups.Any(g => g.Id == Model.ActiveTeamId);
+        HtmlString projectTabClass = new HtmlString("class='panelGroup projectListItem'");
+        HtmlString projectsMenuAttributes = new HtmlString("class='panel-collapse collapse teams' ");
+        if (hasNewTeam)
+        {
+            projectTabClass = new HtmlString("class='panelGroup projectListItem active'");
+            projectsMenuAttributes = new HtmlString("class='panel-collapse in collapse teams' aria-expanded='true' style=''");
+        }
+        <li @projectTabClass>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                   <div class="panel-title"><a class="projectButton" href="#collapse-@pr.Id" data-hash="id=@pr.Groups.FirstOrDefault().Id" data-toggle="collapse">@pr.Name</a></div>
+              </div>
+            <ul id="collapse-@pr.Id" @projectsMenuAttributes>
+            @foreach (var team in pr.Groups)
+            {
+                var teamTabClass = new HtmlString("class='panel-body teamItem'");
+                if (team.Id == Model.ActiveTeamId)
+                {
+                    teamTabClass = new HtmlString("class='panel-body teamItem active'");
+                }
+                <li @teamTabClass>
+                    <a href="#id=@team.Id"><i class="material-icons">keyboard_arrow_right</i> @team.Number</a>
+                </li>
+            }
+                  <li>
+                     <div class="addTeam"><span class="openPopup" data-popupClass="addTeam" data-prId="@pr.Id"><i class="material-icons">add</i> Добавить команду</span></div>
+                 </li>
+                </ul>
+            </div>
+        </li>
+    }
+</ul>

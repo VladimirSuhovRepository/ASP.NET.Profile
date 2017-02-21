@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Profile.UI.Models.Profile.SoftSkillViewModel>
+
+<div class="col-xs-6">
+    
+    <div class="prf-skills-group prf-skills">
+        <h6>Дополнительные</h6>
+        <div class="row">
+            <div id="SoftSkills">
+                @foreach (var softSkill in Model)
+                {
+                    <div class="row  prf-add-inform prf-soft-skill" data-soft-skill-id="@softSkill.Id">
+                        <div class="prf-relative">
+                            <button type="button" class="btn btn-danger prf-delete-btn prf-delete-soft-skill" title="Удалить">
+                                <span>
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </span>
+                            </button>
+                            <div class="form-group prf-required prf-deletable">
+                                <div class="form-group prf-required">
+                                    <input class="form-control" data-soft-skill="softSkillName" type="text" placeholder="Впишите навык" value="@softSkill.Name" maxlength="64" required>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <span class="prf-attention" id="countSoftSkills">Количество дополнительных навыков не&nbsp;должно превышать 5.</span>
+    </div>
+            
+</div>

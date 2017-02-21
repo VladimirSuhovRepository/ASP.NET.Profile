@@ -1,0 +1,32 @@
+﻿@model Profile.UI.Models.Profile.ContactsViewModel
+
+<div class="prf-avatar-big">
+    <img src="~/images/avatar-big.gif" alt="">
+    <!--
+    <input class="prf-file-add" type="file" id="File" name="File">
+    -->
+</div>
+<ul class="prf-contacts">
+    <li>
+        <label class="control-label  prf-phone  prf-required">
+            <input class="form-control" id="Phone" name="Phone" type="tel" placeholder="Телефон +XXX XX XXXXXXX" value="@Html.DisplayFor(model => model.Phone)" required>
+            <span title="Обязательно для заполнения">*</span>
+        </label>
+    </li>
+    <li>
+        <label class="control-label  prf-skype prf-required">
+            <input class="form-control" id="Skype" name="Skype" type="text" placeholder="Skype" value="@Html.DisplayFor(model => model.Skype)" maxlength="50">
+        </label>
+    </li>
+    <li>
+        <label class="control-label  prf-email  prf-required">
+            <input class="form-control" id="Email" name="Email" type="text" placeholder="Email" value="@Html.DisplayFor(model => model.Email)" maxlength="50" required>
+            <span title="Обязательно для заполнения">*</span>
+        </label>
+    </li>
+    <li>        
+        <label class="control-label  prf-linkedin">
+            <input class="form-control" id="Linkedin" name="Linkedin" type="text" placeholder="Linkedin" value="@Html.DisplayFor(model => model.LinkedIn)" maxlength="70">
+        </label>
+    </li>
+</ul>

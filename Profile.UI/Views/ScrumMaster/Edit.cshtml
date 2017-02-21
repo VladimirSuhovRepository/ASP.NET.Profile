@@ -1,0 +1,124 @@
+﻿@model Profile.UI.Models.ScrumProjectViewModel
+@{
+    ViewBag.Title = "Редактирование проекта";
+    Layout = null;
+    var currentUser = CurrentUser.Id.Value;
+}
+
+<div class="projectDescription">
+    <div class="modal fade" id="projectEditModal" tabindex="-1" data-keyboard="false" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row modalHeader">
+                            <button type="button" class="close closeEditModal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span></button>
+                            <h4 class="modal-title modal-titleCustom">Редактировать проект @Model.Project.Name</h4>
+                        </div>
+                        <form id="editProjectForm" action="/ScrumMaster/Edit" method="post">
+                            <input type="hidden" name="Group.Id" value="@Model.Group.Id">
+                            <input type="hidden" name="Group.ScrumMasterId" value="@currentUser">
+                            <input type="hidden" name="Project.Id" value="@Model.Project.Id">
+                            <input type="hidden" name="Project.Status" value="2">
+                            <input type="hidden" name="Project.Groups[0].ProjectId" value="@Model.Project.Id">
+                            <div class="projectDescription blockWrapper">
+                                <div class="row">
+                                    <div class="col-lg-9 col-lg-offset-1">
+
+                                    </div>
+                                </div>
+                                <div class="row wrapper">
+                                    <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+                                        <div class="form-group">
+                                            <label for="projectShortDescription">Краткое описание проекта</label>
+                                            <textarea class="form-control textField PrjShort" id="Project.ShortDescription" name="Project.ShortDescription" rows="3" maxlength="150" placeholder="">@Model.Project.ShortDescription</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row wrapper">
+                                    <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+                                        <div class="form-group">
+                                            <label for="pojectFullDescription">Подробное описание проекта</label>
+                                            <textarea class="form-control textField PrjFull" id="Project.FullDescription" name="Project.FullDescription" rows="8" maxlength="1000" placeholder="">@Model.Project.FullDescription</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- projectDescription -->
+
+                            <div class="teamDescription">
+                                <div class="row wrapper">
+                                    <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+                                        <div class="form-group">
+                                            <label for="teamTask">Цель команды</label>
+                                            <textarea class="form-control TeamTask" id="Group.TeamPurpose" name="Group.TeamPurpose" rows="2" maxlength="50" placeholder="">@Model.Group.TeamPurpose</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row wrapper">
+                                    <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+                                        <div class="form-group">
+                                            <label for="teamWorkDesription">Описание работ команды</label>
+                                            <textarea class="form-control TeamWork" id="Group.TeamWorkDescription" name="Group.TeamWorkDescription" rows="6" maxlength="600" placeholder="">@Model.Group.TeamWorkDescription</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- teamDescription -->
+
+                            <div class="artefacts">
+                                <div class="row">
+                                    <div class="col-lg-10 col-lg-offset-1 wrapper">
+                                        <h4>Артефакты:</h4>
+                                    </div>
+                                </div>
+                                <div class="row wrapper">
+                                </div>
+                            </div><!-- artefacts -->
+
+                            <div class="row">
+                                <div class="col-sm-2 col-xs-6 col-sm-offset-8 col-xs-offset-0 text-right buttonBlock">
+                                    <button class="button" id="saveButton">Сохранить</button>
+                                </div>
+                                <div class="col-sm-2 col-xs-6 text-right buttonBlock">
+                                    <button type="button" class="button" id="cancelButton">Отмена</button>
+                                </div>
+                            </div>
+                        </form>  <!-- editproject -->
+                    </div><!-- container -->
+                </div><!-- modal-body -->
+            </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+    </div><!-- modal -->
+    <!-- Modal -->
+</div>	<!-- projectEditForm -->
+
+<div class="modal fade col-sm-4 confirmationPopup" id="readyConfirm" style="margin:0 auto;" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- 	                <button type="button" class="close confirm_modal_btn" aria-label="Close"><span >&times;</span></button> -->
+                <h4 class="modal-title" id="myModalLabel">Сохранить изменения?</h4>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default confirm_modal_btn">Нет</button>
+                <button type="button" class="btn btn-primary submit_btn_edit">Да</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade col-sm-4 confirmationPopup" id="closeConfirm" data-keyboard="false" style="margin:0 auto;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- 	                <button type="button" class="close close_btn_modal" aria-label="Close"><span>&times;</span></button> -->
+                <h4 class="modal-title" id="myModalLabel">Выйти без изменений?</h4>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default close_btn_modal">Нет</button>
+                <button type="button" class="btn btn-primary close_modal_btn">Да</button>
+            </div>
+        </div>
+    </div>
+</div>

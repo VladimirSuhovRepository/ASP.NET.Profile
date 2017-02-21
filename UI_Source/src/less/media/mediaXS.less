@@ -1,0 +1,167 @@
+﻿@import "../var.less";
+
+@media only screen and (max-width: 768px) {
+
+    .manageProject {
+        .editerWrapper {
+            flex-direction: column;
+
+            .teamTable {
+                .breadCrump {
+                    margin-bottom: 20px;
+                }
+
+                .tableWrap {
+                    width: auto;
+                }
+            }
+        }
+
+        .popupManager {
+            .traineeToTeam {
+                .counter {
+                    text-align: left;
+                }
+            }
+
+            &.editTeam {
+
+                > .disabled {
+                    background: @decorative;
+                }
+            }
+        }
+    }
+
+    .setRoles {
+        div.thead {
+            padding-right: 25px;
+        }
+
+        .set {
+            article.setRights {
+                display: block;
+                border-bottom: none;
+                min-height: auto;
+
+                .table-responsive {
+                    border: none;
+                }
+
+                .buttonsSets {
+                    margin-top: 20px;
+                    border-top: 1px solid @decorative;
+                    border-bottom: 1px solid @decorative;
+                }
+
+                .accountsList {
+                    border-bottom: 1px solid @decorative;
+                }
+            }
+        }
+
+        .rights {
+            .rightItem {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .cabinet {
+        .dataPlace {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            .cabinetName {
+                width: 100%;
+                order: 1;
+
+                .infoInput {
+                    min-width: 200px;
+                }
+            }
+
+            .photoHandler {
+                margin-left: 80px;
+                margin-top:0;
+                position:static;
+            }
+
+            .changePassword {
+                order: 3;
+                text-align: center;
+
+                .button {
+                    margin: 0;
+                }
+            }
+
+            .cabinetPhoto {
+                order: 2;
+                padding: 0;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+
+        .infoPlace {
+            overflow: hidden;
+
+            .cabinetContact {
+                padding-right:0;
+
+                label {
+                    position: relative;
+                    width: 100%;
+
+                    i {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+
+                    .infoInput {
+                        min-width: auto;
+                    }
+                }
+            }
+        }
+
+        .changeButtons {
+            text-align: left;
+        }
+
+        &.edit {
+            .infoInput {
+                min-width: auto;
+            }
+
+            .dataPlace {
+                .cabinetName {
+                    width: auto;
+                    padding-left: 80px;
+
+                    label {
+                        min-width: auto;
+                        display: block;
+                    }
+                }
+            }
+
+            .infoPlace {
+                .cabinetContact {
+                    padding-right:15px;
+                    label {
+                        padding-left: 80px;
+
+                        .infoInput {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

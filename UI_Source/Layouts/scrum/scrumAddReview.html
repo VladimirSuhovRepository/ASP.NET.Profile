@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кабинет ментора - Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../../images/favicon.jpg" type="image/jpeg">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,500italic,700,700italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=cyrillic" rel="stylesheet">  
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="../../Content/styles.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="prf-wrapper">
+        <header class="prf-main-header">
+          <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                      <img src="../../images/logo2_1.png" alt="IT-Academy">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav">
+                        <li class="prf-first-line active"><a href="/stagers">Мои стажеры</a></li>
+                        <li><a href="/projects">Проекты</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle header-avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../images/avatar-big.gif" width="45" height="45" alt="User"></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Профайл</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Проект</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Рейтинг</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Выход</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </nav>
+
+        </header>
+
+
+        <div class="container">
+            <div class="prf-main">
+                <section class="prf-main-content">
+                    <section class="prf-main-section scrumReview">
+                        <div class="row headline">
+                            <div class="col-xs-12 pageTitle">
+                                <h1 data-scrumId="1111">Отзыв на команду</h1>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="col-xs-12 scrumTeamTable">
+                                <thead>
+                                    <tr>
+                                        <th class="col-xs-3"><span>Стажер</span></th>
+                                        <th class="col-xs-6"><span>Комментарий</span></th>
+                                        <th class="col-xs-1"><span>Оценка</span></th>
+                                        <th class="col-xs-2"><span></span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-xs-3"><a href="#"><span>Петрозаводский Петр</span></a></td>
+                                        <td class="col-xs-6"><form class="reviewItemWrapper"><textarea name="review1" maxlength="800" class="reviewItem" rows="1" placeholder="Введите ваш комментарий"></textarea><span class="dots">...</span></form></td>
+                                        <td class="col-xs-1"><select name="" id="">
+                                            <option value=""></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select></td>
+                                        <td class="col-xs-2"><a class="btn btn-primary button saveReview" data-id="123456">Готово</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-3"><a href="#"><span>Петрозаводский Петр</span></a></td>
+                                        <td class="col-xs-6"><form class="reviewItemWrapper"><textarea name="review2" maxlength="800" class="reviewItem filled" rows="1" readonly="readonly">Стажер хорошо использует свои навыки, поэтому у него все получается</textarea><span class="dots">...</span><p class="fullComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci saepe distinctio incidunt nobis nisi sed, recusandae a, reprehenderit soluta error molestias ducimus cum obcaecati in voluptas aliquam inventore quidem illo?</p></form></td>
+                                        <td class="col-xs-1"><span class="mark">3</span></td>
+                                        <td class="col-xs-2"><i class="fa fa-check fa-2x" aria-hidden="true"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-3"><a href="#"><span>Петрозаводский Петр</span></a></td>
+                                        <td class="col-xs-6"><form class="reviewItemWrapper"><textarea name="review3" maxlength="800" class="reviewItem filled" rows="1" readonly="readonly">Стажер не хорошо использует свои навыки, поэтому у него не все получается</textarea><span class="dots">...</span><p class="fullComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur delectus inventore, suscipit id doloremque nihil, sint doloribus, dicta laboriosam enim iure vitae tenetur! Esse nobis consectetur, doloremque labore corrupti expedita!</p></form></td>
+                                        <td class="col-xs-1"><span class="mark">3</span></td>
+                                        <td class="col-xs-2"><i class="fa fa-check fa-2x" aria-hidden="true"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-3"><a href="#"><span>Петрозаводский Петр</span></a></td>
+                                        <td class="col-xs-6"><form class="reviewItemWrapper"><textarea name="review4" maxlength="800" class="reviewItem" rows="1"   placeholder="Введите ваш комментарий"></textarea><span class="dots">...</span></form></td>
+                                        <td class="col-xs-1"><select name="" id="">
+                                            <option value=""></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select></td>
+                                        <td class="col-xs-2"><a class="btn btn-primary button saveReview" data-id="123456">Готово</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <div class="prf-main-footer">
+            <div class="container">
+                <div class="row"><p>&copy; 2016 - Образовательный центр Парка высоких технологий</p></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalScrum" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          </div>
+          <div class="modal-body">
+            <p></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="notSaveChanges" class="btn btn-default" data-dismiss="modal">Нет</button>
+            <button type="button" id="saveChangesModal" class="btn btn-primary">Да</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script> 
+    <script src="../../Scripts/mask.js"></script>
+    <script src="../../Scripts/Custom/scrumAddReview.js"></script>
+    
+</body>
+</html>

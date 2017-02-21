@@ -1,0 +1,102 @@
+﻿@model Profile.UI.Models.Profile.ProfileViewModel
+
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_LayoutTraineeProfile.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/jira.css" type="text/css">
+
+<!--table Report-->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 prf-report-body-text">
+            <div class="prf-report-body-text-head">
+                <span class="glyphicon glyphicon-info-sign"></span>
+                <div class="prf-report-body-text-head-load">
+                    Отчет показывает Ваши задачи на проекте и время, затраченное на них. Система получает данные из Вашего профиля в JIRA. Для
+                    загрузки отчета нажмите кнопку "Загрузить отчет". Для Сохранения отчета нажмите кнопку "Сохранить
+                    отчет".
+                </div>
+            </div>
+            <div class="prf-report-body-text-table-header">
+                <h2>Отчет о проделанной работе на проекте</h2></br>
+            </div>
+            <div class="prf-report-body-text-table-body-load">
+                <i>Ваш отчет еще не загружен.</br>Для загрузки отчета нажмите кнопку</br>"Загрузить отчет".</i>
+                <div class="prf-report-body-text-footer">
+                    <div class="prf-report-body-text-footer-wrap">
+                        <div class="prf-report-body-text-head">
+                            <span class="glyphicon glyphicon-exclamation-sign"></span>
+                            <div class="prf-report-body-text-head-load">
+                                <div class="prf-report-body-text-footer-load">Обратите внимание! Сохранить отчет можно только один раз!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prf-report-table">
+                <!-- TABLE CONTENT -->
+                @if (Model.Issues.Any())
+                {
+                    @Html.Partial("~/Views/Report/List.cshtml", Model.Issues)
+                }
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-1 prf-report-button-list">
+            <button type="button" class="btn btn-info prf-submit" id="prfSubmitLoad" data-action="/Report/List/">Загрузить отчет</button>
+            <button type="button" class="btn btn-info prf-submit" id="prfSubmitSave" data-action="/Report/Save/">Сохранить отчет</button>
+        </div>
+        <!--end table Report-->
+    </div>
+</div>
+<div class="prf-report-modal">
+    <div class="prf-report-modal-wrap">
+        <div class="prf-report-modal-block-inline">
+            <div class="prf-report-modal-load-wrap">
+                <div class="prf-report-modal-load">
+                    <span>Ваш отчет загружается.</span></br>
+                    <span>Подождите, пожалуйста.</span></br>
+                    </br>
+                    <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                </div>
+            </div>
+            <div class="prf-report-modal-load-error">
+                <div class="prf-report-modal-save-load-text">
+                    Система на может загрузить ваш отчет.
+                    <br>Попробуйте позже.<span class="glyphicon glyphicon-question-sign"></span>
+                </div>
+                <hr>
+                <a href="#">Ок</a>
+            </div>
+            <div class="prf-report-modal-save-ask">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                <span class="glyphicon glyphicon-question-sign"></span>
+                <div class="prf-report-modal-save-ask-text">Сохранить отчет можно только один раз.</br>Вы уверены, что хотите сохранить отчет?</div>
+                <hr>
+                <a href="#">Сохранить</a>
+                <a href="#">Отмена</a>
+            </div>
+            <div class="prf-report-modal-save-complete">
+                <div class="prf-report-modal-save-ask-text">Ваш отчет успешно сохранен.</div>
+                <hr>
+                <a href="#">Ок</a>
+            </div>
+            <div class="prf-report-modal-save-error">
+                <div class="prf-report-modal-save-ask-text">
+                    Система на может сохранить ваш отчет.
+                    <br>Попробуйте позже.<span class="glyphicon glyphicon-question-sign"></span>
+                </div>
+                <hr>
+                <a href="#">Ок</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of All Content -->
+
+@section Scripts {
+    <script src="~/Scripts/Custom/traineeReport.js"></script>
+    @Scripts.Render("~/bundles/tables")
+    @Scripts.Render("~/bundles/profile-view-page")
+}

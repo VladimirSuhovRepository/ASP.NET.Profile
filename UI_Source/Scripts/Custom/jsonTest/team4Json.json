@@ -1,0 +1,49 @@
+﻿{
+  "ScrumName": "Петр Петр",
+  "ProjectName": "ME-NU",
+  "TeamName": "team mR12",
+  "Trainee": [
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    },
+    {
+      "Id": "FullName",
+      "FullName": "Бориско Александр",
+      "Specialization": "BA",
+      "MentorName": "Петров Антон"
+    }
+  ]
+}

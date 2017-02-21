@@ -1,0 +1,104 @@
+﻿﻿@model List<Profile.UI.Models.TraineeViewModel>
+@{
+    ViewBag.Title = "Кабинет стажера";
+    Layout = "~/Views/Shared/_LayoutCommon.cshtml";
+}
+
+<!-- Modal -->
+<div class="modal fade modal groupmateReviewForm" id="groupmate1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog" role="document">
+        <div class="modal-content" id="trainee-review">
+
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div><!-- modal -->
+<!-- Modal -->
+
+<div class="modal fade col-sm-4 confirmationPopupMR" id="readyConfirm" style="margin:0 auto;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close confirm_modal_btn" aria-label="Close"><span>&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Вы не сможете редактировать отзыв после сохранения. Сохранить?</h4>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default confirm_modal_btn">Нет</button>
+                <button type="button" class="btn btn-primary submit_btn">Да</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade col-sm-4 confirmationPopupMR" id="closeConfirm" style="margin:0 auto;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close close_btn_modal" aria-label="Close"><span>&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Введенные данные будут утеряны. Закрыть форму?</h4>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default close_btn_modal">Нет</button>
+                <button type="button" class="btn btn-primary close_modal_btn">Да</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="prf-main">
+        <section class="prf-main-content">
+            <section class="prf-main-section groupmatesList">
+                <div class="row headline">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pageTitle">
+                        <h1 class="text-center">Отзыв на команду</h1>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="col-lg-12 col-md-12 col-sm-12 col-xs-12 groupmatesTable table">
+                        <thead>
+                            <tr>
+                                <th class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span></span></th>
+                                <th class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><span>Стажер</span></th>
+                                <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span>Специализация</span></th>
+                                <th class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span></span></th>
+                                <th class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Count; i++)
+                            {
+                                var trainee = Model[i];
+                                <tr>
+                                    <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span>@(i + 1)</span></td>
+
+                                    <td class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        @Html.ActionLink(trainee.FullName, "View", "Profile", new { id = trainee.Id }, null) 
+                                    </td>
+
+                                    <td class="col-lg-3 col-md-3 col-sm-3 col-xs-3">@trainee.Specialization</td>
+
+                                    @if (trainee.IsReviewed)
+                                    {
+                                        <td class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><a href="#" class="btn btn-primary button disabled">Оставить отзыв</a></td>
+                                        <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><i class="fa fa-check fa-2x" aria-hidden="true"></i></td>
+                                    }
+                                    else
+                                    {
+                                        <td class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><a href="#" class="btn btn-primary button btn-review" type="button" value="@trainee.Id" data-toggle="modal" data-target="#groupmate1">Оставить отзыв</a></td>
+                                        <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="/Scripts/Custom/reviewFormValidation2.js"></script>
+}

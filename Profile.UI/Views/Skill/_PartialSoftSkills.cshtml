@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Profile.UI.Models.Profile.SoftSkillViewModel>
+
+<div class="col-xs-6">
+    <div class="prf-skills-group prf-skills">
+        <h6>Дополнительные</h6>
+        <ul class="prf-skill-list prf-info">
+            @foreach (var mainSkill in Model)
+            {
+                <li>@mainSkill.Name</li>
+            }
+        </ul>
+    </div>
+</div>

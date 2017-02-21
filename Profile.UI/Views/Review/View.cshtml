@@ -1,0 +1,30 @@
+﻿@using Profile.UI.HtmlHelpers;
+@model Profile.UI.Models.Review.ProfileReviewViewModel
+
+@{
+    ViewBag.Title = "Отзывы";
+    Layout = "~/Views/Shared/_LayoutTraineeProfile.cshtml";
+}
+
+<div class="container viewReview">
+
+    @Html.BuildReviewTabs(
+        Model.IsTraineeHavingMentorReview, 
+        Model.IsTraineeHavingScrumReview,
+        Model.IsTraineeHavingTeamReview)
+
+    <div class="reviewWrapper">
+
+        @if (Model.RenderingReview != null)
+        {
+            @Html.Partial(Model.RenderingReview.PartialViewName, Model.RenderingReview)
+        }
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/tables")
+    @Scripts.Render("~/bundles/profile-view-page")
+    @Scripts.Render("~/bundles/view-review")
+}

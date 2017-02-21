@@ -1,0 +1,50 @@
+﻿@model Profile.UI.Models.MetricsViewModel
+@{
+    ViewBag.Title = "Главная";
+    Layout = "~/Views/Shared/_LayoutCommon.cshtml";
+}
+
+    <div class="container">
+        <div class="prf-main">
+            <section class="prf-main-content">
+                <section class="prf-main-section homePage">
+                    <div class="row wrap">
+                        <div class="col-xs-6">
+                            <p><span class="number">@Model.ProjectsCount</span> @Model.ProjectsLabel сейчас находится в разработке</p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p><span class="number">@Model.TraineesCount</span> @Model.TraineesLabel сейчас проходят практику в ОЦ ПВТ</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="/Project/List" class="button listlink">Перейти к списку Проектов</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="/Trainee/List" class="button listlink">Перейти к списку Стажеров</a>
+                        </div>
+                    </div>
+                    <div class="row wrap">
+                        <div class="col-xs-6"><img src="../images/homepage-1.png" class="img-responsive"></div>
+                        <div class="col-xs-6"><img src="../images/homepage-2.png" class="img-responsive"></div>
+                    </div>
+
+                    <div class="row wrap">
+                        <div class="col-md-8 col-sm-12 allCoures">
+                            <p>Со всеми курсами ОЦ ПВТ вы можете ознакомиться на нашем сайте:</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-sm-offset-3 col-lg-offset-0 col-md-offset-0 col-xs-8 col-xs-offset-2">
+                            <a href="http://www.it-academy.by/catalog" class="button listlink">КАТАЛОГ КУРСОВ IT-Academy</a>
+                        </div>
+                    </div>
+
+                </section><!-- prf-main-section passwordRecovery -->
+            </section><!-- prf-main-content -->
+        </div><!-- prf-main -->
+    </div><!-- container -->
+
+
+
+
+
+

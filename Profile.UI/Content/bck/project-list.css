@@ -1,0 +1,175 @@
+/* font-family-base is Tahoma*/
+/* font-family-decor is Lucida Handwriting Italic Bold*/
+/* brand colors */
+/* nav-bar height from bootsrap */
+/* footer height */
+.navbar-inverse {
+  background-color: #2ca8df;
+  border: none;
+}
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav > li.prf-first-line {
+    padding-top: 33px;
+  }
+}
+.navbar-inverse .navbar-nav > li > a {
+  padding: 10px 9px 11px 35px;
+  font-weight: normal;
+  color: #fff;
+  text-transform: uppercase;
+}
+.navbar-inverse .navbar-nav > li > a.header-avatar {
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .navbar-inverse .navbar-nav > li > a {
+    padding: 10px 9px 11px;
+  }
+  .navbar-inverse .navbar-nav > li > a.header-avatar {
+    padding: 0;
+  }
+}
+@media (min-width: 997px) {
+  .navbar-inverse .navbar-nav > li > a {
+    padding: 10px 22px 11px;
+  }
+  .navbar-inverse .navbar-nav > li > a.header-avatar {
+    padding: 0;
+  }
+  .navbar-inverse .navbar-nav > li > a.btn-primary {
+    padding: 5px 11px 6px;
+    margin: 5px 11px 5px;
+    background-color: #337ab7;
+    border: 0;
+  }
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #fff;
+  background-color: #325578;
+}
+.navbar-inverse .navbar-nav > .active {
+  border-bottom: 4px solid #325578;
+}
+.navbar-inverse .navbar-nav > .active > a {
+  background-color: transparent;
+}
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #325578;
+}
+.navbar-inverse .navbar-nav > .open a {
+  background-color: #2384af;
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > .open a:hover,
+.navbar-inverse .navbar-nav > .open a:focus {
+  background-color: #325578;
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > .open .dropdown-menu > li > a {
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > .open .dropdown-menu > li > a:hover,
+.navbar-inverse .navbar-nav > .open .dropdown-menu > li > a:focus {
+  background-color: #325578;
+  color: #fff;
+}
+.navbar-inverse .navbar-nav .dropdown-menu {
+  padding: 0;
+}
+.navbar-inverse .navbar-nav .dropdown-menu > a {
+  padding: 8px;
+}
+.navbar-inverse .navbar-nav .dropdown-menu .divider {
+  margin: 0;
+}
+.navbar-inverse .navbar-nav.navbar-right > li > a {
+  text-transform: none;
+}
+.navbar-inverse .navbar-toggle {
+  margin-top: 5px;
+  /* was default 8px */
+  margin-bottom: 6px;
+  /* was default 15px */
+}
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover {
+  background-color: #325578;
+}
+.navbar {
+  position: relative;
+  min-height: 45px;
+  /* was default 50px */
+  margin-bottom: 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+  border-radius: 0;
+}
+.navbar > .container .navbar-brand,
+.navbar > .container-fluid .navbar-brand {
+  position: relative;
+  width: 120px;
+  height: 45px;
+  padding: 10px 0;
+  padding-right: 90px;
+  margin-left: 5px;
+}
+@media (min-width: 1200px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    margin-left: 90px;
+  }
+}
+.navbar > .container .navbar-brand img,
+.navbar > .container-fluid .navbar-brand img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  margin-left: 20px;
+}
+
+/* font-family-base is Tahoma*/
+/* font-family-decor is Lucida Handwriting Italic Bold*/
+/* brand colors */
+/* nav-bar height from bootsrap */
+/* footer height */
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+/* styles for Main Layout */
+.prf-wrapper {
+  padding-bottom:50px;
+  position: relative;
+  min-height: 100%;
+}
+.prf-wrapper .prf-content {
+  padding-bottom: 50px;
+}
+.prf-wrapper .prf-main-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+.prf-wrapper .prf-main-footer p {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 0;
+  padding-top: 15px;
+  border-top: solid 1px #333;
+  background-color: #fff;
+  min-height: 50px;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 996px;
+    padding: 0;
+  }
+}
+
+.projectWrapper{margin-top:1px;margin-bottom:1px}.pageTitle{color:#999;font-size:30px;font-weight:600;line-height:18px;padding-top:25px;padding-bottom:15px}.projectItem{padding:15px;border:1px solid #fff}.projectName{border-bottom:1px solid #2da3da;padding-bottom:10px;heigh:30px;margin-top:0!important}.projectSummary{height:130px;font-size:14px;font-weight:300;line-height:1.5;border-bottom:1px solid #999;padding:15px 0}.projectTerms{font-size:14px;font-weight:300;line-height:18px;height:40px}.pageNavigationWrapper{padding-top:25px;padding-bottom:7px}.pageIndication{font-family:'Open Sans',sans-serif;font-size:14px;font-weight:300;line-height:18px;margin-bottom:-10px}.pageNavigation{font-size:22px;font-weight:300;line-height:18px}.paginationItem a{margin:0 7.5px}.currentPage a{border:1px solid #2da3da!important}body{height:100%}*{box-sizing:border-box}#example{display:block;margin-bottom:30px}#example tbody,#example thead{display:block}#example tbody tr,#example thead tr{border:1px solid transparent;border-left:1px solid #ddd;border-top:1px solid #ddd;display:inline-block}#example tbody tr:nth-child(-n+3),#example thead tr:nth-child(-n+3){border-top:1px solid transparent}#example tbody tr:nth-child(3n),#example thead tr:nth-child(3n){border-right:1px solid #ddd}#example tbody tr:hover,#example thead tr:hover{border:1px solid #999}#example tbody tr td,#example thead tr td{display:block}#example_wrapper #example_info{font-family:'Open Sans',sans-serif;font-size:14px;font-weight:300;line-height:18px;margin-bottom:15px;text-align:center;display:block}.dataTables_paginate{text-align:center}.pageNavigation>a:first-child{border-top-left-radius:4px;border-bottom-left-radius:4px}.pageNavigation>a:last-child{border-top-right-radius:4px;border-bottom-right-radius:4px}.pageNavigation>a.disabled{display:none}.pageNavigation .paginate_button{margin:0 7.5px 0 -1px;padding:6px 12px;line-height:1.42857143;color:#337ab7;text-decoration:none;background-color:#fff;border:1px solid #ddd;display:inline-block}.pageNavigation .paginate_button:hover{color:#23527c;background-color:#eee;border-color:#ddd;cursor:pointer}.pageNavigation .paginate_button.current{border:none}.pageNavigation .paginate_button.current:hover{cursor:default;background:0 0;border:none}

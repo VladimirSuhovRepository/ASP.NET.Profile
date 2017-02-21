@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Profile.UI.Models.Profile.LinkViewModel>
+
+<!-- Links list -->
+@foreach (var link in Model)
+{
+    <a class="prf-artifact prf-link" href="#artifacts" data-link-id="@link.Id" data-link="@link.Url">
+        <span class="prf-artifact-back">
+            <span class="prf-artifact-icon">
+                <span class="glyphicon glyphicon-link prf-artifact-icon"></span>
+                <button class="prf-trash btn-link" type="button" id="" title="Удалить" disabled="disabled">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </span>
+        </span>
+        <span class="prf-signature">@link.Description</span>
+    </a>
+}
+<!-- end of Links list -->

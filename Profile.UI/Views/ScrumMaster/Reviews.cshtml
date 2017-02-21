@@ -1,0 +1,87 @@
+﻿@model Profile.UI.Models.ScrumTraineesViewModel
+@{
+    ViewBag.Title = "Кабинет ментора";
+    Layout = "~/Views/Shared/_LayoutCommon.cshtml";
+}
+<div class="container">
+    <div class="prf-main">
+        <section class="prf-main-content">
+            <section class="prf-main-section scrumReview">
+                <div class="row headline">
+                    <div class="col-xs-12 pageTitle">
+                        <h1 data-scrumId="@Model.ScrumMasterId">Отзыв на команду</h1>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="col-xs-12 scrumTeamTable">
+                        <thead>
+                            <tr>
+                                <th class="col-xs-3"><span>Стажер</span></th>
+                                <th class="col-xs-6"><span>Комментарий</span></th>
+                                <th class="col-xs-1"><span>Оценка</span></th>
+                                <th class="col-xs-2"><span></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{int counter = 1;}
+                            @foreach (var review in Model.Reviews)
+                            {
+
+                                if (review.IsReviewed)
+                                {
+                                    <tr>
+                                        <td class="col-xs-3"><a href="/Profile/View/@review.ReviewedTrainee.Id"><span>@review.ReviewedTrainee.FullName</span></a></td>
+                                        <td class="col-xs-6"><form class="reviewItemWrapper"><textarea name="review_@counter" maxlength="800" class="reviewItem filled" rows="1" readonly="readonly">@review.Comment</textarea><span class="dots">...</span><p class="fullComment">@review.Comment</p></form></td>
+                                        <td class="col-xs-1"><span class="mark">@review.Mark</span></td>
+                                        <td class="col-xs-2"><i class="fa fa-check fa-2x" aria-hidden="true"></i></td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                        <tr>
+                                            <td class="col-xs-3"><a href="/Profile/View/@review.ReviewedTrainee.Id"><span>@review.ReviewedTrainee.FullName</span></a></td>
+                                            <td class="col-xs-6"><form class="reviewItemWrapper"><textarea name="review_@counter" maxlength="800" class="reviewItem" rows="1" placeholder="Введите ваш комментарий"></textarea><span class="dots">...</span></form></td>
+                                            <td class="col-xs-1">
+                                                <select name="" id="">
+                                                    <option value=""></option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </td>
+                                            <td class="col-xs-2"><a class="btn btn-primary button saveReview" data-id="@review.ReviewedTrainee.Id">Готово</a></td>
+                                        </tr>
+                                }
+
+                                counter++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>
+
+<div class="modal fade" id="modalScrum" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="notSaveChanges" class="btn btn-default" data-dismiss="modal">Нет</button>
+                <button type="button" id="saveChangesModal" class="btn btn-primary">Да</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/scrum-review-add")
+}
+

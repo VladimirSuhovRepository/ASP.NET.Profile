@@ -1,0 +1,75 @@
+﻿﻿@model Profile.UI.Models.TraineeReviewViewModel
+
+<div class="modal-body">
+    <div class="container">
+        <div class="row modalHeader">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span></button>
+            <h4 class="modal-title modal-titleCustom" id="traineeLabel">Отзыв о работе <span class="traineeName">@Model.ReviewedTrainee.FullName</span> в качестве <span class="traineeRole">@Model.ReviewedTrainee.Specialization</span></h4>
+            @Html.Hidden("TraineeId", Model.ReviewedTrainee.Id)
+            @Html.Hidden("ReviewerId", Model.ReviewerId)
+        </div>
+        <form id="reviewForm">
+            @for (int i = 0; i < Model.Skills.Count; i++)
+            {
+                var skill = Model.Skills[i];
+                <div class="row skillgrade">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 skillNumber">@(i + 1)</div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <div class="form-group">
+                            <label for="generalSkillReview" id="mainSkillName">@skill.Description</label>
+                            @Html.Hidden("SkillId", skill.Id)
+                            <textarea class="form-control commentField" id="SkillReview@(i+1)" rows="3" name="SkillReviewText@(i+1)" placeholder="Ваш отзыв" maxlength="500"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+                        <div class="form-group">
+                            <select class="form-control markSelect" name="markSelect@(i+1)" id="sel@(i+1)">
+                                <option disabled selected value></option>
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="row skillgrade">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 skillNumber">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <div class="form-group">
+                        <label for="commentWeak">@Model.Weakness.Description</label>
+                        @Html.Hidden("SkillId", Model.Weakness.Id)
+                        <textarea class="form-control commentField" id="commentWeak" rows="6" name="commentW" placeholder="Ваш комментарий" maxlength="700"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+            </div>
+
+            <div class="row skillgrade">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 skillNumber">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <div class="form-group">
+                        <label for="commentStrong">@Model.Strengths.Description</label>
+                        @Html.Hidden("SkillId", Model.Strengths.Id)
+                        <textarea class="form-control commentField" id="comment" rows="6" name="commentStrong" placeholder="Ваш комментарий" maxlength="700"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-right buttonBlock">
+                    <button class="btn btn-default" id="saveButton">Готово</button>
+                    <button type="button" class="btn btn-default" id="cancelButton">Отмена</button>
+                </div>
+            </div>
+        </form>
+    </div><!-- container -->
+</div><!-- modal-body -->

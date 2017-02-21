@@ -1,0 +1,97 @@
+﻿@model Profile.UI.Models.Profile.ProfileViewModel
+
+@{
+    ViewBag.Title = "Анкета стажера";
+    Layout = "~/Views/Shared/_LayoutTraineeProfile.cshtml";
+}
+
+<!-- Additional Questionary -->
+<div class="prf-questionary ">
+    <div class="container">
+        <div class="row prf-underline">
+            <!-- Contacts -->
+            <div class="col-sm-4  clearfix">
+                @Html.Partial("_PartialContacts", Model.Contacts)
+            </div>
+            <!-- end of Contacts -->
+            <!-- Career Objective -->
+            <div class="col-sm-4  prf-add-inform">
+                @Html.Partial("_PartialPosition", Model.Position)
+            </div>
+            <!-- end of Career Objective -->
+            <!-- Work Experience -->
+            <div class="col-sm-4  prf-add-inform">
+                @Html.Partial("_PartialJob", Model.Job)
+            </div>
+            <!-- end of Work Experience -->
+        </div>
+
+    </div>
+    <!-- Education -->
+    <div class="container">
+        <div class="row  prf-underline">
+            <div class="prf-add-inform">
+                <h5>Образование</h5>
+                @Html.Action("Universities", "Education", new { profileId = Model.Id })
+                @Html.Action("Courses", "Education", new { profileId = Model.Id })
+            </div>
+        </div>
+    </div>
+    <!-- end of Education -->
+    <!-- Skills -->
+    <div class="container">
+        <div class="row  prf-underline">
+            <div class="prf-add-inform">
+                <h5>Навыки</h5>
+                <!-- Main Skills -->
+                @Html.Action("MainSkills", "Skill", new { profileId = Model.Id })
+                <!-- end of Main Skills -->
+                <!-- Soft Skills -->
+                @Html.Action("SoftSkills", "Skill", new { profileId = Model.Id })
+                <!-- end of Soft Skills -->
+            </div>
+        </div>
+    </div>
+    <!-- end of Skills -->
+    <!-- Foreign languages -->
+    <div class="container">
+        <div class="row prf-underline">
+            <div class="prf-add-inform">
+                @Html.Action("Languages", "Language", new { profileId = Model.Id })
+            </div>
+        </div>
+    </div>
+    <!-- end of Foreign languages -->
+    <!-- Artifacts -->
+    <div class="container">
+        @Html.Partial("~/Views/Artefact/_PartialArtefacts.cshtml", Model.Artefacts)
+    </div>
+    <!-- end of Artifacts -->
+    <!-- Additional information -->
+    <div class="container">
+        <div class="row">
+            <div class="prf-add-inform">
+                <h5>Квалификация</h5>
+                @Html.Partial("_PartialQualification", Model.Qualification)
+            </div>
+        </div>
+    </div>
+    <!-- end of Additional information -->
+</div>
+<!-- end of Additional Questionary -->
+
+@section TopArrow {
+    <!-- Arrow to Top of Page -->
+    <div id="toTop" class="prf-arrow-top">
+        <a href="#" title="Наверх">
+            <span class="glyphicon glyphicon-menu-up"></span>
+        </a>
+    </div>
+    <!-- end of Arrow to Top of Page -->
+}
+
+@section Scripts {
+<script src="~/Scripts/Custom/fileTypeImage.js"></script>
+    @Scripts.Render("~/bundles/tables")
+    @Scripts.Render("~/bundles/profile-view-page")
+}

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<SourceAnalyzer Name="Special rules">
+  <Description> Special rules which is used for custom validation. </Description>
+  <Rules>
+    <RuleGroup Name="Curly brackets">
+      <Rule Name="CurlyBracketsMustNotBeOmitted" CheckId="EX0001">
+        <Context>The body of the {0} must be wrapped in opening and closing curly brackets.</Context>
+        <Description>Validates that opening and closing curly brackets are always included, even if the statement type allows them to be omitted.</Description>
+      </Rule>
+    </RuleGroup>
+  </Rules>
+</SourceAnalyzer>

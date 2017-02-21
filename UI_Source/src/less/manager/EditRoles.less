@@ -1,0 +1,43 @@
+﻿@import "../var.less";
+
+.setRoles {
+
+    .edit {
+        display:none;
+        .currentRoleBlock,.newRoleBlock{
+            margin-bottom: 60px;
+            > *{
+                &:nth-of-type(2){
+                    margin-top:28px;
+                    margin-bottom:10px;
+                }
+            }
+            label{
+                display:block;
+                margin-bottom:10px;
+                p{
+                    text-align:left;
+                }
+                select{
+                    width:100%;
+                    .commonInput();
+                }
+            }
+            .button{
+                width:100%;
+                margin-left:0;
+
+            }
+            &.disabled{
+                .selectWrapper{
+                    p{
+                        color:@mainDecorative;
+                    }
+                }
+            }
+        }
+        .newRoleBlock{
+
+        }
+    }
+}

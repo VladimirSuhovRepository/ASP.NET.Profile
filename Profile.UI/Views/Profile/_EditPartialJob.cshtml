@@ -1,0 +1,19 @@
+﻿@model Profile.UI.Models.Profile.JobViewModel
+
+<h5>Опыт работы</h5>
+<div class="form-group  prf-required">
+    <input class="form-control" id="CurrentWork" name="CurrentWork" type="text" placeholder="Текущее место" value="@Model.CurrentWork" maxlength="50">
+    <span title="Обязательно для заполнения">*</span>
+</div>
+<div class="form-group  prf-required">
+    <input class="form-control" id="CurrentPosition" name="CurrentPosition" type="text" placeholder="Должность" value="@Model.CurrentPosition" maxlength="50">
+    <span title="Обязательно для заполнения">*</span>
+</div>
+<div class="form-group  prf-required">
+    <input class="form-control" id="EmploymentDuration" name="EmploymentDuration" type="text" placeholder="Период XX/XXXX – XX/XXXX" value="@Model.EmploymentDuration" maxlength="40">
+    <span title="Обязательно для заполнения">*</span>
+</div>
+<div class="form-group  prf-required">
+    <textarea class="form-control" id="JobDuties" name="JobDuties" placeholder="Обязанности" rows="8" maxlength="400">@Model.JobDuties</textarea>
+    <span title="Обязательно для заполнения">*</span>
+</div>

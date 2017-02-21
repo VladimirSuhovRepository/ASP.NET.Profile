@@ -1,0 +1,446 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Описание проекта - Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../images/favicon.jpg" type="image/jpeg">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,500italic,700,700italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=cyrillic" rel="stylesheet">  
+    <link href="../Content/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="../Content/styles.css" rel="stylesheet"> 
+    <script src="../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script> 
+</head>
+<body>
+
+	<div class="prf-wrapper">
+		<header class="prf-main-header">
+		  <nav class="navbar navbar-inverse">
+		    <div class="container">
+		        <div class="navbar-header">
+		            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+		                <span class="sr-only">Toggle navigation</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		            <a class="navbar-brand" href="#">
+		              <img src="../images/logo2_1.png" alt="IT-Academy">
+		            </a>
+		        </div>
+
+		        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+		            <ul class="nav navbar-nav">
+		            </ul>
+		            <ul class="nav navbar-nav navbar-right">
+		                <li class="dropdown">
+		                    <a href="#" class="dropdown-toggle header-avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../images/avatar-big.gif" width="45" height="45" alt="User"></a>
+		                    <ul class="dropdown-menu">
+		                        <li><a href="#">Войти</a></li>
+		                    </ul>
+		                </li>
+		            </ul>
+		        </div>
+		    </div>
+		  </nav>
+
+		</header>
+
+        <div class="container">
+            <div class="prf-main">
+                <section class="prf-main-content">
+                    <section class="prf-main-section projectDescription">
+                        <div class="row headline">
+                            <div class="col-xs-12 pageTitle text-left">
+                                <h1 class="title">Проект</h1>
+                            </div>
+                        </div>
+                        <div class="projectData">
+	                        <div class="row wrapper">
+	                        	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+	                        		<p>Название проекта:</p>
+	                        		<h3>PROFILE.Net</h3>
+	                        	</div>
+	                        	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                        		<button id="editProjectBtn" class="button-borderless" data-toggle="modal" data-target="#projectEditModal"><img src="../images/edit-icon.png" class="button-icon">Редактировать</button>
+	                        	</div>
+	                        </div>
+	                        <div class="row wrapper">
+	                        	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+	                        		<p>Начало:</p>
+	                        		<p class="date">02.09.2016</p>
+	                        	</div>
+	                        	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+	                        		<p>Конец:</p>
+	                        		<p class="date">02.12.2017</p>
+	                        	</div>
+	                        </div>
+	                        <div class="row">
+	                        	<div class="col-xs-12 wrapper">
+	                        		<h4>О проекте</h4>
+	                        	</div>
+							</div>
+	                        <div class="row">
+	                        	<div class="col-xs-10 col-xs-offset-1 wrapper">
+	                        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae soluta cum voluptas quam consequuntur sapiente vitae sit ab, voluptate ex vero voluptatum aperiam sed consectetur nesciunt sequi eius voluptates? Ex quia, inventore nihil, beatae quam ad velit. Eveniet laborum perspiciatis saepe laboriosam, eaque veniam repellat dignissimos, quia consequuntur atque. Neque nemo ratione voluptas perspiciatis, optio facilis sunt deserunt cumque molestiae, nihil fuga, labore dolor odit tempore, aperiam! Nam corporis culpa, rerum dolore cum nulla explicabo laboriosam esse quas eos non voluptatibus, voluptates nihil doloribus accusamus placeat sequi recusandae, incidunt labore illo libero! Sed animi repellat iusto at temporibus consequatur modi.</p>
+	                        	</div>
+							</div>
+	                    </div> <!-- projectData -->
+                    	<div class="row">
+                    		<div class="col-lg-12">
+                    			<hr>
+                    		</div>
+                    	</div>
+	                    <div class="artefacts">
+	                        <div class="row">
+	                        	<div class="col-lg-12 wrapper">
+	                        		<h4>Артефакты</h4>
+	                        	</div>
+							</div>
+							<div class="row wrapper">
+	                        </div>
+	                    </div><!-- artefacts -->
+                    	<div class="row">
+                    		<div class="col-lg-12">
+                    			<hr>
+                    		</div>
+                    	</div>
+	                    <div class="teams">
+	                        <div class="row">
+	                        	<div class="col-lg-12 wrapper">
+	                        		<h4>Команды</h4>
+	                        	</div>
+							</div>
+							<div class="row wrapper">
+								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								  <div class="panel panel-default">
+								    <div class="panel-heading" role="tab" id="heading1">
+								      <div class="panel-title">
+								        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+								          <div class="row">
+								          	<div class="col-xs-1 arrows arrowCollapsed">
+								          		<img src="../images/arrow-collapsed.png">
+								          	</div>
+								          	<div class="col-xs-1 arrows arrowExpaned hideArrow">
+								          		<img src="../images/arrow-expand.png">
+								          	</div>
+								          	<div class="col-xs-2">PROF 1</div>
+								          	<div class="col-xs-3 col-xs-offset-1 teamDate">02.09.2016 - 02.12.2016</div>
+								          	<div class="col-xs-5 teamTask">Создать базовую функциональность</div>
+								          </div>
+								        </a>
+								      </div>
+								    </div>
+								    <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+								      <div class="panel-body">
+								        <div class="row">
+								        	<div class="col-xs-9 col-xs-offset-1">
+								        		<h5>Краткое описание работы</h5>
+								        		<p class="descriptionText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic aliquam voluptatum blanditiis quia expedita non similique numquam, et officiis dolorem. Dicta temporibus distinctio cum, laboriosam ducimus delectus aperiam ullam! Sed!</p>
+								        	</div>
+								        </div>
+								        <div class="row">
+								        	<div class="col-xs-9 col-xs-offset-1">
+								        		<h5>Команда</h5>
+								        	</div>
+								        </div>
+									        <div class="table-responsive">
+									        	<table class="col-lg-6 col-md-6 col-sm-6 col-xs-6 table table-borderless">
+										        	<tbody>
+										        		<tr>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">1</span></td>
+										        			<td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left"><a href="#">Антонов Петр Петрович</a></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">BE ANDROID</td>
+										        			<td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+										        		</tr>
+										        		<tr>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">2</span></td>
+										        			<td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left"><a href="#">Антонов Петр Петрович</a></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">BE ANDROID</td>
+										        			<td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+										        		</tr>
+										        		<tr>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">3</span></td>
+										        			<td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left"><a href="#">Антонов Петр Петрович</a></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">BE ANDROID</td>
+										        			<td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+										        		</tr>
+										        	</tbody>
+									        	</table>
+									        </div><!-- table-responsive -->
+								      </div><!-- panel-body -->
+								    </div>
+								  </div>
+								  <div class="panel panel-default">
+								    <div class="panel-heading" role="tab" id="heading2">
+								      <h4 class="panel-title">
+								        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+								          <div class="row">
+								          	<div class="col-xs-1 arrows arrowCollapsed">
+								          		<img src="../images/arrow-collapsed.png">
+								          	</div>
+								          	<div class="col-xs-1 arrows arrowExpaned hideArrow">
+								          		<img src="../images/arrow-expand.png">
+								          	</div>
+								          	<div class="col-xs-2">PROF 2</div>
+								          	<div class="col-xs-3 col-xs-offset-1 teamDate">02.09.2016 - 02.12.2016</div>
+								          	<div class="col-xs-5 teamTask">Создать прототип</div>
+								          </div>
+								        </a>
+								      </h4>
+								    </div>
+								    <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+								      <div class="panel-body">
+								        <div class="row">
+								        	<div class="col-xs-9 col-xs-offset-1">
+								        		<h5>Краткое описание работы</h5>
+								        		<p class="descriptionText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic aliquam voluptatum blanditiis quia expedita non similique numquam, et officiis dolorem. Dicta temporibus distinctio cum, laboriosam ducimus delectus aperiam ullam! Sed!</p>
+								        	</div>
+								        </div>
+								        <div class="row">
+								        	<div class="col-xs-9 col-xs-offset-1">
+								        		<h5>Команда</h5>
+								        	</div>
+								        </div>
+									        <div class="table-responsive">
+									        	<table class="col-lg-6 col-md-6 col-sm-6 col-xs-6 table table-borderless">
+										        	<tbody>
+										        		<tr>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">1</span></td>
+										        			<td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left"><a href="#">Иванов Петр Петрович</a></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">BE</td>
+										        			<td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+										        		</tr>
+										        		<tr>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">2</span></td>
+										        			<td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left"><a href="#">Иванов Петр Петрович</a></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">BE ANDROID</td>
+										        			<td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+										        		</tr>
+										        		<tr>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">3</span></td>
+										        			<td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left"><a href="#">Иванов Петр Петрович</a></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">BE ANDROID</td>
+										        			<td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+										        		</tr>
+										        	</tbody>
+									        	</table>
+									        </div><!-- table-responsive -->
+								      </div>
+								    </div>
+								  </div>
+								  <div class="panel panel-default">
+								    <div class="panel-heading" role="tab" id="heading3">
+								      <h4 class="panel-title">
+								        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+								          <div class="row">
+								          	<div class="col-xs-1 arrows arrowCollapsed">
+								          		<img src="../images/arrow-collapsed.png">
+								          	</div>
+								          	<div class="col-xs-1 arrows arrowExpaned hideArrow">
+								          		<img src="../images/arrow-expand.png">
+								          	</div>
+								          	<div class="col-xs-2">PROF 3</div>
+								          	<div class="col-xs-3 col-xs-offset-1 teamDate">02.09.2016 - 02.12.2016</div>
+								          	<div class="col-xs-5 teamTask">Создать чтото еще</div>
+								          </div>
+								        </a>
+								      </h4>
+								    </div>
+								    <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+								      <div class="panel-body">
+								        <div class="row">
+								        	<div class="col-xs-9 col-xs-offset-1">
+								        		<h5>Краткое описание работы</h5>
+								        		<p class="descriptionText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic aliquam voluptatum blanditiis quia expedita non similique numquam, et officiis dolorem. Dicta temporibus distinctio cum, laboriosam ducimus delectus aperiam ullam! Sed!</p>
+								        	</div>
+								        </div>
+								        <div class="row">
+								        	<div class="col-xs-9 col-xs-offset-1">
+								        		<h5>Команда</h5>
+								        	</div>
+								        </div>
+									        <div class="table-responsive">
+									        	<table class="col-lg-6 col-md-6 col-sm-6 col-xs-6 table table-borderless">
+										        	<tbody>
+										        		<tr>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">1</span></td>
+										        			<td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left"><a href="#">Клименко Петр Петрович</a></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">BE ANDROID</td>
+										        			<td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+										        		</tr>
+										        		<tr>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">2</span></td>
+										        			<td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left"><a href="#">Клименко Петр Петрович</a></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">BE ANDROID</td>
+										        			<td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+										        		</tr>
+										        		<tr>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">3</span></td>
+										        			<td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left"><a href="#">Клименко Петр Петрович</a></td>
+										        			<td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+										        			<td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">SM</td>
+										        			<td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+										        		</tr>
+										        	</tbody>
+									        	</table>
+									        </div><!-- table-responsive -->
+								      </div>
+								    </div>
+								  </div>
+								</div>
+							</div>
+	                    </div><!-- teams -->
+                    </section><!-- prf-main-section projectDescription -->
+                </section><!-- prf-main-content -->
+            </div><!-- prf-main -->
+        </div><!-- container -->
+
+<div class="projectDescription" >
+			<div class="modal fade" id="projectEditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog modal-dialog" role="document">
+			    <div class="modal-content">
+				    <div class="modal-body">
+			    		<div class="container">
+					    	<div class="row modalHeader">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span></button>
+						        <h4 class="modal-title modal-titleCustom">Редактировать проект - НАЗВАНИЕ ПРОЕКТА</h4>				    		
+					    	</div>
+							<form id="editProjectForm">
+			                    <div class="projectDescription blockWrapper">
+			                    	<div class="row">
+			                    		<div class="col-lg-9 col-lg-offset-1">
+			                    			
+			                    		</div>
+			                    	</div>
+									<div class="row wrapper">
+			                        	<div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+											<div class="form-group">
+											  <label for="projectShortDescription">Краткое описание проекта</label>
+											  <textarea class="form-control textField PrjShort" id="projectShortDescription" name="projectShortDescription" rows="3" maxlength="150" placeholder=""></textarea>
+											</div>
+			                        	</div>
+			                        </div>
+									<div class="row wrapper">
+			                        	<div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+											<div class="form-group">
+											  <label for="pojectFullDescription">Подробное описание проекта</label>
+											  <textarea class="form-control textField PrjFull" id="pojectFullDescription" name="pojectFullDescription" rows="8" maxlength="1000" placeholder=""></textarea>
+											</div>
+			                        	</div>
+			                        </div>
+			                    </div> <!-- projectDescription -->
+
+			                    <div class="teamDescription">
+									<div class="row wrapper">
+			                        	<div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+											<div class="form-group">
+											  <label for="teamTask">Цель команды</label>
+											  <textarea class="form-control textField TeamTask" id="teamTask" name="teamTask" rows="2" maxlength="50" placeholder=""></textarea>
+											</div>
+			                        	</div>
+			                        </div>
+									<div class="row wrapper">
+			                        	<div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+											<div class="form-group">
+											  <label for="teamWorkDesription">Описание работ команды</label>
+											  <textarea class="form-control textField TeamWork" id="teamWorkDesription" name="teamWorkDesription" rows="6" maxlength="600" placeholder=""></textarea>
+											</div>
+			                        	</div>
+			                        </div> 	
+			                    </div><!-- teamDescription -->
+
+			                    <div class="artefacts">
+			                        <div class="row">
+			                        	<div class="col-lg-10 col-lg-offset-1 wrapper">
+			                        		<h4>Артефакты:</h4>
+			                        	</div>
+									</div>
+									<div class="row wrapper">
+			                        </div>
+			                    </div><!-- artefacts -->
+
+							    <div class="row">
+							    	<div class="col-sm-2 col-xs-6 col-sm-offset-8 col-xs-offset-0 text-right buttonBlock">
+							      	    <button  class="button" id="saveButton">Готово</button>
+							    	</div>
+							    	<div class="col-sm-2 col-xs-6 text-right buttonBlock">
+							            <button type="button" class="button" id="cancelButton">Отмена</button>
+							    	</div>		
+							    </div>
+							</form>  <!-- editproject -->  
+						</div><!-- container -->
+					</div><!-- modal-body -->
+			    </div><!-- modal-content -->
+			  </div><!-- modal-dialog -->
+			</div><!-- modal -->
+<!-- Modal -->
+</div>	<!-- projectEditForm -->
+
+	<div class="modal fade col-sm-4 confirmationPopup"  id="readyConfirm" data-keyboard="false" style="margin:0 auto;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	    <div class="modal-dialog" role="document">
+	        <div class="modal-content">
+	            <div class="modal-header">
+<!-- 	                <button type="button" class="close confirm_modal_btn" aria-label="Close"><span >&times;</span></button> -->
+	                <h4 class="modal-title" id="myModalLabel">Сохранить изменения?</h4>
+	            </div>
+
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default confirm_modal_btn">Нет</button>
+	                <button type="button" class="btn btn-primary submit_btn">Да</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="modal fade col-sm-4 confirmationPopup" id="closeConfirm" data-keyboard="false" style="margin:0 auto;">
+	    <div class="modal-dialog" role="document">
+	        <div class="modal-content">
+	            <div class="modal-header">
+<!-- 	                <button type="button" class="close close_btn_modal" aria-label="Close"><span>&times;</span></button> -->
+	                <h4 class="modal-title" id="myModalLabel">Выйти без изменений?</h4>
+	            </div>
+
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default close_btn_modal">Нет</button>
+	                <button type="button" class="btn btn-primary close_modal_btn">Да</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+
+
+
+
+	    <div class="prf-main-footer">
+	        <div class="container">
+	            <div class="row"><p>&copy; 2016 - Образовательный центр Парка высоких технологий</p></div>
+	        </div>
+	    </div>
+	</div>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+	<script src="../Scripts/mask.js"></script>		
+	<script src="../Scripts/Custom/ProjectDescription.js"></script>
+	
+</body>
+</html>

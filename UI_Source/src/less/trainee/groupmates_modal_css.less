@@ -1,0 +1,169 @@
+@blue-color: #2da3da;
+@grey-color: #999;
+@font-bold: 600;
+@font-light: 300;
+@unit: 5px;
+
+	.confirmationPopupGM {
+		margin:0 auto;
+		.modal-dialog{
+			width: 100%;
+		}
+	}
+
+	.groupmateReviewForm {
+
+
+		.modal-dialog{
+			width: 100%;
+		}
+
+		.modal {
+			padding-left: 0px;
+		}
+
+
+		.close {
+			float: left;
+			margin-right: 67px;
+			color: #000;
+		}
+
+		.modal-title {
+			font-size: 14px;
+			font-weight: @font-bold;
+		}
+
+		.traineeName {
+			color: @blue-color;
+		}
+
+		#saveButton {
+			color:@grey-color;
+			border: 2px solid @grey-color;
+			border-radius: 0;
+		}
+
+		#cancelButton {
+			color: @blue-color;
+			border: 2px solid @blue-color;
+			border-radius: 0;
+			&:hover{
+				background: @blue-color;
+		    	color: white;
+			}     
+		}
+
+		.btn-default {
+			&:focus {
+				background-color: #fff;
+			}
+		}
+
+		.modalHeader{
+			padding-bottom: 65px;
+		}
+
+		.modal-body {
+			padding-top:15px; 
+		}
+
+		.modal-footer {
+			border-top: none;
+		}
+
+		.modal-dialog {
+		    width: 100%;
+		    padding: 0;
+		    margin: 0;
+		}
+		.modal-content {
+		    height: 100%;
+		    // min-height: 100%;
+		    height: auto;
+		    border-radius: 0;
+		}
+
+		.modalTitle {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+
+		.modalSubTitle {
+			color:@grey-color;
+			font-size: 24px;
+			font-weight: @font-bold;
+
+		}
+
+		.line {
+		    margin-top: 33px;
+		}
+
+		label.error {
+			color: red;
+		}
+
+		.skillNumber {
+			padding-top: 30px;
+			color:@grey-color;
+			font-weight: @font-bold;
+		}
+
+		.reviewField {
+			border: 1px solid #999;
+			border-radius: 0;
+		}
+
+		.commentField {
+			border: 2px solid #999;
+			border-radius: 0;	
+		}
+
+		textarea {
+		   resize: none;
+		}
+
+		.markSelect {
+			margin-top: 25px;
+			width:60px;
+
+		}
+
+		.markSelectInput {
+			width: 30px;
+		}
+
+
+		.mainSkillNumber {
+			font-size: 14px;
+			font-weight: @font-bold;
+			color: @grey-color;
+			padding-top: 50px;
+		}
+
+		.dropdown-menu {
+			min-width: 50px;
+			text-align: left;
+		}
+
+		.buttonBlock {
+			padding-top: 70px;
+		}
+
+		#saveButton {
+			margin-right: 10px;
+		}
+
+		select.error, textarea.error{
+			border: 1px solid red;
+		}
+
+		.markSelect {
+			&:hover {
+				border: 1px solid @blue-color;
+				
+			}
+		}
+	}
+

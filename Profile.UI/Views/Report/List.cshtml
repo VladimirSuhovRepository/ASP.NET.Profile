@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Profile.UI.Models.Report.IssueViewModel>
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Номер задачи</th>
+            <th>Название задачи</th>
+            <th>
+                <select class="form-control">
+                    <option selected="selected">Статус</option>
+                    <!--<option>STORY</option>
+                    <option>SUBTASK</option>
+                    <option>NEW FEATURE</option>
+                    <option>IMPROVEMENT</option>
+                    <option>BAG</option>
+                    <option>EPIC</option>-->
+                </select>
+            </th>
+            <th>Затраченное/<br>Запланированное время</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td><img src="@item.IconUrl" />@item.Key</td>
+                <td>@item.Summary</td>
+                <td><p class="jira-issue status-@item.ColorName">@item.Status</p></td>
+                <td><span class="jira-time">@item.TimeSpent</span> / <span class="jira-time">@item.OriginalEstimate</span></td>
+            </tr>
+        }
+        <tr>
+            <td>Итоговое время</td>
+            <td></td>
+            <td></td>
+            <td><span class="jira-time">@ViewBag.TotalLoggedTime</span> / <span class="jira-time">@ViewBag.TotalEstimatedTime</span></td>
+        </tr>
+    </tbody>
+</table>

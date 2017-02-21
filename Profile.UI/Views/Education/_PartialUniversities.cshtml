@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Profile.UI.Models.Profile.UniversityViewModel>
+
+@foreach (var item in Model) {
+    <div class="row prf-add-inform prf-underline-decoration" educationId="@Html.DisplayFor(modelItem => item.Id)">
+        <div class="col-sm-3 prf-study">
+            <div class="prf-info prf-date">@Html.DisplayFor(modelItem => item.TrainingPeriod)</div>
+        </div>
+        <div class="col-sm-6 col-sm-offset-1 prf-study ">
+            <div class="prf-info">@Html.DisplayFor(modelItem => item.EducationalInstitution)</div>
+            <div class="prf-info">@Html.DisplayFor(modelItem => item.Specialization)</div>
+            <div class="prf-info">@Html.DisplayFor(modelItem => item.Specialty)</div>
+            <div class="prf-info">@Html.DisplayFor(modelItem => item.AdditionalInformation)</div>
+        </div>
+    </div>
+}

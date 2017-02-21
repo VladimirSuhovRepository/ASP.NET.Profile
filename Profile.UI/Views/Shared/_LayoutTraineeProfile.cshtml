@@ -1,0 +1,30 @@
+﻿@model Profile.UI.Models.Profile.ProfileMainInfoViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutCommon.cshtml";
+}
+
+@Styles.Render("~/Content/tables")
+
+<!-- Main Questionary (there is traineeId as an attribute)-->
+<div class="prf-questionary-up" traineeId="@Model.TraineeId">
+    <div class="container">
+        <div class="row">
+            <!-- Left Navigation -->
+            @Html.Partial("_PartialLeftNavigation", Model)
+            <!-- end of Left Navigation -->
+            <!-- Trainee summary -->
+            @Html.Partial("_PartialTraineeSummary")
+            <!-- end of Trainee summary -->
+        </div>
+    </div>
+</div>
+<!-- end of Main Questionary -->
+@RenderBody()
+
+@RenderSection("TopArrow", required: false)
+
+@section Scripts
+{
+    @RenderSection("scripts", required: false)
+}

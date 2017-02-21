@@ -1,0 +1,105 @@
+﻿@model Profile.UI.Models.Mentor.MentorProfileViewModel
+
+@{
+    ViewBag.Title = "Ментор - Контакты";
+    Layout = "~/Views/Shared/_LayoutCommon.cshtml";
+    bool isOwner = Model.Id == CurrentUser.Id.Value;
+}
+
+<div class="container">
+    <div>
+        <form class="container" id="changesData">
+            <div class="row">
+                <div class="col-lg-12 pageTitle">
+                    <h1 class="text-center">Личные данные</h1>
+                </div>
+            </div>
+            <div class="row infoPlace">
+                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-10 col-xs-offset-1 mentorPhoto">
+                    <img id="truePhoto" src="@Model.AvatarUrl" alt="">
+
+                </div>
+                <div class="col-sm-8 col-sm-offset-0 col-xs-10 col-xs-offset-1 mentorName">
+
+                    <label>
+                        <input class="infoInput" type="text" data-inputmask-regex="[а-яА-Я'-]([\s]?[а-яА-Я'-]){0,49}" maxlength="50" tabindex="1" id="mentorName" value="@Model.FullName" disabled="disabled">
+                    </label>
+                    <div class="prof"><span>@Model.Specialization</span></div>
+
+                    <div>
+                        <label tabindex="2" class="photoBut">
+
+                            <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+                            <input id="loadPhoto" name="newPhoto" type="file">
+                            <span>Загрузить фото</span>
+                            <b class="error"></b>
+                            <button id="loadPhotoButton" data-toggle="modal" data-target="#myModal"></button>
+                        </label>
+                        <label tabindex="3" class="photoBut">
+                            <input type="hidden" id="metorId" value=@Model.Id />
+
+                            <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+                            <input id="removePhoto" name="deletePhoto" type="hidden">
+                            <span>Удалить фото</span>
+                            <button id="removePhotoButton" data-toggle="modal" data-target="#myModal"></button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row infoPlace">
+                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1 mentorContact">
+                    <label class="row">
+                        <span class="correct">Teлефон</span>
+                        <i class="fa fa-phone fa-2x col-lg-2 col-md-2 col-sm-2 col-xs-2"></i>
+                        <input type="text" tabindex="4" id="phone" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 infoInput" maxlength="15" disabled="disabled" value="@Model.Phone">
+                    </label>
+                    <label class="row">
+                        <span class="correct">Email</span>
+                        <i class="fa fa-envelope fa-2x col-lg-2 col-md-2 col-sm-2 col-xs-2"></i>
+                        <input type="text" tabindex="5" id="email" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 infoInput" disabled="disabled" data-inputmask-regex="[\S]{0,40}" value="@Model.Email" maxlength="40">
+                    </label>
+                    <label class="row">
+                        <span class="correct">Skype</span>
+                        <i class="fa fa-skype fa-2x col-lg-2 col-md-2 col-sm-2 col-xs-2"></i>
+                        <input type="text" tabindex="6" id="skype" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 infoInput" data-inputmask-regex="[a-zA-Z]+(.{0,40})" disabled="disabled" value="@Model.Skype" maxlength="30">
+                    </label>
+                    <label class="row">
+                        <span class="correct">Linkedin</span>
+                        <i class="fa fa-linkedin-square fa-2x col-lg-2 col-md-2 col-sm-2 col-xs-2"></i>
+                        <input type="text" tabindex="7" id="linkedin" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 infoInput" disabled="disabled" data-inputmask-regex="[\S]{0,30}" value="@Model.LinkedIn" maxlength="30">
+                    </label>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-xs-10 col-xs-offset-1 mentorChange">
+
+                    @if (isOwner)
+                    {
+                        <span class="button" id="change">Редактировать данные</span>
+                    }
+
+                    <button class="button" data-toggle="modal" data-target="#myModal" id="cancelFromEdit">Отмена</button>
+                    <button id="saveChanges" data-toggle="modal" data-target="#myModal" class="button disabled">Сохранить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="notSaveChanges" class="btn btn-default" data-dismiss="modal">Нет</button>
+                    <button type="button" id="saveChangesModal" class="btn btn-primary">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/mentor-profile-page")
+}

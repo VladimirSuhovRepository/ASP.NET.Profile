@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Profile.UI.Models.Profile.CourseViewModel>
+
+@foreach (var course in Model)
+{
+    <div class="row prf-add-inform prf-underline-decoration prf-course" data-course-id="@course.Id">
+        <div class="col-sm-4 col-sm-offset-1 prf-study">
+            <div class="prf-relative">
+                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-course" title="Удалить">
+                    <span>
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </span>
+                </button>
+                <div class="form-group prf-required prf-deletable">
+                    <input class="form-control prf-time-period" data-course="timePeriod" type="text" placeholder="Период обучения" value="@course.TimePeriod" maxlength="40" required>
+                    <span title="Обязательно для заполнения">*</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6  prf-study">
+            <div class="form-group prf-required">
+                <input class="form-control" data-course="courseEstablishment" type="text" placeholder="Наименование учебного заведения" value="@course.EducationalEstablishment" maxlength="150" required>
+                <span title="Обязательно для заполнения">*</span>
+            </div>
+            <div class="form-group prf-required">
+                <input class="form-control" data-course="courseName" type="text" placeholder="Наименование курсов" value="@course.CourseName" maxlength="150" required>
+                <span title="Обязательно для заполнения">*</span>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control prf-not-required" data-course="additionalInformation" placeholder="Дополнительная информация" rows="6" maxlength="300" required>@course.AdditionalInformation</textarea>
+            </div>
+        </div>
+    </div>
+}

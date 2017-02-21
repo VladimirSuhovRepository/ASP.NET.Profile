@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C2E7146-6AC1-4DB4-91AF-47BA95CDE696}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Profile.DAL</RootNamespace>
+    <AssemblyName>Profile.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\IProfileContext.cs" />
+    <Compile Include="Context\ProfileContext.cs" />
+    <Compile Include="Entities\Avatar.cs" />
+    <Compile Include="Entities\Contacts.cs" />
+    <Compile Include="Entities\File.cs" />
+    <Compile Include="Entities\Course.cs" />
+    <Compile Include="Entities\FileData.cs" />
+    <Compile Include="Entities\Grade.cs" />
+    <Compile Include="Entities\Issue.cs" />
+    <Compile Include="Entities\Link.cs" />
+    <Compile Include="Entities\Mentor.cs" />
+    <Compile Include="Entities\Permission.cs" />
+    <Compile Include="Entities\PermissionType.cs" />
+    <Compile Include="Entities\ProjectStatus.cs" />
+    <Compile Include="Entities\Review.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\ReviewType.cs" />
+    <Compile Include="Entities\RoleType.cs" />
+    <Compile Include="Entities\ScrumMaster.cs" />
+    <Compile Include="Entities\Skill.cs" />
+    <Compile Include="Entities\SkillType.cs" />
+    <Compile Include="Entities\University.cs" />
+    <Compile Include="Entities\Group.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\MainSkill.cs" />
+    <Compile Include="Entities\SoftSkill.cs" />
+    <Compile Include="Entities\Specialization.cs" />
+    <Compile Include="Entities\Trainee.cs" />
+    <Compile Include="Entities\TraineeProfile.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Identity\EmailService.cs" />
+    <Compile Include="Identity\Entities\UserClaim.cs" />
+    <Compile Include="Identity\Entities\UserLogin.cs" />
+    <Compile Include="Identity\Entities\UserRole.cs" />
+    <Compile Include="Identity\IPermissionStore.cs" />
+    <Compile Include="Identity\PermissionStore.cs" />
+    <Compile Include="Identity\RoleManager.cs" />
+    <Compile Include="Identity\UserManager.cs" />
+    <Compile Include="Identity\RoleStore.cs" />
+    <Compile Include="Identity\UserStore.cs" />
+    <Compile Include="Initializers\DropCreateSeedDatabaseAlways.cs" />
+    <Compile Include="Migrations\201602060020546_initial.cs" />
+    <Compile Include="Migrations\201602060020546_initial.Designer.cs">
+      <DependentUpon>201602060020546_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602100614470_RelatedToTrainees.cs" />
+    <Compile Include="Migrations\201602100614470_RelatedToTrainees.Designer.cs">
+      <DependentUpon>201602100614470_RelatedToTrainees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602161752526_AddTraineeProfileData.cs" />
+    <Compile Include="Migrations\201602161752526_AddTraineeProfileData.Designer.cs">
+      <DependentUpon>201602161752526_AddTraineeProfileData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602182159121_AddSaltFieldToUser.cs" />
+    <Compile Include="Migrations\201602182159121_AddSaltFieldToUser.Designer.cs">
+      <DependentUpon>201602182159121_AddSaltFieldToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603141038284_RenameEducationToUniversity.cs" />
+    <Compile Include="Migrations\201603141038284_RenameEducationToUniversity.Designer.cs">
+      <DependentUpon>201603141038284_RenameEducationToUniversity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603141056244_AddCourseEntity.cs" />
+    <Compile Include="Migrations\201603141056244_AddCourseEntity.Designer.cs">
+      <DependentUpon>201603141056244_AddCourseEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604071301503_AddLinkFromTraineeProfileAndMainSkill.cs" />
+    <Compile Include="Migrations\201604071301503_AddLinkFromTraineeProfileAndMainSkill.Designer.cs">
+      <DependentUpon>201604071301503_AddLinkFromTraineeProfileAndMainSkill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604140008012_UpdateFileEntity.cs" />
+    <Compile Include="Migrations\201604140008012_UpdateFileEntity.Designer.cs">
+      <DependentUpon>201604140008012_UpdateFileEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604241204050_ExtendFileEntity.cs" />
+    <Compile Include="Migrations\201604241204050_ExtendFileEntity.Designer.cs">
+      <DependentUpon>201604241204050_ExtendFileEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604241401171_AddLinkEntity.cs" />
+    <Compile Include="Migrations\201604241401171_AddLinkEntity.Designer.cs">
+      <DependentUpon>201604241401171_AddLinkEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604241823495_AddIssueEntity.cs" />
+    <Compile Include="Migrations\201604241823495_AddIssueEntity.Designer.cs">
+      <DependentUpon>201604241823495_AddIssueEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609261931177_AddMentorEntity.cs" />
+    <Compile Include="Migrations\201609261931177_AddMentorEntity.Designer.cs">
+      <DependentUpon>201609261931177_AddMentorEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609262050230_AddContactsEntity.cs" />
+    <Compile Include="Migrations\201609262050230_AddContactsEntity.Designer.cs">
+      <DependentUpon>201609262050230_AddContactsEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609262109519_MoveFullNamePropertyToUserEntity.cs" />
+    <Compile Include="Migrations\201609262109519_MoveFullNamePropertyToUserEntity.Designer.cs">
+      <DependentUpon>201609262109519_MoveFullNamePropertyToUserEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031221297_AddAvatarEntity.cs" />
+    <Compile Include="Migrations\201610031221297_AddAvatarEntity.Designer.cs">
+      <DependentUpon>201610031221297_AddAvatarEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610210954570_AddScrumMasterAndReviewEntities.cs" />
+    <Compile Include="Migrations\201610210954570_AddScrumMasterAndReviewEntities.Designer.cs">
+      <DependentUpon>201610210954570_AddScrumMasterAndReviewEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610221622261_MoveDescriptionPropertyToSkillEntity.cs" />
+    <Compile Include="Migrations\201610221622261_MoveDescriptionPropertyToSkillEntity.Designer.cs">
+      <DependentUpon>201610221622261_MoveDescriptionPropertyToSkillEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610280950252_EditGroupToScrumMasterRelation.cs" />
+    <Compile Include="Migrations\201610280950252_EditGroupToScrumMasterRelation.Designer.cs">
+      <DependentUpon>201610280950252_EditGroupToScrumMasterRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610281530206_RemoveReleaseAddDatesToProjectsAndTeams.cs" />
+    <Compile Include="Migrations\201610281530206_RemoveReleaseAddDatesToProjectsAndTeams.Designer.cs">
+      <DependentUpon>201610281530206_RemoveReleaseAddDatesToProjectsAndTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611011939018_ImplementingIdentity.cs" />
+    <Compile Include="Migrations\201611011939018_ImplementingIdentity.Designer.cs">
+      <DependentUpon>201611011939018_ImplementingIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611021644364_AddRoleType.cs" />
+    <Compile Include="Migrations\201611021644364_AddRoleType.Designer.cs">
+      <DependentUpon>201611021644364_AddRoleType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611041305162_AddPermissionEntity.cs" />
+    <Compile Include="Migrations\201611041305162_AddPermissionEntity.Designer.cs">
+      <DependentUpon>201611041305162_AddPermissionEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091619274_UpdateGroupEntity.cs" />
+    <Compile Include="Migrations\201611091619274_UpdateGroupEntity.Designer.cs">
+      <DependentUpon>201611091619274_UpdateGroupEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611101100075_SetNullableForeignKeyToMentorForTrainee.cs" />
+    <Compile Include="Migrations\201611101100075_SetNullableForeignKeyToMentorForTrainee.Designer.cs">
+      <DependentUpon>201611101100075_SetNullableForeignKeyToMentorForTrainee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611101800246_UpdateTraineeEntity.cs" />
+    <Compile Include="Migrations\201611101800246_UpdateTraineeEntity.Designer.cs">
+      <DependentUpon>201611101800246_UpdateTraineeEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611111713139_UpdateProjectEntity.cs" />
+    <Compile Include="Migrations\201611111713139_UpdateProjectEntity.Designer.cs">
+      <DependentUpon>201611111713139_UpdateProjectEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611161040097_AddAbbreviationToSpecialization.cs" />
+    <Compile Include="Migrations\201611161040097_AddAbbreviationToSpecialization.Designer.cs">
+      <DependentUpon>201611161040097_AddAbbreviationToSpecialization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611201906151_CorrectPropertyName.cs" />
+    <Compile Include="Migrations\201611201906151_CorrectPropertyName.Designer.cs">
+      <DependentUpon>201611201906151_CorrectPropertyName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612081146175_AddContactsCompanyProperty.cs" />
+    <Compile Include="Migrations\201612081146175_AddContactsCompanyProperty.Designer.cs">
+      <DependentUpon>201612081146175_AddContactsCompanyProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612130954080_AddFieldIsInArchiveForUser.cs" />
+    <Compile Include="Migrations\201612130954080_AddFieldIsInArchiveForUser.Designer.cs">
+      <DependentUpon>201612130954080_AddFieldIsInArchiveForUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602060020546_initial.resx">
+      <DependentUpon>201602060020546_initial.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602100614470_RelatedToTrainees.resx">
+      <DependentUpon>201602100614470_RelatedToTrainees.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602161752526_AddTraineeProfileData.resx">
+      <DependentUpon>201602161752526_AddTraineeProfileData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602182159121_AddSaltFieldToUser.resx">
+      <DependentUpon>201602182159121_AddSaltFieldToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603141038284_RenameEducationToUniversity.resx">
+      <DependentUpon>201603141038284_RenameEducationToUniversity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603141056244_AddCourseEntity.resx">
+      <DependentUpon>201603141056244_AddCourseEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604071301503_AddLinkFromTraineeProfileAndMainSkill.resx">
+      <DependentUpon>201604071301503_AddLinkFromTraineeProfileAndMainSkill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604140008012_UpdateFileEntity.resx">
+      <DependentUpon>201604140008012_UpdateFileEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604241204050_ExtendFileEntity.resx">
+      <DependentUpon>201604241204050_ExtendFileEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604241401171_AddLinkEntity.resx">
+      <DependentUpon>201604241401171_AddLinkEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604241823495_AddIssueEntity.resx">
+      <DependentUpon>201604241823495_AddIssueEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609261931177_AddMentorEntity.resx">
+      <DependentUpon>201609261931177_AddMentorEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609262050230_AddContactsEntity.resx">
+      <DependentUpon>201609262050230_AddContactsEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609262109519_MoveFullNamePropertyToUserEntity.resx">
+      <DependentUpon>201609262109519_MoveFullNamePropertyToUserEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031221297_AddAvatarEntity.resx">
+      <DependentUpon>201610031221297_AddAvatarEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610210954570_AddScrumMasterAndReviewEntities.resx">
+      <DependentUpon>201610210954570_AddScrumMasterAndReviewEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610221622261_MoveDescriptionPropertyToSkillEntity.resx">
+      <DependentUpon>201610221622261_MoveDescriptionPropertyToSkillEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610280950252_EditGroupToScrumMasterRelation.resx">
+      <DependentUpon>201610280950252_EditGroupToScrumMasterRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610281530206_RemoveReleaseAddDatesToProjectsAndTeams.resx">
+      <DependentUpon>201610281530206_RemoveReleaseAddDatesToProjectsAndTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611011939018_ImplementingIdentity.resx">
+      <DependentUpon>201611011939018_ImplementingIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611021644364_AddRoleType.resx">
+      <DependentUpon>201611021644364_AddRoleType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611041305162_AddPermissionEntity.resx">
+      <DependentUpon>201611041305162_AddPermissionEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091619274_UpdateGroupEntity.resx">
+      <DependentUpon>201611091619274_UpdateGroupEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611101100075_SetNullableForeignKeyToMentorForTrainee.resx">
+      <DependentUpon>201611101100075_SetNullableForeignKeyToMentorForTrainee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611101800246_UpdateTraineeEntity.resx">
+      <DependentUpon>201611101800246_UpdateTraineeEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611111713139_UpdateProjectEntity.resx">
+      <DependentUpon>201611111713139_UpdateProjectEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611161040097_AddAbbreviationToSpecialization.resx">
+      <DependentUpon>201611161040097_AddAbbreviationToSpecialization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201906151_CorrectPropertyName.resx">
+      <DependentUpon>201611201906151_CorrectPropertyName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612081146175_AddContactsCompanyProperty.resx">
+      <DependentUpon>201612081146175_AddContactsCompanyProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612130954080_AddFieldIsInArchiveForUser.resx">
+      <DependentUpon>201612130954080_AddFieldIsInArchiveForUser.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Entities\Diagram.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

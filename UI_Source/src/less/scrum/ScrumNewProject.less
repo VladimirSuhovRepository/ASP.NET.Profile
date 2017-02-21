@@ -1,0 +1,82 @@
+@blue-color: #2da3da;
+@grey-color: #999;
+@font-bold: 600;
+@font-light: 300;
+
+.scrumNewProject {
+	font-weight:@font-light; 
+	text-align: left;
+
+	h4 {
+		font-weight: @font-bold;
+	}
+
+	textarea {
+		resize: none;
+		border: 1px solid @grey-color;
+		border-radius: 0;
+	}
+
+	hr {
+		border-top: 1px solid @grey-color;
+	}
+
+	.confirmationPopup {
+		.modal-dialog{
+			width: 100%;
+		}	
+	}
+
+	.blockWrapper {
+		margin-top: 20px;
+	}
+
+	.wrapper {
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+
+	.notification {
+		outline: 1px solid @blue-color;
+		font-weight: @font-bold;
+		font-size: 14px;
+		padding:15px;	
+	}
+
+	.exclamation {
+		font-size: 20px;
+	}
+
+	.date {
+		border: solid 1px @grey-color;
+		text-align: center;
+		padding:3px;
+	}
+
+	.divider {
+		border-top: solid 1px @grey-color;
+	}
+
+	.infoMark {
+		color: @blue-color;
+		font-weight: @font-bold;
+	}
+
+	.artefacts{
+		margin-bottom: 140px;
+	}
+
+	#saveButton{
+		width:100%;
+		margin-right: 10%;
+	}
+
+	select.error, textarea.error{
+		border: 1px solid red;
+	}
+
+	label.error {
+		color:red;
+	}
+
+}

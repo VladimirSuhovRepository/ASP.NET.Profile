@@ -1,0 +1,181 @@
+﻿@model Profile.UI.Models.Project.ProjectDescriptionViewModel
+
+@using Profile.DAL.Entities;
+
+@{
+    ViewBag.Title = "Описание проекта";
+    Layout = "~/Views/Shared/_LayoutCommon.cshtml";
+}
+
+<div class="container">
+    <div class="prf-main">
+        <section class="prf-main-content">
+            <section class="prf-main-section projectDescription">
+                <div class="row headline">
+                    <div class="col-xs-12 pageTitle text-left">
+                        <h1 class="title">Проект</h1>
+                    </div>
+                </div>
+                <div class="projectData">
+                    <div class="row wrapper">
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                            <p>Название проекта:</p>
+                            <h3>@Model.Name</h3>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            @if (Model.IsCurrentUserOwner)
+                            {
+                                <button id="editProjectBtn" class="button-borderless" data-toggle="modal" data-target="#projectEditModal">
+                                    <img src="@Url.Content("~/images/edit-icon.png")" class="button-icon">Редактировать
+                                </button>
+                            }
+                        </div>
+                    </div>
+                    <div class="row wrapper">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                            <p>Начало:</p>
+                            <p class="date">@Model.StartDate.ToString("dd.MM.yyyy")</p>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                            <p>Конец:</p>
+                            <p class="date">@Model.FinishDate.ToString("dd.MM.yyyy")</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 wrapper">
+                            <h4>О проекте</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1 wrapper">
+                            <p>@Model.FullDescription</p>
+                        </div>
+                    </div>
+                </div> <!-- projectData -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="artefacts">
+                    <div class="row">
+                        <div class="col-lg-12 wrapper">
+                            <h4>Артефакты</h4>
+                        </div>
+                    </div>
+                    <div class="row wrapper">
+                    </div>
+                </div><!-- artefacts -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="teams">
+                    <div class="row">
+                        <div class="col-lg-12 wrapper">
+                            <h4>Команды</h4>
+                        </div>
+                    </div>
+                    <div class="row wrapper">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            @for (int i = 1; i <= Model.Groups.Count; i++)
+                            {
+                                var group = Model.Groups[i - 1];
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="heading@(i)">
+                                        <div class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse@(i)" aria-expanded="true" aria-controls="collapse@(i)">
+                                                <div class="row">
+                                                    <div class="col-xs-1 arrows arrowCollapsed">
+                                                        <img src="@Url.Content("~/images/arrow-collapsed.png")">
+                                                    </div>
+                                                    <div class="col-xs-1 arrows arrowExpaned hideArrow">
+                                                        <img src="@Url.Content("~/images/arrow-expand.png")">
+                                                    </div>
+                                                    <div class="col-xs-2">@group.Number</div>
+                                                    <div class="col-xs-3 col-xs-offset-1 teamDate">
+                                                        @group.StartDate.ToString("dd.MM.yyyy") - @group.FinishDate.ToString("dd.MM.yyyy")
+                                                    </div>
+                                                    <div class="col-xs-5 teamTask">@group.TeamPurpose</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="collapse@(i)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading@(i)">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-9 col-xs-offset-1">
+                                                    <h5>Краткое описание работы</h5>
+                                                    <p class="descriptionText">@group.TeamWorkDescription</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-9 col-xs-offset-1">
+                                                    <h5>Команда</h5>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="col-lg-6 col-md-6 col-sm-6 col-xs-6 table table-borderless">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+                                                            <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">1</span></td>
+
+                                                            <td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left">
+                                                                @Html.ActionLink(group.ScrumMaster.UserFullName, "View", "User", new { id = group.ScrumMaster.Id }, null)
+                                                            </td>
+
+                                                            <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+                                                            <td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">SM</td>
+                                                            <td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+                                                        </tr>
+
+                                                        @for (int j = 0; j < group.Trainees.Count; j++)
+                                                        {
+                                                            var trainee = group.Trainees[j];
+
+                                                            <tr>
+                                                                <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+                                                                <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right"><span class="number">@(j + 2)</span></td>
+
+                                                                <td class="col-lg-3 col-md-3  col-sm-3 col-xs-3 text-left">
+                                                                    @if (!CurrentUser.HasRole(RoleType.HR) || trainee.IsAllowed)
+                                                                    {
+                                                                        @: @Html.ActionLink(trainee.UserFullName, "View", "Profile", new { id = trainee.Id }, null)
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        @: @trainee.UserFullName
+                                                                    }
+                                                                </td>
+
+                                                                <td class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left"></td>
+                                                                <td class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">@trainee.SpecializationAbbreviation</td>
+                                                                <td class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div><!-- table-responsive -->
+                                        </div><!-- panel-body -->
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div><!-- teams -->
+            </section><!-- prf-main-section projectDescription -->
+        </section><!-- prf-main-content -->
+    </div><!-- prf-main -->
+</div><!-- container -->
+
+@if (Model.IsCurrentUserOwner)
+{
+    @Html.Action("Edit", "ScrumMaster")
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/project-description")
+}

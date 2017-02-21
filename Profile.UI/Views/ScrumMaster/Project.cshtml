@@ -1,0 +1,163 @@
+﻿@model Profile.UI.Models.ScrumProjectViewModel
+@{
+    ViewBag.Title = "Проект скрама";
+    Layout = "~/Views/Shared/_LayoutCommon.cshtml";
+    var currentUser = CurrentUser.Id.Value;
+}
+
+<div class="container">
+    <div class="prf-main">
+        <section class="prf-main-content">
+            <section class="prf-main-section scrumNewProject">
+                <div class="row headline">
+                    <div class="col-xs-12 pageTitle text-left">
+                        <h1 class="title">Новый проект</h1>
+                    </div>
+                </div>
+                <div class="projectData">
+                    <div class="row wrapper">
+                        <div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-offset-0">
+                            <p>Ваш проект</p>
+                            <h4>@Model.Project.Name</h4>
+                        </div>                        
+                        <div class="col-lg-6 col-md-6 notification visible-lg-block">
+                            <div class="row">
+                                <div class="col-lg-2"><span class="infoMark exclamation">!</span></div>
+                                <div class="col-lg-10">Заполните обязательные поля и нажмите <span class="infoMark">Готово</span>.<br> Проект будет добавлен в общий список проектов.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrapper">
+                        <div class="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-0 col-sm-2 col-sm-offset-0 col-xs-6 col-xs-offset-0">
+                            <p>Начало</p>
+                            <p class="date">@Model.Project.StartDate.ToString("dd.MM.yyyy")</p>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                            <p>Конец</p>
+                            <p class="date">@Model.Project.FinishDate.ToString("dd.MM.yyyy")</p>
+                        </div>
+                    </div>
+                    <div class="row wrapper">
+                        <div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-offset-0">
+                            <p>Ваша команда</p>
+                            <h4>@Model.Group.Number</h4>
+                        </div>
+                    </div>
+                    <div class="row wrapper">
+                        <div class="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-0 col-sm-2 col-sm-offset-0 col-xs-6 col-xs-offset-0">
+                            <p>Начало</p>
+                            <p class="date">@Model.Group.StartDate.ToString("dd.MM.yyyy")</p>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                            <p>Конец</p>
+                            <p class="date">@Model.Group.FinishDate.ToString("dd.MM.yyyy")</p>
+                        </div>
+                    </div>
+                    <div class="row hidden-lg notificationPdd">
+                        <div class="col-md-6 col-sm-8 col-xs-8 col-xs-offset-2 col-sm-offset-0 notification">
+                            <div class="row">
+                                <div class="col-md-1 col-sm-1 col-xs-1"><span class="infoMark exclamation">!</span></div>
+                                <div class="col-md-11 col-sm-11 col-xs-11">Заполните поля отмеченные <span class="infoMark">*</span> и нажмите <span class="infoMark">Готово</span> <br>Проект будет добавлен в список</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- projectData -->
+
+                <form id="scrumProjectInfo" method="post">
+                    <input type="hidden" name="Group.Id" value="@Model.Group.Id">
+                    <input type="hidden" name="Group.ScrumMasterId" value="@currentUser">
+                    <input type="hidden" name="Project.Id" value="@Model.Project.Id">
+                    <input type="hidden" name="Project.Status" value="2">
+                    <input type="hidden" name="Project.Groups[0].ProjectId" value="@Model.Project.Id">
+                    <div class="projectDescription blockWrapper">
+                        <div class="row">
+                            <div class="col-lg-9 col-lg-offset-1">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-9 col-lg-offset-1 wrapper">
+                                <h4>Описание к проекту:</h4>
+                            </div>
+                        </div>
+                        <div class="row wrapper">
+                            <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+                                <div class="form-group">
+                                    <label for="Project.ShortDescription">Краткое описание проекта <span class="infoMark">*</span></label>
+                                    <textarea class="form-control textField textFieldRequired" id="Project.ShortDescription" name="Project.ShortDescription" rows="3" maxlength="150" placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row wrapper">
+                            <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+                                <div class="form-group">
+                                    <label for="Project.FullDescription">Подробное описание проекта <span class="infoMark">*</span></label>
+                                    <textarea class="form-control textField textFieldRequired" id="Project.FullDescription" name="Project.FullDescription" rows="8" maxlength="1000" placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- projectDescription -->
+
+                    <div class="teamDescription">
+                        <div class="row">
+                            <div class="col-lg-9 col-lg-offset-1 wrapper">
+                                <h4>Описание команды:</h4>
+                            </div>
+                        </div>
+                        <div class="row wrapper">
+                            <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+                                <div class="form-group">
+                                    <label for="Group.TeamPurpose">Цель команды</label>
+                                    <textarea class="form-control textField" id="Group.TeamPurpose" name="Group.TeamPurpose" rows="2" maxlength="50" placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row wrapper">
+                            <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-0">
+                                <div class="form-group">
+                                    <label for="Group.TeamWorkDescription">Описание работ команды</label>
+                                    <textarea class="form-control textField" id="Group.TeamWorkDescription" name="Group.TeamWorkDescription" rows="6" maxlength="600" placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- teamDescription -->
+
+                    <div class="artefacts">
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1 wrapper">
+                                <h4>Артефакты:</h4>
+                            </div>
+                        </div>
+                        <div class="row wrapper">
+                        </div>
+                    </div><!-- artefacts -->
+
+                    <div class="row wrapper">
+                        <div class="col-lg-2 col-lg-offset-9 col-md-2 col-md-offset-9 col-sm-2 col-sm-offset-9 col-xs-4 col-xs-offset-4 text-right">
+                            <button id="saveButton" class="button btn btn-default" onclick="return false;">Готово</button>
+                        </div>
+                    </div>
+                </form><!-- projectInfo -->
+
+                <div class="modal fade col-sm-4 confirmationPopup" id="readyConfirm" style="margin:0 auto;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close close_modal" aria-label="Close"><span>&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Добавить проект в общий список проектов? Вы сможете редактировать свой проект после добавления.</h4>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default close_modal">Нет</button>
+                                <button type="button" class="btn btn-primary" onclick="$('#scrumProjectInfo').submit()">Да</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- confirmationPopup -->
+
+            </section><!-- prf-main-section scrumNewProject -->
+        </section><!-- prf-main-content -->
+    </div><!-- prf-main -->
+</div><!-- container -->
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+<script src="../../Scripts/mask.js"></script>
+<script src="../../Scripts/Custom/scrumNewProject.js"></script>

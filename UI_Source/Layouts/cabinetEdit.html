@@ -1,0 +1,171 @@
+﻿
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проекты - Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=cyrillic" rel="stylesheet">
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet">
+    <link href="../../Content/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="prf-wrapper">
+        <header class="prf-main-header">
+            <nav class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="../../images/logo2_1.png" alt="IT-Academy">
+                        </a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                        <ul class="nav navbar-nav"></ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle header-avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../images/avatar-big.gif" width="45" height="45" alt="User"></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Контактные данные</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Мои стажеры</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Выйти</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="prf-main">
+                <section class="prf-main-content">
+                    <section class="prf-main-section cabinet edit">
+                        <form id="cabinetData">
+                            <div class="row headline">
+                                <div class="col-xs-12 pageTitle">
+                                    <h1>Личный кабинет</h1>
+                                </div>
+                            </div>
+                            <div class="row dataPlace">
+                                <div class="col-sm-3 col-sm-offset-0 col-xs-9 col-xs-offset-2 cabinetPhoto">
+                                    <div class="photoWrapper">
+                                        <img id="truePhoto" src="../../images/tn.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-offset-0 col-sm-9 col-xs-12 cabinetName">
+                                    <label>
+                                        <input class="infoInput name validate" id="name" name="name" type="text" value="Ян Агеенко" maxlength="35" data-inputmask-regex="[а-яА-Я\`-]([\s]?[а-яА-Я\`-]){0,35}" />
+                                    </label>
+                                    <label>
+                                        <input class="infoInput company" id="company" name="company" type="text" value="Big int." maxlength="50" data-inputmask-regex="[\S]([\s]?[\S]){0,50}" />
+                                    </label>
+                                </div>
+                                <div class="col-sm-8 col-sm-offset-0 col-xs-12 photoHandler">
+                                    <label class="photoBut">
+                                        <input id="loadPhoto" name="newPhoto" type="file">
+                                        <button id="loadPhotoButton">
+                                            <i class="material-icons">add_a_photo</i>
+                                            <span>Загрузить фото</span>
+                                        </button>
+                                    </label>
+                                    <label class="photoBut">
+                                        <input id="removePhotoPath" type="hidden">
+                                        <button id="removePhotoButton">
+                                            <i class="material-icons">delete</i>
+                                            <span>Удалить фото</span>
+                                        </button>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row infoPlace">
+                                <div class="col-md-5 col-sm-7 col-xs-12 cabinetContact">
+                                    <label>
+                                        <i class="material-icons">phone</i>
+                                        <input type="text" id="phone" class="infoInput validate" placeholder="375-__-___-__-__">
+                                    </label>
+                                    <label>
+                                        <i class="material-icons">email</i>
+                                        <input type="text" data-inputmask-regex="[\S]{0,40}" id="email" class="infoInput validate" value="example@email.com" maxlength="40">
+                                    </label>
+                                    <label>
+                                        <i class="fa fa-skype fa-2x"></i>
+                                        <input type="text" data-inputmask-regex="[\S]([\s]?[\S]){0,30}" id="skype" class="infoInput" value="abdc" maxlength="30">
+                                    </label>
+                                    <label>
+                                        <i class="fa fa-linkedin-square fa-2x"></i>
+                                        <input type="text" data-inputmask-regex="[\S]([\s]?[\S]){0,30}" id="linkedin" class="infoInput" maxlength="30">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-4 col-xs-7 changeButtons">
+                                    <button type="button" class="button disabled" id="save">Сохранить</button>
+                                </div>
+                                <div class="col-md-2 col-sm-3 col-xs-5 changeButtons">
+                                    <a href="/Layouts/cabinet.html" class="button" id="cancel">Отмена</a>
+                                </div>
+                            </div>
+                            <div class="modal fade" tabindex="-1" id="saveData" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Данные будут изменены. Сохранить ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Нет</button>
+                                            <button type="submit" class="btn btn-primary saveModal">Да</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal fade" tabindex="-1" id="cancelData" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title"></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Данные не будут сохранены. Выйти ?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Нет</button>
+                                        <a class="btn btn-primary saveModal" href="/Layouts/cabinet.html">Да</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <div class="prf-main-footer">
+            <div class="container">
+                <div class="row"><p>&copy; 2016 - Образовательный центр Парка высоких технологий</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/jquery.inputmask.bundle.min.js"></script>
+    <script src="../../Scripts/Custom/common/cabinetEdit.js"></script>
+</body>
+</html>

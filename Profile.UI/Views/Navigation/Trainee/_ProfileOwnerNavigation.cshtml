@@ -1,0 +1,13 @@
+﻿@using Profile.UI.HtmlHelpers
+
+@model Profile.UI.Models.Profile.ProfileMainInfoViewModel
+
+<li class="active">
+    <a>Мой профайл</a>
+    <ul class="nav prf-list-nav">
+        @Html.MenuItem("Анкета", "View", "Profile")
+        @Html.MenuItem("Отчет", "View", "Report", new { Id = Model.TraineeId }, null)
+        @Html.MenuItem("Отзывы", "View", "Review", new { Id = Model.TraineeId }, null, Model.HasReviews)
+    </ul>
+</li>
+@Html.MenuItem("Изменить профайл", "Edit", "Profile")

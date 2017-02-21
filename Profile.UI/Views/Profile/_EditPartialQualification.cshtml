@@ -1,0 +1,14 @@
+﻿@model Profile.UI.Models.Profile.QualificationViewModel
+
+<div class="prf-long-text">
+    <div class="form-group prf-required">
+        <textarea class="form-control" id="Strengths" name="Strengths" placeholder="Лидирующие личностные качества (примеры проявления в реальной жизни)." rows="5" maxlength="1000" required>@Model.Strengths</textarea>
+        <span title="Обязательно для заполнения">*</span>
+    </div>
+</div>
+<div class="prf-long-text">
+    <div class="form-group  prf-required">
+        <textarea class="form-control" id="Weaknesses" name="Weaknesses" placeholder="Слабые стороны (пробелы в знаниях, качества характера и т.д., все что может повлиять на успешность выпускника в работе)." rows="5" maxlength="1000" required>@Model.Weaknesses</textarea>
+        <span title="Обязательно для заполнения">*</span>
+    </div>
+</div>

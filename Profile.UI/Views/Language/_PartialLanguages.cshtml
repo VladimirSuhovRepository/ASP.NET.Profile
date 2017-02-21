@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Profile.UI.Models.Profile.LanguageViewModel>
+
+<h5>Иностранные языки</h5>
+
+@foreach (var language in Model) {
+    <div class="col-xs-6 col-sm-2 col-sm-offset-3 ">
+        <ul class="prf-skill-list prf-info">
+            <li>@Html.DisplayFor(modelItem => language.Name)</li>
+        </ul>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-sm-offset-1">
+        <ul class="prf-skill-list prf-info">
+            <li>@Html.DisplayFor(modelItem => language.Level)</li>
+        </ul>
+    </div>
+}

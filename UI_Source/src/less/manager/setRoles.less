@@ -1,0 +1,184 @@
+﻿@import "../var.less";
+
+.rights {
+    margin-bottom: 40px;
+    padding: 0;
+
+    li {
+        .rightItem {
+            .parentLink();
+        }
+    }
+}
+
+.setRoles {
+
+    .set {
+        display:block;
+
+        &:target{
+            display:block;
+        }
+
+        #saveTrainee {
+            .modal-body {
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .modal {
+            button {
+                &.disabled {
+                }
+            }
+
+            .preloader {
+                position: absolute;
+                top: 0;
+                left: 0;
+                max-width: 100%;
+                max-height: 100%;
+                background: url("../images/loading.gif") no-repeat 50% 50%;
+                background-size: contain;
+            }
+        }
+
+        .thead {
+            .th {
+                font-size: 16px;
+                border: none;
+                text-align: left;
+                font-weight: bold;
+                padding: 10px;
+                padding-left: 0;
+
+                &:first-child {
+                    padding-left: 18px;
+                }
+            }
+        }
+
+        .setRights {
+            border: 1px solid @decorative;
+            border-right: none;
+            display: flex;
+            align-items: stretch;
+            min-height: 575px;
+
+            .accountsList {
+                padding: 0;
+                overflow-y: scroll;
+
+                .table-responsive {
+                    margin-bottom: 0;
+                }
+
+                table {
+
+
+                    tr {
+                        &:first-of-type {
+                            td {
+                                padding-top: 20px;
+                            }
+                        }
+                    }
+
+                    td {
+                        padding: 10px;
+                        vertical-align: middle;
+                        border: none;
+                        text-align: left;
+
+                        &:first-child {
+                            text-align: right;
+                        }
+
+                        &:nth-child(2) {
+                            padding-left: 30px;
+                        }
+
+                        .checkAcc {
+                            border: 2px solid @decorative;
+                            border-radius: 3px;
+                            width: 18px;
+                            height: 18px;
+                            display: inline-block;
+                            margin: 0;
+
+                            i {
+                                font-size: 15px;
+                                color: white;
+                            }
+                        }
+
+                        .checkInput {
+                            .check(@decorative,@main);
+                        }
+
+                        a {
+                            .personalLink();
+                            line-height: 18px;
+                        }
+                    }
+                }
+            }
+
+            .buttonsSets {
+                border-left: 1px solid @decorative;
+                border-right: 1px solid @decorative;
+
+
+                .container-fluid {
+                    margin: 0 -15px 0 -15px;
+                    display: none;
+                }
+
+                .delete {
+                    .addButtons();
+                    margin: 12px 0 0;
+
+                    i {
+                        vertical-align: middle;
+                        margin-bottom: 0.25em;
+                    }
+                }
+
+                .roleButtons, .specButtons {
+                    border-top: 1px solid @decorative;
+
+                    h3 {
+                        .heading1(bold);
+                        text-align: left;
+                        margin: 0.75em 0 1.5em;
+                    }
+
+                    .check {
+                        margin-bottom: 18px;
+
+                        input {
+                            .check(@decorative,@mainDecorative);
+
+                            & + .checkButton {
+                                width:100%;
+                                margin: 0;
+                                .checkButton();
+                            }
+                        }
+                    }
+                }
+            }
+
+            & + .buttons {
+                margin-bottom: 50px;
+
+                .button {
+                    width: 100%;
+                    margin: 20px 0 30px;
+                }
+            }
+        }
+    }
+}

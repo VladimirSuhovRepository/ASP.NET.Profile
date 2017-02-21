@@ -1,0 +1,317 @@
+@main: #3DA2DA;
+@forEffects: #25BDFF;
+@forEffects2: #71D9FF;
+@mainDecorative: #999999;
+@decorative: #E6E6E6;
+@text: black;
+@navBack: #fff;
+
+// @titleFont: 30px;
+// @headingFont:16px;
+// @headFont2:14px;
+// @headLink: 24px;
+// @mainLink:15px;
+
+.trans() {
+    transition: 0.2s ease;
+}
+
+.heading1(@weight) {
+    font-size: 16px;
+    font-weight: @weight;
+    color: @text;
+}
+
+.heading2(@weight) {
+    font-size: 14px;
+    font-weight: @weight;
+    color: @text;
+}
+
+.headLink() {
+    font-size: 24px;
+    font-weight: 400;
+    color: @text;
+    padding: 0.2em;
+    border-bottom: 2px solid @main;
+}
+
+.mainLink() {
+    font-size: 15px;
+    font-weight: bold;
+    color: @mainDecorative;
+    padding: 0.2em;
+    border-bottom: 2px dashed @mainDecorative;
+    .trans();
+
+    &.disabled {
+        color: @mainDecorative;
+        border-bottom: 2px dashed @mainDecorative;
+        cursor: default;
+
+        &:hover {
+            color: @mainDecorative;
+        }
+    }
+
+    &.active {
+        font-weight: bold;
+        color: @main;
+        border-bottom: 2px solid @main;
+    }
+
+    &:hover {
+        color: @main;
+    }
+
+    &:focus:active {
+        color: @forEffects;
+    }
+}
+
+.smallLink(@weight) {
+    font-size: 12px;
+    font-weight: @weight;
+    color: @text;
+    cursor: pointer;
+    .trans();
+
+    &.active {
+        font-weight: bold;
+        color: @main;
+    }
+
+    &:hover {
+        color: @main;
+    }
+}
+
+.decorative(@weight,@col) {
+    font-size: 10px;
+    font-weight: @weight;
+    color: @col;
+}
+
+.subLinkMenu() {
+    a {
+        padding: 0.8em;
+        vertical-align: middle;
+        border: 1px solid @decorative;
+        border-bottom: 1px solid transparent;
+        text-align: left;
+        .smallLink(normal);
+        .trans();
+
+        i {
+            opacity: 0;
+            vertical-align: middle;
+            .trans();
+        }
+
+        &:hover {
+            background: none;
+
+            i {
+                opacity: 1;
+                color: @forEffects;
+            }
+        }
+
+        &:focus:active {
+            background: @decorative;
+        }
+    }
+
+    &.active {
+        a {
+            color: @text;
+
+            i {
+                opacity: 1;
+                color: @main;
+            }
+        }
+    }
+
+    &:last-of-type {
+        a {
+            border-bottom: 1px solid @decorative;
+        }
+    }
+}
+
+.parentLinkMenu() {
+    a {
+        padding: 1em 2em;
+        .smallLink(bold);
+        border: 1px solid @mainDecorative;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            background: @decorative;
+            color: @text;
+        }
+
+        &:focus:active {
+            background: @mainDecorative;
+            color: @text;
+        }
+    }
+
+    &.active {
+        a {
+            border: 1px solid @main;
+            color: @main;
+
+            &:hover {
+                background: @decorative;
+                color: @text;
+            }
+        }
+    }
+}
+
+.personalLink() {
+    font-size: 14px;
+    .trans();
+
+    &:hover {
+        text-decoration: underline;
+        color: @mainDecorative;
+    }
+
+    &:focus:active {
+        text-decoration: underline;
+        color: @decorative;
+    }
+}
+
+.addButtons() {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    span {
+        cursor: pointer;
+        .smallLink(normal);
+        .trans();
+
+        &:hover {
+            font-weight: normal;
+            color: @main;
+        }
+
+        &:focus {
+            :active {
+                color: @forEffects;
+            }
+        }
+    }
+}
+
+.parentLink() {
+    outline: 1px solid @mainDecorative;
+    .trans();
+
+    span, a {
+        font-size: 12px;
+        display: block;
+        padding: 1.25em;
+        line-height: 1;
+        cursor: pointer;
+        font-weight: bold;
+        .trans();
+    }
+
+    &:not(.disabled) {
+        span, a {
+            &:hover {
+                background: @decorative;
+            }
+            &:focus:active {
+                background: @mainDecorative;
+            }
+        }
+    }
+
+    &.disabled {
+        outline: 1px solid @decorative;
+
+        span, a {
+            color: @mainDecorative;
+            cursor: default;
+        }
+    }
+
+    &.active {
+        outline: 2px solid @main;
+
+        span, a {
+            color: @main;
+
+            &:focus:active {
+                background: none;
+            }
+        }
+    }
+}
+
+.check(@hoverBack,@back) {
+    display: none;
+
+    & + label {
+        cursor: pointer;
+        .trans();
+
+        &:hover {
+            background: @hoverBack;
+        }
+
+        i {
+            opacity: 0;
+        }
+    }
+
+    &:checked + label {
+        background: @back;
+
+        i {
+            opacity: 1;
+        }
+    }
+}
+
+.checkButton() {
+    background: @decorative;
+    font-size: 12px;
+    padding: 1em;
+    .trans();
+
+    &:hover {
+        outline: 1px solid @mainDecorative;
+    }
+
+    &:focus:active {
+        background: @mainDecorative;
+    }
+
+    &.disabled {
+        background: none;
+        border: 1px solid @decorative;
+        color: @decorative;
+
+        &:hover {
+            outline: none;
+        }
+
+        &:focus:active {
+            outline: none;
+        }
+    }
+}
+
+.commonInput() {
+    padding: .5em;
+    border: 1px solid #999999;
+    font-size: 12px;
+    font-weight: normal;
+}

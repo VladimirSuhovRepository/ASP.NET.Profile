@@ -1,0 +1,495 @@
+﻿@import "../var.less";
+
+.mainTabs {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        list-style: none;
+        text-align: center;
+
+        a {
+            display: inline-block;
+            .mainLink();
+        }
+    }
+}
+
+.manageProject {
+    margin-bottom: 80px;
+
+    .error() {
+        &.error {
+            border: 1px solid red;
+
+            + .errorText {
+                display: inline-block;
+                color: red;
+                position: absolute;
+                bottom: -2em;
+                left: 1.5em;
+                font-size: 11px;
+                font-weight: normal;
+
+                & + i {
+                    display: inline-block;
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .preload {
+        position: absolute;
+        left: 78%;
+        top: 50%;
+        margin-top: -12.5px;
+        width: 25px;
+        opacity: 0.5;
+    }
+
+    .editerWrapper {
+        border: 1px solid @decorative;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .navigation {
+            border-right: 1px solid @decorative;
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            .button {
+                width: 100%;
+                display: inline-block;
+                margin: 0 0 3em;
+            }
+
+            h3 {
+                .heading1(bold);
+                text-align: left;
+                margin-bottom: 1.5em;
+            }
+
+            .projects {
+                padding: 0;
+                margin: 0;
+
+                li {
+                    list-style: none;
+                    display: block;
+
+                    &.projectListItem {
+                        .parentLinkMenu();
+
+                        &:last-of-type {
+                            .projectButton {
+                                border-bottom: 1px solid @mainDecorative;
+                            }
+                        }
+
+                        &.active {
+                            .projectButton {
+                                border-bottom: 1px solid @main;
+                            }
+                        }
+                    }
+
+                    * {
+                        border: none;
+                        background: none;
+                        padding: 0;
+                        box-shadow: none;
+                        margin: 0;
+                    }
+
+                    a {
+                        text-align: left;
+                        display: inline-block;
+                        width: 100%;
+                    }
+
+                    .teams {
+                        .teamItem {
+                            font-weight: normal;
+                            .subLinkMenu();
+
+                            &:nth-last-of-type(2) {
+                                border-bottom: 1px solid @decorative;
+                            }
+                        }
+
+                        .addTeam {
+                            text-align: left;
+                            padding-left: 2em;
+
+                            span {
+                                border: none;
+                                vertical-align: middle;
+
+                                &:hover {
+                                    background: none;
+                                }
+
+                                i {
+                                    opacity: 1;
+                                    vertical-align: middle;
+                                }
+                            }
+
+                            .addButtons();
+                        }
+                    }
+                }
+            }
+        }
+
+        .teamTable {
+            display: none;
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            .breadCrump {
+                text-align: left;
+
+                .crumps {
+                    padding-bottom: 3px;
+                    display: inline-block;
+                    border-bottom: 1px solid @main;
+
+                    .project {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .tableWrap {
+                margin-bottom: 0;
+                min-height: 60vh;
+
+                table {
+                    caption {
+                        padding: 1.5em 0 0.5em;
+                        color: @text;
+
+                        .name {
+                            .personalLink();
+                        }
+                    }
+
+                    thead {
+                        tr {
+                            th {
+                                border: none;
+                                text-align: left;
+                                padding: 10px 15px;
+
+                                span {
+                                    display: inline-block;
+                                    .heading1(bold);
+                                }
+
+                                &:last-child {
+                                    padding-left: 2em;
+                                }
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            td {
+                                border: none;
+                                text-align: left;
+                                padding: 10px 15px;
+
+                                > * {
+                                    display: inline-block;
+                                    word-break: break-all;
+                                    width: 100%;
+                                }
+
+                                a {
+                                    .personalLink();
+                                }
+
+                                &:first-child {
+                                    font-weight: bold;
+                                    color: @mainDecorative;
+                                    text-align: right;
+                                }
+
+                                &:last-child {
+                                    padding-left: 2em;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .progress {
+                    display: none;
+                }
+            }
+
+            .buttons {
+                text-align: left;
+
+                .button {
+                    width: 150px;
+                    display: inline-block;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .popupManager {
+        display: none;
+        position: absolute;
+        width: 100%;
+        background: white;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        text-align: left;
+        padding-top: 40px;
+        padding-bottom: 60px;
+        min-height: 100vh;
+        overflow: hidden;
+
+        label{
+            display:block;
+        }
+
+        &.addTeam {
+            .projName {
+                display: none;
+            }
+
+            .projDate {
+                display: none;
+            }
+        }
+
+        &.editTeam{
+
+            > .disabled {
+                margin:0 -15px;
+                padding:0 15px;
+                background: linear-gradient(90deg, transparent 0%, transparent 7%,@decorative 7%,@decorative 100%);
+
+                .changeName {
+                    opacity: 1;
+                }
+
+                input {
+                    background: white;
+
+                    & + i {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        input, select {
+            width: 100%;
+            .commonInput();
+        }
+
+        .head {
+            margin-bottom: 60px;
+
+            .back {
+                text-align: right;
+
+                i {
+                    font-size: 30px;
+                    cursor: pointer;
+                    .trans();
+
+                    &:hover {
+                        color: @main;
+                    }
+                }
+            }
+
+            p {
+                .heading1(bold);
+                padding-top: 0.75em;
+                margin: 0;
+
+                span {
+                    color: @main;
+                }
+            }
+        }
+
+        .changeName {
+            text-align: right;
+            padding-top: 20px;
+            margin-bottom: -20px;
+            opacity: 0;
+            .trans();
+
+            .changeButton {
+                cursor: pointer;
+                display: inline-block;
+
+                > * {
+                    vertical-align: middle;
+                }
+
+                span {
+                    padding: 0 1em 0 0.5em;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .field {
+            padding-bottom: 12.5px;
+            padding-top: 30px;
+
+            &[class*="Date"] {
+                padding-bottom: 30px;
+                padding-top: 12.5px;
+            }
+
+            &.disabled {
+                background: linear-gradient(90deg, transparent 0%, transparent 7%,@decorative 7%,@decorative 100%);
+            }
+
+            &.scrumName {
+                margin-bottom: 60px;
+
+                i {
+                    display: none;
+                    color: red;
+                }
+
+                .errorText {
+                    display: none;
+                }
+
+                select {
+                    .error();
+                }
+            }
+
+            label {
+                position: relative;
+
+                i {
+                    position: absolute;
+                    right: -0.5em;
+                    top: 1.25em;
+                    cursor: pointer;
+                    color: @text;
+                    .trans();
+
+                    &:hover {
+                        color: @main;
+                    }
+                }
+
+                p {
+                    .heading2(normal);
+                }
+
+                input {
+                    position: relative;
+
+                    &.disabled {
+                        color: @mainDecorative;
+                        border: 1px solid @mainDecorative;
+                    }
+
+                    .error();
+                }
+            }
+        }
+
+        h3 {
+            margin-bottom: 35px;
+
+            span {
+                .heading2(bold);
+            }
+        }
+
+        .traineeToTeam {
+            margin-bottom: 30px;
+
+            select {
+                font-weight: normal;
+
+                &[disabled="disabled"] {
+                    color: @mainDecorative;
+                }
+            }
+
+            .preload {
+                position: absolute;
+                width: 25px;
+                right: -12.5px;
+            }
+
+            .counter {
+                color: @mainDecorative;
+                font-weight: bold;
+                text-align: right;
+                padding-top: 0.5em;
+            }
+
+            .delete {
+                .addButtons();
+                margin: 0;
+
+                span {
+                    margin-bottom: -1em;
+                    font-size: 13px;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                i {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-top: -0.1em;
+                }
+            }
+        }
+
+        .addTrainee {
+            i {
+                font-size: 30px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 13px;
+            }
+
+            #addTraineeRow {
+                display: inline-block;
+                cursor: pointer;
+                .addButtons();
+            }
+        }
+
+        .popupButtons {
+            margin-top: 65px;
+
+            .button {
+                width: 100%;
+            }
+        }
+    }
+}

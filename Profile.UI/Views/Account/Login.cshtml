@@ -1,0 +1,68 @@
+﻿@model Profile.UI.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Логин";
+}
+
+<div class="container">
+    <div class="prf-main">
+        <section class="prf-main-login">
+            <h1>Добро пожаловать в&nbsp;<span class="prf-name">Profile</span>!</h1>
+
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal well" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <fieldset>
+                    <legend>Вход</legend>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "col-sm-4 control-label" })
+                        <div class="col-sm-7 ">
+                            @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control", @maxLength = "64", @autofocus = "", @required = "" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-sm-4 control-label" })
+                        <div class="col-sm-7">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @maxLength = "14", @required = "" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-7">
+                            <div class="checkbox">
+                                <label>
+                                    @Html.EditorFor(model => model.RememberMe)
+                                    @Html.DisplayNameFor(model => model.RememberMe)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-7">
+                            <button type="submit" class="btn btn-info prf-submit">Войти</button>
+                            @Html.ActionLink("Забыли пароль?", "ForgotPassword", null, new { @class = "prf-forgot" })
+                        </div>
+                    </div>
+                </fieldset>
+
+                if (ViewBag.LoginFailture != null)
+                {
+                    <div id="globalError">
+                        <span class="prf-global-error">@ViewBag.LoginFailture</span>
+                    </div>
+                }
+            }
+
+        </section>
+        <!-- end of Main Login -->
+
+    </div>
+    <!-- end of Main Content -->
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/login-page")
+}

@@ -1,0 +1,1038 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>3v_Edit_Анкета стажера - Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=cyrillic" rel="stylesheet">
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet">
+    <link href="../../Content/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../../Content/styles.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="prf-wrapper">
+        <div class="prf-content">
+            <header class="prf-main-header headerRestyle">
+                    <nav class="navbar navbar-inverse">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">
+                                    <img src="../../images/logo.png" alt="IT-Academy">
+                                </a>
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                                <ul class="nav navbar-nav roleNavContainer">
+                                    <li class="active"><a href="#">Стажеры</a></li>
+                                    <li><a href="#">Проекты</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="dropdown ">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <img src="../../images/avatar-small-placeholder.png">
+                                            <img class="arrow-dropdown" src="../../images/arrow-down.png">
+                                        </a>
+                                        <ul class="dropdown-menu accountContainer">
+                                            <li><a href="#">Личный кабинет</a></li>
+                                            <li><a href="#">Выйти</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                <!-- end of Navbar -->
+
+            </header>
+            <div class="prf-questionary-up" data-profile-id="6">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-1">
+                            <div class="prf-humburger" id="toggleSidebar">
+                                <span class="prf-bar"></span>
+                                <span class="prf-bar"></span>
+                                <span class="prf-bar"></span>
+                                <aside id="leftSidebar">
+                                    <ul class="nav prf-nav-sidebar">
+                                        <li>
+                                            <a href="#">Мой профайл</a>
+                                            <ul class="nav prf-list-nav">
+                                                <li><a href="#">Анкета</a></li>
+                                                <li><a href="#">Отчет</a></li>
+                                                <li class="disabled"><a href="#">Отзыв</a></li>
+                                                <li><a href="#">Мой рейтинг</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Проекты</a></li>
+                                        <li><a href="#">Стажеры</a></li>
+                                        <li class="active"><a href="#">Изменить профайл</a></li>
+                                    </ul>
+                                </aside>
+                                <!-- end of Left Sidebar -->
+                            </div>
+                        </div>
+                        <!-- end of Left Navigation -->
+                        <!-- Full Name -->
+                        <div class="col-xs-11  col-sm-5  prf-name-tr">
+                            <p class="">Семенов Алексей Олегович</p>
+                        </div>
+                        <!-- end of Full Name -->
+                        <!-- Project and Direction -->
+                        <div class="col-xs-6  col-sm-3">
+                            <div class="prf-direction">
+                                <p>Проект: Profile</p>
+                                <p>Направление: Бизнес аналитик</p>
+                            </div>
+                        </div>
+                        <!-- end of Project and Direction -->
+                        <!-- Nume of team and Rating -->
+                        <div class="col-xs-6  col-sm-3">
+                            <div class="prf-rating" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Описание расчёта рейтинга.">100</div>
+
+                            <div class="prf-direction  prf-team">
+                                <p>Команда 1.25</p>
+                                <p>
+                                    <a href="#" title="Скачать в pdf">
+                                        <span class="glyphicon glyphicon-save"></span>
+                                    </a>
+                                    <a id="callPrint" title="Распечатать анкету">
+                                        <span class="glyphicon glyphicon-print"></span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end of Nume of team and Rating -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- end of Main Questionary -->
+            <!-- Additional Questionary -->
+            <div class="prf-questionary ">
+                <div class="container">
+                    <form class="prf-efit-form" action="javascript: alert('Submit');" method="POST" role="form" name="mainTraineeInfo" data-action="url-mainTraineeInfo">
+                        <button class="prf-edit btn-link" type="button" id="" title="Редактировать">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <div class="row ">
+                            <!-- Contacts -->
+                            <div class="col-sm-4  clearfix">
+                                <div class="prf-avatar-big">
+                                    <img src="../../images/avatar-big.gif" alt="">
+                                    <!--
+                                    <input class="prf-file-add" type="file" id="File" name="File">
+                                    -->
+                                </div>
+                                <ul class="prf-contacts">
+                                    <li>
+                                        <label class="control-label  prf-phone  prf-required">
+                                            <input class="form-control" id="Phone" name="Phone" type="tel" placeholder="Телефон +XXX XX XXXXXXX" value="+375 29 1354965" required>
+                                            <span title="Обязательно для заполнения">*</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="control-label  prf-skype prf-required">
+                                            <input class="form-control" id="Skype" name="Skype" type="text" placeholder="Skype" value="alexsiy555" maxlength="50">
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="control-label  prf-email  prf-required">
+                                            <input class="form-control" id="Email" name="Email" type="text" placeholder="Email" value="aleksey.semenof@gmail.com" maxlength="50" required>
+                                            <span title="Обязательно для заполнения">*</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="control-label  prf-linkedin">
+                                            <input class="form-control" id="Linkedin" name="Linkedin" type="text" placeholder="Linkedin" value="https://www.linkedin.com/in/дмитрий-романюк-20460610b" maxlength="70">
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- end of Contacts -->
+                            <!-- Career Objective -->
+                            <div class="col-sm-4  prf-add-inform">
+                                <h5>Желаемая должность</h5>
+                                <div class="form-group prf-required">
+                                    <input class="form-control" id="DesirablePosition" name="DesirablePosition" type="text" placeholder="Должность" value="" maxlength="50" required>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                                <div class="form-group prf-required">
+                                    <textarea class="form-control" id="ExperienceAtITLab" name="ExperienceAtITLab" placeholder="Обязанности на проектах IT-lab и период работы на проектах" rows="5" maxlength="200" required></textarea>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                                <div class="form-group prf-required">
+                                    <textarea class="form-control" id="ProfessionalPurposes" name="ProfessionalPurposes" placeholder="Цели, профессиональные планы" rows="8" maxlength="500" required></textarea>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                            </div>
+                            <!-- end of Career Objective -->
+                            <!-- Work Experience -->
+                            <div class="col-sm-4  prf-add-inform">
+                                <h5>Опыт работы</h5>
+                                <div class="form-group prf-required">
+                                    <input class="form-control" id="CurrentWork" name="CurrentWork" type="text" placeholder="Текущее место" value="" maxlength="50" required>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                                <div class="form-group prf-required">
+                                    <input class="form-control" id="CurrentPosition" name="CurrentPosition" type="text" placeholder="Должность" value="" maxlength="50" required>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                                <div class="form-group prf-required">
+                                    <input class="form-control" id="EmploymentDuration" name="EmploymentDuration" type="text" placeholder="Период XX/XXXX – XX/XXXX" value="" maxlength="40" required>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                                <div class="form-group prf-required">
+                                    <textarea class="form-control" id="JobDuties" name="JobDuties" placeholder="Обязанности" rows="8" maxlength="400" required>Что-то заполнено</textarea>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                            </div>
+                            <!-- end of Work Experience -->
+
+                        </div>
+                        <!-- Block of Buttons -->
+                        <div class="row  prf-underline prf-button-edit">
+                            <button type="submit" class="btn btn-info prf-submit"><span>Сохранить</span></button>
+                            <button type="button" class="btn btn-warning  prf-cansel">Отмена</button>
+                        </div>
+                        <!-- end of Block of Buttons -->
+                    </form>
+
+                </div>
+                <!-- Education -->
+                <div class="container">
+                    <form class="prf-efit-form" action="javascript: alert('Submit');" method="POST" role="form" name="traineeEducation" data-action="url-educationInfo">
+                        <button class="prf-edit btn-link" type="button" id="" title="Редактировать">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <div class="row  ">
+                            <div class="prf-add-inform">
+                                <h5>Образование</h5>
+                                <div id="University">
+                                    <!-- 1 University -->
+                                    <div class="row  prf-add-inform prf-underline-decoration prf-university" data-university-id="1">
+                                        <div class="col-sm-4 col-sm-offset-1 prf-study">
+                                            <div class="prf-relative">
+                                                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-university" title="Удалить">
+                                                    <span>
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                    </span>
+                                                </button>
+                                                <div class="form-group prf-required prf-deletable">
+                                                    <input class="form-control prf-time-period" data-university="timePeriod" type="text" placeholder="Период обучения" value="" maxlength="40" required>
+                                                    <span title="Обязательно для заполнения">*</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6  prf-study">
+                                            <div class="form-group prf-required">
+                                                <input class="form-control" data-university="universityEstablishment" type="text" placeholder="Наименование учебного заведения" value="" maxlength="150" required>
+                                                <span title="Обязательно для заполнения">*</span>
+                                            </div>
+                                            <div class="form-group prf-required">
+                                                <input class="form-control" data-university="specialization" type="text" placeholder="Специализация" value="" maxlength="150" required>
+                                                <span title="Обязательно для заполнения">*</span>
+                                            </div>
+                                            <div class="form-group prf-required">
+                                                <input class="form-control" data-university="speciality" type="text" placeholder="Специальность" value="" maxlength="150" required>
+                                                <span title="Обязательно для заполнения">*</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control prf-not-required" data-university="additionalInformation" placeholder="Дополнительная информация" rows="6" maxlength="300" required>Что-то заполнено</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of 1 University -->
+                                    <!-- 2 University -->
+                                    <div class="row  prf-add-inform prf-underline-decoration prf-university" data-university-id="5">
+                                        <div class="col-sm-4 col-sm-offset-1 prf-study">
+                                            <div class="prf-relative">
+                                                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-university" title="Удалить">
+                                                    <span>
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                    </span>
+                                                </button>
+                                                <div class="form-group prf-required prf-deletable">
+                                                    <input class="form-control prf-time-period" data-university="timePeriod" type="text" placeholder="Период обучения" value="" maxlength="40" required>
+                                                    <span title="Обязательно для заполнения">*</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6  prf-study">
+                                            <div class="form-group prf-required">
+                                                <input class="form-control" data-university="universityEstablishment" type="text" placeholder="Наименование учебного заведения" value="" maxlength="150" required>
+                                                <span title="Обязательно для заполнения">*</span>
+                                            </div>
+                                            <div class="form-group prf-required">
+                                                <input class="form-control" data-university="specialization" type="text" placeholder="Специализация" value="" maxlength="150" required>
+                                                <span title="Обязательно для заполнения">*</span>
+                                            </div>
+                                            <div class="form-group prf-required">
+                                                <input class="form-control" data-university="speciality" type="text" placeholder="Специальность" value="" maxlength="150" required>
+                                                <span title="Обязательно для заполнения">*</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" data-university="additionalInformation" placeholder="Дополнительная информация" rows="6" maxlength="300" required>Ерунда заполнена</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of 2 University -->
+                                </div>
+
+                                <div id="Course">
+                                    <!-- 1 Course -->
+                                    <div class="row  prf-add-inform prf-underline-decoration prf-course" data-course-id="1">
+                                        <div class="col-sm-4 col-sm-offset-1 prf-study">
+                                            <div class="prf-relative">
+                                                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-course" title="Удалить">
+                                                    <span>
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                    </span>
+                                                </button>
+                                                <div class="form-group prf-required prf-deletable">
+                                                    <input class="form-control prf-time-period" data-course="timePeriod" type="text" placeholder="Период обучения" value="" maxlength="40" required>
+                                                    <span title="Обязательно для заполнения">*</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6  prf-study">
+                                            <div class="form-group prf-required">
+                                                <input class="form-control" data-course="courseEstablishment" type="text" placeholder="Наименование учебного заведения" value="" maxlength="150" required>
+                                                <span title="Обязательно для заполнения">*</span>
+                                            </div>
+                                            <div class="form-group prf-required">
+                                                <input class="form-control" data-course="courseName" type="text" placeholder="Наименование курсов" value="" maxlength="150" required>
+                                                <span title="Обязательно для заполнения">*</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control prf-not-required" data-course="additionalInformation" placeholder="Дополнительная информация" rows="6" maxlength="300" required>Что-то заполнено</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of 1 Course -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Block of Buttons -->
+                        <div class="row  prf-underline prf-button-edit prf-help-hide-line">
+                            <button type="button" class="btn btn-primary prf-add-university">Добавить университет</button>
+                            <button type="button" class="btn btn-primary prf-add-course">Добавить курс</button>
+                            <button type="submit" class="btn btn-info prf-submit"><span>Сохранить</span></button>
+                            <button type="button" class="btn btn-warning prf-cansel">Отмена</button>
+                        </div>
+                        <!-- end of Block of Buttons -->
+                    </form>
+                    <!-- University Template -->
+                    <div class="row hidden prf-add-inform prf-underline-decoration prf-university" id="blankUniversity" data-university-id="0">
+                        <div class="col-sm-4 col-sm-offset-1 prf-study">
+                            <div class="prf-relative">
+                                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-university" title="Удалить">
+                                    <span>
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </span>
+                                </button>
+                                <div class="form-group prf-required prf-deletable">
+                                    <input class="form-control prf-time-period" data-university="timePeriod" type="text" placeholder="Период обучения" value="" maxlength="40" required>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6  prf-study">
+                            <div class="form-group prf-required">
+                                <input class="form-control" data-university="universityEstablishment" type="text" placeholder="Наименование учебного заведения" value="" maxlength="150" required>
+                                <span title="Обязательно для заполнения">*</span>
+                            </div>
+                            <div class="form-group prf-required">
+                                <input class="form-control" data-university="specialization" type="text" placeholder="Специализация" value="" maxlength="150" required>
+                                <span title="Обязательно для заполнения">*</span>
+                            </div>
+                            <div class="form-group prf-required">
+                                <input class="form-control" data-university="speciality" type="text" placeholder="Специальность" value="" maxlength="150" required>
+                                <span title="Обязательно для заполнения">*</span>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control prf-not-required" data-university="additionalInformation" placeholder="Дополнительная информация" rows="6" maxlength="300" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of University Template -->
+                    <!-- Course Template -->
+                    <div class="row hidden prf-add-inform prf-underline-decoration prf-course" id="blankCourse" data-course-id="0">
+                        <div class="col-sm-4 col-sm-offset-1 prf-study">
+                            <div class="prf-relative">
+                                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-course" title="Удалить">
+                                    <span>
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </span>
+                                </button>
+                                <div class="form-group prf-required prf-deletable">
+                                    <input class="form-control prf-time-period" data-course="timePeriod" type="text" placeholder="Период обучения" value="" maxlength="40" required>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6  prf-study">
+                            <div class="form-group prf-required">
+                                <input class="form-control" data-course="courseEstablishment" type="text" placeholder="Наименование учебного заведения" value="" maxlength="150" required>
+                                <span title="Обязательно для заполнения">*</span>
+                            </div>
+                            <div class="form-group prf-required">
+                                <input class="form-control" data-course="courseName" type="text" placeholder="Наименование курсов" value="" maxlength="150" required>
+                                <span title="Обязательно для заполнения">*</span>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control prf-not-required" data-course="additionalInformation" placeholder="Дополнительная информация" rows="6" maxlength="300" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of Course Template -->
+                </div>
+                <!-- end of Education -->
+                <!-- Skills in 2 columns 1 Specialization-->
+                <div class="container">
+                    <form class="prf-efit-form" action="javascript: alert('Submit');" method="POST" role="form" name="traineeSkills" data-action="url-skillsInfo">
+                        <button class="prf-edit btn-link" type="button" id="" title="Редактировать">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <div class="row ">
+                            <div class="prf-add-inform clearfix">
+                                <h5>Навыки</h5>
+                                <!-- Main Skills -->
+                                <div class="col-xs-6">
+                                    <div class="prf-skills-group prf-skills">
+                                        <h6>Основные</h6>
+                                        <div class="row">
+                                            <!-- 1 Specialization -->
+                                            <div>
+                                                <ul class="prf-skill-list prf-info prf-edit-skill prf-edit-1" data-spec-id="5">
+                                                    <li>
+                                                        <label class="prf-label-checkbox">
+                                                            <input type="checkbox" data-main-skill-id="7" checked>
+                                                            <span>Software Development Models and Methodologies</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="prf-label-checkbox">
+                                                            <input type="checkbox" data-main-skill-id="4">
+                                                            <span>Elicitation techniques</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="prf-label-checkbox">
+                                                            <input type="checkbox" data-main-skill-id="1" checked>
+                                                            <span>Analyzing Requirements</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="prf-label-checkbox">
+                                                            <input type="checkbox" data-main-skill-id="8">
+                                                            <span>Documenting Requirements</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="prf-label-checkbox">
+                                                            <input type="checkbox" data-main-skill-id="2">
+                                                            <span>Prioritizing Requirements</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="prf-label-checkbox">
+                                                            <input type="checkbox" data-main-skill-id="3">
+                                                            <span>UML modeling</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="prf-label-checkbox">
+                                                            <input type="checkbox" data-main-skill-id="10">
+                                                            <span>BPMN modeling</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="prf-label-checkbox">
+                                                            <input type="checkbox" data-main-skill-id="11">
+                                                            <span>UI design for Business analysts</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="prf-label-checkbox">
+                                                            <input type="checkbox" data-main-skill-id="12">
+                                                            <span>Requirements management</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="prf-label-checkbox">
+                                                            <input type="checkbox" data-main-skill-id="14">
+                                                            <span>Modelling Tools</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- end of 1 Specialization -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of Main Skills -->
+                                <!-- Soft Skills -->
+                                <div class="col-xs-6">
+                                    <div class="prf-skills-group prf-skills">
+                                        <h6>Дополнительные</h6>
+                                        <div class="row">
+                                            <div id="SoftSkills">
+                                                <!-- 1 Soft Skill -->
+                                                <div class="row  prf-add-inform prf-soft-skill" data-soft-skill-id="7">
+                                                    <div class="prf-relative">
+                                                        <button type="button" class="btn btn-danger prf-delete-btn prf-delete-soft-skill" title="Удалить">
+                                                            <span>
+                                                                <span class="glyphicon glyphicon-remove"></span>
+                                                            </span>
+                                                        </button>
+                                                        <div class="form-group prf-required prf-deletable">
+                                                            <input class="form-control" data-soft-skill="softSkillName" type="text" placeholder="Впишите навык" value="Scrum Metodology" maxlength="64" required>
+                                                            <span title="Обязательно для заполнения">*</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end of 1 Soft Skill -->
+                                                <!-- 2 Soft Skill -->
+                                                <div class="row  prf-add-inform prf-soft-skill" data-soft-skill-id="10">
+                                                    <div class="prf-relative">
+                                                        <button type="button" class="btn btn-danger prf-delete-btn prf-delete-soft-skill" title="Удалить">
+                                                            <span>
+                                                                <span class="glyphicon glyphicon-remove"></span>
+                                                            </span>
+                                                        </button>
+                                                        <div class="form-group prf-required prf-deletable">
+                                                            <input class="form-control" data-soft-skill="softSkillName" type="text" placeholder="Впишите навык" value="Активность" maxlength="64" required>
+                                                            <span title="Обязательно для заполнения">*</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end of 2 Soft Skill -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="prf-attention" id="countSoftSkills">Количество дополнительных навыков не&nbsp;должно превышать 5.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Block of Buttons -->
+                        <div class="row  prf-underline prf-button-edit">
+                            <button type="button" class="btn btn-primary prf-add-soft-skill"><span class="glyphicon glyphicon-plus"></span> Добавить навык</button>
+                            <button type="submit" class="btn btn-info prf-submit"><span>Сохранить</span></button>
+                            <button type="button" class="btn btn-warning prf-cansel">Отмена</button>
+                        </div>
+                        <!-- end of Block of Buttons -->
+                    </form>
+                    <!-- Soft Skill Template -->
+                    <div class="row hidden prf-add-inform prf-soft-skill" id="blankSoftSkill" data-soft-skill-id="0">
+                        <div class="prf-relative">
+                            <button type="button" class="btn btn-danger prf-delete-btn prf-delete-soft-skill" title="Удалить">
+                                <span>
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </span>
+                            </button>
+                            <div class="form-group prf-required prf-deletable">
+                                <div class="form-group prf-required">
+                                    <input class="form-control" data-soft-skill="softSkillName" type="text" placeholder="Впишите навык" value="" maxlength="64" required>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of Soft Skill Template -->
+                </div>
+                <!-- end of Skills in 2 columns 1 Specialization --> 
+                <!-- Foreign languages -->
+                <div class="container">
+                    <form class="prf-efit-form" action="javascript: alert('Submit');" method="POST" role="form" name="traineeLanguage" data-action="url-languageInfo">
+                        <button class="prf-edit btn-link" type="button" id="" title="Редактировать">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <div class="row">
+                            <div class="prf-add-inform">
+                                <h5>Иностранные языки</h5>
+                                <div id="Language">
+                                    <!-- 1 Language -->
+                                    <div class="row  prf-add-inform prf-language" data-language-id="1">
+
+                                        <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+                                            <div class="prf-relative">
+                                                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-language" title="Удалить">
+                                                    <span>
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                    </span>
+                                                </button>
+                                                <div class="form-group prf-required prf-deletable">
+                                                    <input class="form-control prf-language-datalist" type="text" data-language="languageName" list="language_list_1" placeholder="Иностранный язык" maxlength="20" value="Английский">
+                                                    <datalist id="language_list_1">
+                                                        <option value="Английский">
+                                                        <option value="Белорусский">
+                                                        <option value="Испанский">
+                                                        <option value="Литовский">
+                                                        <option value="Немецкий">
+                                                        <option value="Польский">
+                                                        <option value="Португальский">
+                                                        <option value="Русский">
+                                                        <option value="Украинский">
+                                                        <option value="Французский">
+                                                        <option value="Шведский">
+                                                    </datalist>
+                                                    <span title="Обязательно для заполнения">*</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-6 col-sm-4">
+                                            <div class="form-group prf-required">
+                                                <select class="form-control prf-languge" data-language="languageLevel">
+                                                    <option value="0" disabled>Уровень владения</option>
+                                                    <option value="A1-Элементарный">A1-Элементарный</option>
+                                                    <option value="A2-Базовый">A2-Базовый</option>
+                                                    <option value="B1-Пороговый">B1-Пороговый</option>
+                                                    <option value="B2-Пороговый продвинутый">B2-Пороговый продвинутый</option>
+                                                    <option value="C1-Профессиональный" selected>C1-Профессиональный</option>
+                                                    <option value="C2-Владение на уровне носителя">C2-Владение на уровне носителя</option>
+                                                </select>
+                                                <span title="Обязательно для заполнения">*</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of 1 Language -->
+                                    <!-- 2 Language -->
+                                    <div class="row  prf-add-inform prf-language" data-language-id="5">
+                                        <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+                                            <div class="prf-relative">
+                                                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-language" title="Удалить">
+                                                    <span>
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                    </span>
+                                                </button>
+                                                <div class="form-group prf-required prf-deletable">
+                                                    <input class="form-control prf-language-datalist" type="text" data-language="languageName" list="language_list_5" placeholder="Иностранный язык" maxlength="20" value="">
+                                                    <datalist id="language_list_5">
+                                                        <option value="Английский">
+                                                        <option value="Белорусский">
+                                                        <option value="Испанский">
+                                                        <option value="Литовский">
+                                                        <option value="Немецкий">
+                                                        <option value="Польский">
+                                                        <option value="Португальский">
+                                                        <option value="Русский">
+                                                        <option value="Украинский">
+                                                        <option value="Французский">
+                                                        <option value="Шведский">
+                                                    </datalist>
+                                                    <span title="Обязательно для заполнения">*</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4">
+                                            <div class="form-group prf-required">
+                                                <select class="form-control" data-language="languageLevel">
+                                                    <option value="0" disabled selected>Уровень владения</option>
+                                                    <option value="A1-Элементарный">A1-Элементарный</option>
+                                                    <option value="A2-Базовый">A2-Базовый</option>
+                                                    <option value="B1-Пороговый">B1-Пороговый</option>
+                                                    <option value="B2-Пороговый продвинутый">B2-Пороговый продвинутый</option>
+                                                    <option value="C1-Профессиональный">C1-Профессиональный</option>
+                                                    <option value="C2-Владение на уровне носителя">C2-Владение на уровне носителя</option>
+                                                </select>
+                                                <span title="Обязательно для заполнения">*</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of 2 Language -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Block of Buttons -->
+                        <div class="row  prf-underline prf-button-edit">
+                            <button type="button" class="btn btn-primary prf-add-language"><span class="glyphicon glyphicon-plus"></span> Добавить язык</button>
+                            <button type="submit" class="btn btn-info prf-submit"><span>Сохранить</span></button>
+                            <button type="button" class="btn btn-warning prf-cansel">Отмена</button>
+                        </div>
+                        <!-- end of Block of Buttons -->
+                    </form>
+                    <!-- Language Template -->
+                    <div class="row hidden prf-add-inform prf-language" id="blankLanguage" data-language-id="0">
+                        <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+                            <div class="prf-relative">
+                                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-language" title="Удалить">
+                                    <span>
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </span>
+                                </button>
+                                <div class="form-group prf-required prf-deletable">
+                                    <input class="form-control prf-language-datalist" type="text" data-language="languageName" list="language_list_0" placeholder="Иностранный язык" maxlength="20" value="">
+                                    <datalist id="language_list_0">
+                                        <option value="Английский">
+                                        <option value="Белорусский">
+                                        <option value="Испанский">
+                                        <option value="Литовский">
+                                        <option value="Немецкий">
+                                        <option value="Польский">
+                                        <option value="Португальский">
+                                        <option value="Русский">
+                                        <option value="Украинский">
+                                        <option value="Французский">
+                                        <option value="Шведский">
+                                    </datalist>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="form-group prf-required">
+                                <select class="form-control" data-language="languageLevel">
+                                    <option value="0" disabled selected>Уровень владения</option>
+                                    <option value="A1-Элементарный">A1-Элементарный</option>
+                                    <option value="A2-Базовый">A2-Базовый</option>
+                                    <option value="B1-Пороговый">B1-Пороговый</option>
+                                    <option value="B2-Пороговый продвинутый">B2-Пороговый продвинутый</option>
+                                    <option value="C1-Профессиональный">C1-Профессиональный</option>
+                                    <option value="C2-Владение на уровне носителя">C2-Владение на уровне носителя</option>
+                                </select>
+                                <span title="Обязательно для заполнения">*</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of Language Template -->
+                </div>
+                <!-- end of Foreign languages -->
+                <!-- Artifacts -->
+                <div class="container prf-efit-form" id="artifacts">
+                    <button class="prf-edit btn-link" type="button" id="" title="Редактировать">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <div class="row">
+                        <div class="prf-add-inform">
+                            <h5>Список артефактов</h5>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="prf-add-inform prf-center-inline prf-block-anchor" id="FilesLinks">
+                            <a class="prf-artifact prf-file" href="#artifacts" data-file-id="1" data-file-name="Script.js" data-file-size="12481">
+                                <span class="prf-artifact-back">
+                                    <span class="prf-artifact-icon">
+                                        <img src="../../images/file-other.png" alt="">
+                                        <button class="prf-trash btn-link" type="button" id="" title="Удалить" disabled="disabled">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </span>
+                                </span>
+                                <span class="prf-signature">Мой скрипт</span>
+                            </a>
+                            <a class="prf-artifact prf-file" href="#artifacts" data-file-id="2" data-file-name="Photo.jpg" data-file-size="46581">
+                                <span class="prf-artifact-back">
+                                    <span class="prf-artifact-icon">
+                                        <img src="../../images/file-other.png" alt="">
+                                        <button class="prf-trash btn-link" type="button" id="" title="Удалить" disabled="disabled">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </span>
+                                </span>
+                                <span class="prf-signature">Мой Скриншот</span>
+                            </a>
+                            <a class="prf-artifact prf-link" href="#artifacts" data-link-id="2" data-link="http://citydog.by/">
+                                <span class="prf-artifact-back">
+                                    <span class="prf-artifact-icon">
+                                        <span class="glyphicon glyphicon-link prf-artifact-icon"></span>
+                                        <button class="prf-trash btn-link" type="button" id="" title="Удалить" disabled="disabled">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </span>
+                                </span>
+                                <span class="prf-signature">Моя Ссылка</span>
+                            </a>
+                            <a class="prf-artifact prf-link" href="#artifacts" data-link-id="7" data-link="https://dokxpi.github.io/Quick/">
+                                <span class="prf-artifact-back">
+                                    <span class="prf-artifact-icon">
+                                        <span class="glyphicon glyphicon-link prf-artifact-icon"></span>
+                                        <button class="prf-trash btn-link" type="button" id="" title="Удалить" disabled="disabled">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </span>
+                                </span>
+                                <span class="prf-signature">Моя Ссылка 2</span>
+                            </a>
+                            <a class="prf-artifact prf-link" href="#artifacts" data-link-id="12" data-link="http://extremal.by/2016/04/21/ekstrim-vyihodnyie-kuda-shodit-23-24-aprelya/">
+                                <span class="prf-artifact-back">
+                                    <span class="prf-artifact-icon">
+                                        <span class="glyphicon glyphicon-link prf-artifact-icon"></span>
+                                        <button class="prf-trash btn-link" type="button" id="" title="Удалить" disabled="disabled">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </span>
+                                </span>
+                                <span class="prf-signature">Моя Ссылка 12</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row prf-block-wrap">
+                        <div class="prf-add-artifacts" id="addArtifacts">
+                            <div class="prf-legend"><span>Добавить артефакты</span></div>
+                            <div class="prf-add-inform prf-center-inline">
+                                <a class="prf-artifact" href="#loadFileModal" id="loadFile" data-toggle="modal" data-target="#loadFileModal" data-backdrop="static">
+                                    <span class="prf-artifact-back">
+                                        <span class="glyphicon glyphicon-file prf-artifact-icon"></span>
+                                    </span>
+                                    <span class="prf-signature">Файл</span>
+                                </a>
+                                <a class="prf-artifact" href="#artifacts">
+                                    <span class="prf-artifact-back">
+                                        <span class="glyphicon glyphicon-screenshot prf-artifact-icon"></span>
+                                    </span>
+                                    <span class="prf-signature">Скриншот</span>
+                                </a>
+                                <a class="prf-artifact" href="#artifacts">
+                                    <span class="prf-artifact-back">
+                                        <img src="../../images/artifact-table.png" alt="">
+                                    </span>
+                                    <span class="prf-signature">Таблица</span>
+                                </a>
+                                <a class="prf-artifact" href="#artifacts">
+                                    <span class="prf-artifact-back">
+                                        <img src="../../images/artifact-presentation.png" alt="">
+                                    </span>
+                                    <span class="prf-signature">Презентация</span>
+                                </a>
+                                <a class="prf-artifact" href="#loadLinkModal" id="loadLink" data-toggle="modal" data-target="#loadLinkModal" data-backdrop="static">
+
+                                    <span class="prf-artifact-back">
+                                        <span class="glyphicon glyphicon-link prf-artifact-icon"></span>
+                                    </span>
+                                    <span class="prf-signature">Ссылка</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Block of Buttons -->
+                    <div class="row  prf-underline prf-button-edit">
+                        <button type="button" class="btn btn-warning prf-cansel">Отмена</button>
+                    </div>
+                    <!-- end of Block of Buttons -->
+                    <!-- File Template -->
+                    <a id="blankFile" class="prf-artifact prf-file hidden" href="#artifacts" data-file-id="0" data-file-name="" data-file-size="0">
+                        <span class="prf-artifact-back">
+                            <span class="prf-artifact-icon">
+                                <img src="../../images/file-other.png" alt="">
+                                <button class="prf-trash btn-link" type="button" id="" title="Удалить" disabled="disabled">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </span>
+                        </span>
+                        <span class="prf-signature">Мой Скриншот</span>
+                    </a>
+                    <!-- end of File Template -->
+                    <!-- Link Template -->
+                    <a id="blankLink" class="prf-artifact prf-link hidden" href="#artifacts" data-link-id="0" data-link="">
+                        <span class="prf-artifact-back">
+                            <span class="prf-artifact-icon">
+                                <span class="glyphicon glyphicon-link prf-artifact-icon"></span>
+                                <button class="prf-trash btn-link" type="button" id="" title="Удалить" disabled="disabled">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </span>
+                        </span>
+                        <span class="prf-signature">Моя Ссылка</span>
+                    </a>
+                    <!-- end of Link Template -->
+                </div>
+                <!-- end of Artifacts -->
+                <!-- Additional information -->
+                <div class="container">
+                    <form class="prf-efit-form" action="javascript: alert('Submit');" method="POST" role="form" name="qualificationTraineeInfo" data-action="url-qualificationTraineeInfo">
+                        <button class="prf-edit btn-link" type="button" id="" title="Редактировать">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+
+                        <div class="row">
+                            <div class="prf-add-inform">
+                                <h5>Квалификация</h5>
+                                <div class="prf-long-text">
+                                    <div class="form-group prf-required">
+                                        <textarea class="form-control" id="Strengths" name="Strengths" placeholder="Лидирующие личностные качества (примеры проявления в реальной жизни)." rows="5" maxlength="1000" required></textarea>
+                                        <span title="Обязательно для заполнения">*</span>
+                                    </div>
+                                </div>
+                                <div class="prf-long-text">
+                                    <div class="form-group  prf-required">
+                                        <textarea class="form-control" id="Weaknesses" name="Weaknesses" placeholder="Слабые стороны (пробелы в знаниях, качества характера и т.д., все что может повлиять на успешность выпускника в работе)." rows="5" maxlength="1000" required></textarea>
+                                        <span title="Обязательно для заполнения">*</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Block of Buttons -->
+                        <div class="row  prf-underline prf-button-edit">
+                            <button type="submit" class="btn btn-info prf-submit"><span>Сохранить</span></button>
+                            <button type="button" class="btn btn-warning prf-cansel">Отмена</button>
+                        </div>
+                        <!-- end of Block of Buttons -->
+                    </form>
+                </div>
+                <!-- end of Additional information -->
+
+
+            </div>
+            <!-- end of Additional Questionary -->
+
+        </div>
+        <!-- end of All Content -->
+        <!-- Footer -->
+        <footer class="prf-main-footer">
+            <div class="container">
+                <div class="row">
+                    <p>&copy; 2016 - Образовательный центр Парка высоких технологий</p>
+                </div>
+            </div>
+        </footer>
+        <!-- end of Footer -->
+
+    </div>
+
+    <!-- Arrow to Top of Page -->
+    <div id="toTop" class="prf-arrow-top">
+        <a href="#" title="Наверх">
+            <span class="glyphicon glyphicon-menu-up"></span>
+        </a>
+    </div>
+    <!-- end of Arrow to Top of Page -->
+
+    <!-- Modal for File Load -->
+    <div class="modal fade" id="loadFileModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog prf-file-load" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Загрузите файл</h4>
+                </div>
+                <form id="superForm" name="traineeFile" method="POST" enctype="multipart/form-data" action="javascript: alert('Submit');" data-action="url-traineeFile" data-file-id="0" class="prf-efit-form">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="form-group prf-modal-input">
+                                    <label for="fileDescription" class="control-label">Название:</label>
+                                    <span class="prf-restrictions" title="Обязательно для заполнения">*</span>
+                                    <input type="text" id="fileDescription" class="form-control" name="description" maxlength="15">
+                                    <div class="prf-required"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="prf-restrictions">
+                                    <p>
+                                        Максимальный объем загрузочного файла:
+                                    </p>
+                                    <ul>
+                                        <li>Файл любого типа: - 300 кБ</li>
+                                        <li>Файл скриншот: - 500 кБ</li>
+                                        <li>Файл презентация: - 2,5 Мб</li>
+                                        <li>Файл таблица: - 200 кБ</li>
+                                    </ul>
+                                    <p>
+                                        Максимальный общий объем загрузочных файлов не более 4 Мб
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newFile" class="control-label">Выберите файл:</label>
+                            <span class="prf-restrictions" title="Обязательно для заполнения">*</span>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <span class="btn btn-primary btn-file">
+                                        Загрузить <input type="file" id="newFile" name="file" value="Browse" />
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control" readonly id="newFileName" />
+                            </div>
+                            <div class="prf-required"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="prf-attention"></div>
+                        <button type="submit" id="saveFile" class="btn btn-primary"><span>Сохранить</span></button>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end of Modal for File Load -->
+
+    <!-- Modal for Link Load -->
+    <div class="modal fade" id="loadLinkModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog prf-file-load" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <form name="traineeLink" enctype="multipart/form-data" action="javascript: alert('Submit');" data-action="url-traineeLink" data-link-id="0" class="prf-efit-form">
+                    <div class="modal-body">
+                        <div class="form-group ">
+                            <label for="newLink" class="control-label">Введите ссылку:</label>
+                            <span class="prf-restrictions" title="Обязательно для заполнения">*</span>
+                            <input type="text" id="newLink" class="form-control" name="newLink" maxlength="500">
+                            <div class="prf-required"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="linkDescription" class="control-label">Введите имя ссылки:</label>
+                            <span class="prf-restrictions" title="Обязательно для заполнения">*</span>
+                            <input type="text" id="linkDescription" class="form-control" name="linkDescription" maxlength="15">
+                            <div class="prf-required"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="saveLink" class="btn btn-primary"><span>Сохранить</span></button>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Отменить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end of Modal for File Load --> 
+
+    <!-- Modal for Delete Confirmation -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+        <div class="modal-dialog prf-confirm" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <div>Вы хотите удалить информацию?</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                    <button type="button" class="btn btn-primary" id="confirmation"><span>Да</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of Modal for Delete Confirmation --> 
+
+    <script src="../../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/jquery.dataTables.min.js" type="text/javascript"></script>
+
+    <script src="../../Scripts/Custom/fileTypeImage.js"></script>
+    <script src="../../Scripts/Custom/traineeProfileEdit.js"></script>
+    <script src="../../Scripts/jquery.maskedinput.min.js"></script>
+    <script src="../../Scripts/Custom/toTopPage.js"></script>
+
+</body>
+</html>

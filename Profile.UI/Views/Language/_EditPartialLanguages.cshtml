@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Profile.UI.Models.Profile.LanguageViewModel>
+
+<form class="prf-efit-form" action="javascript: alert('Submit');" method="POST" role="form" name="traineeLanguage" data-action="/Language/EditLanguages">
+    <button class="prf-edit btn-link" type="button" id="" title="Редактировать">
+        <span class="glyphicon glyphicon-pencil"></span>
+    </button>
+    <div class="row">
+        <div class="prf-add-inform">
+            <h5>Иностранные языки</h5>
+            <div id="Language">
+                <!-- Languages List -->
+                @foreach (var language in Model)
+                {
+                    <div class="row  prf-add-inform prf-language" data-language-id="@language.Id">
+                        <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+                            <div class="prf-relative">
+                                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-language" title="Удалить">
+                                    <span>
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </span>
+                                </button>
+                                <div class="form-group prf-required prf-deletable">
+                                    <input class="form-control prf-language-datalist" type="text" data-language="languageName" list="language_list_0" placeholder="Иностранный язык" maxlength="20" value="@language.Name">
+                                    <datalist id="language_list_0">
+                                        <option value="Английский">
+                                        <option value="Белорусский">
+                                        <option value="Испанский">
+                                        <option value="Литовский">
+                                        <option value="Немецкий">
+                                        <option value="Польский">
+                                        <option value="Португальский">
+                                        <option value="Русский">
+                                        <option value="Украинский">
+                                        <option value="Французский">
+                                        <option value="Шведский">
+                                    </datalist>
+                                    <span title="Обязательно для заполнения">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <div class="form-group prf-required">
+                                <select class="form-control prf-languge" data-language="languageLevel">
+                                    <option value="0" disabled>Уровень владения</option>
+                                    <option value="A1-Элементарный" @(language.Level == "A1-Элементарный" ? "selected":null)>A1-Элементарный</option>
+                                    <option value="A2-Базовый" @(language.Level == "A2-Базовый" ? "selected" : null)>A2-Базовый</option>
+                                    <option value="B1-Пороговый" @(language.Level == "B1-Пороговый" ? "selected" : null)>B1-Пороговый</option>
+                                    <option value="B2-Пороговый продвинутый" @(language.Level == "B2-Пороговый продвинутый" ? "selected" : null)>B2-Пороговый продвинутый</option>
+                                    <option value="C1-Профессиональный" @(language.Level == "C1-Профессиональный" ? "selected" : null)>C1-Профессиональный</option>
+                                    <option value="C2-Владение на уровне носителя @(language.Level =="C2-Владение на уровне носителя" ? "selected" : null)">C2-Владение на уровне носителя</option>
+                                </select>
+                                <span title="Обязательно для заполнения">*</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- end of Languages List-->
+            </div>
+        </div>
+    </div>
+    <!-- Block of Buttons -->
+    <div class="row  prf-underline prf-button-edit">
+        <button type="button" class="btn btn-primary prf-add-language"><span class="glyphicon glyphicon-plus"></span> Добавить язык</button>
+        <button type="submit" class="btn btn-info prf-submit"><span>Сохранить</span></button>
+        <button type="button" class="btn btn-warning prf-cansel">Отмена</button>
+    </div>
+    <!-- end of Block of Buttons -->
+</form>
+<!-- Language Shablon -->
+<div class="row hidden prf-add-inform prf-language" id="blankLanguage" data-language-id="0">
+    <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+        <div class="prf-relative">
+            <button type="button" class="btn btn-danger prf-delete-btn prf-delete-language" title="Удалить">
+                <span>
+                    <span class="glyphicon glyphicon-remove"></span>
+                </span>
+            </button>
+            <div class="form-group prf-required prf-deletable">
+                <input class="form-control prf-language-datalist" type="text" data-language="languageName" list="language_list_0" placeholder="Иностранный язык" maxlength="20" value="">
+                <datalist id="language_list_0">
+                    <option value="Английский">
+                    <option value="Белорусский">
+                    <option value="Испанский">
+                    <option value="Литовский">
+                    <option value="Немецкий">
+                    <option value="Польский">
+                    <option value="Португальский">
+                    <option value="Русский">
+                    <option value="Украинский">
+                    <option value="Французский">
+                    <option value="Шведский">
+                </datalist>
+                <span title="Обязательно для заполнения">*</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+        <div class="form-group prf-required">
+            <select class="form-control" data-language="languageLevel">
+                <option value="0" disabled selected>Уровень владения</option>
+                <option value="A1-Элементарный">A1-Элементарный</option>
+                <option value="A2-Базовый">A2-Базовый</option>
+                <option value="B1-Пороговый">B1-Пороговый</option>
+                <option value="B2-Пороговый продвинутый">B2-Пороговый продвинутый</option>
+                <option value="C1-Профессиональный">C1-Профессиональный</option>
+                <option value="C2-Владение на уровне носителя">C2-Владение на уровне носителя</option>
+            </select>
+            <span title="Обязательно для заполнения">*</span>
+        </div>
+    </div>
+</div>
+<!-- end of Language Shablon -->

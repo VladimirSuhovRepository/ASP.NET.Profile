@@ -1,0 +1,41 @@
+﻿@using Profile.UI.HtmlHelpers
+
+<header class="prf-main-header headerRestyle">
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                    <img src="@Url.Content("~/images/logo.png")" alt="IT-Academy">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav roleNavContainer">
+                    @Html.Action("GetHeaderNavigation", "Navigation")
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img src="@Html.Action("GetUserAvatar", "Avatar")">
+                            <img class="arrow-dropdown" src="@Url.Content("~/images/arrow-down.png")">
+                        </a>
+                        <ul class="dropdown-menu accountContainer">
+                            @(ViewBag.IsUserTrainee ?
+                                Html.MenuItem("Изменить пароль", "ChangePassword", "Account") :
+                                Html.MenuItem("Личный кабинет", "View", "User"))
+
+                            <li>@Html.ActionLink("Выйти", "Logout", "Account")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end of Navbar -->
+</header>

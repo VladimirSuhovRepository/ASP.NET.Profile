@@ -1,0 +1,305 @@
+@blue-color: #2da3da;
+@grey-color: #999;
+@font-bold: 600;
+@font-light: 300;
+@unit: 5px;
+
+
+.confirmationPopupMR {
+	.modal-dialog{
+		width: 100%;
+	}	
+}
+
+[id^="trainee"]{
+
+	.modal-dialog {
+		width: 100%;
+	}
+
+	.modal {
+		padding-left: 0px;
+	}
+
+
+	.close {
+		float: left;
+		margin-right: 67px;
+		color: #000;
+	}
+
+	.modal-title {
+		font-size: 14px;
+		font-weight: @font-bold;
+	}
+
+	.traineeName {
+		color: @blue-color;
+	}
+
+	#saveButton {
+		color:@grey-color;
+		border: 2px solid @grey-color;
+		border-radius: 0;
+	}
+
+	#cancelButton {
+		color: @blue-color;
+		border: 2px solid @blue-color;
+		border-radius: 0;
+		&:hover{
+			background: @blue-color;
+	    	color: white;
+		}     
+	}
+
+	.btn-default {
+		&:focus {
+			background-color: #fff;
+		}
+	}
+
+	.modal-header{
+		border-bottom: none;
+	}
+
+	.modal-footer {
+		border-top: none;
+	}
+
+	.modal-dialog {
+	    width: 100%;
+	    padding: 0;
+	    margin: 0;
+	}
+	.modal-content {
+	    height: 100%;
+	    // min-height: 100%;
+	    height: auto;
+	    border-radius: 0;
+	}
+
+	.modalTitle {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.modalSubTitle {
+		color:@grey-color;
+		font-size: 24px;
+		font-weight: @font-bold;
+
+	}
+
+	.line {
+	    margin-top: 33px;
+	}
+
+	.reviewField {
+		border: 1px solid #999;
+		border-radius: 0;
+	}
+
+	.commentField {
+		border: 2px solid #999;
+		border-radius: 0;	
+	}
+
+	textarea {
+	   resize: none;
+	}
+
+	.markSelect {
+		margin-top: 25px;
+		width:60px;
+
+	}
+
+	.markSelectInput {
+		width: 30px;
+	}
+
+
+	.mainSkillNumber {
+		font-size: 14px;
+		font-weight: @font-bold;
+		color: @grey-color;
+		padding-top: 50px;
+	}
+
+	.dropdown-menu {
+		min-width: 50px;
+		text-align: left;
+	}
+
+	#saveButton {
+		margin-right: 10px;
+	}
+
+	select.error, textarea.error{
+		border: 1px solid red;
+	}
+
+	label.error {
+		color:red;
+	}
+
+	.markSelect {
+		&:hover {
+			border: 1px solid @blue-color;
+			
+		}
+	}	
+
+}
+
+
+
+// [id^="trainee"]{
+
+// 	.modal-dialog{
+// 		width: 100%;
+
+// 		.modal-body{
+// 			width: 100%;
+
+
+// 			#reviewForm {
+
+// 				.modal {
+// 					padding-left: 0px;
+// 				}
+
+
+// 				.close {
+// 					float: left;
+// 					margin-right: 67px;
+// 					color: #000;
+// 				}
+
+// 				.modal-title {
+// 					font-size: 14px;
+// 					font-weight: @font-bold;
+// 				}
+
+// 				.traineeName {
+// 					color: @blue-color;
+// 				}
+
+// 				#saveButton {
+// 					color:@grey-color;
+// 					border: 2px solid @grey-color;
+// 					border-radius: 0;
+// 				}
+
+// 				#cancelButton {
+// 					color: @blue-color;
+// 					border: 2px solid @blue-color;
+// 					border-radius: 0;
+// 					&:hover{
+// 						background: @blue-color;
+// 				    	color: white;
+// 					}     
+// 				}
+
+// 				.btn-default {
+// 					&:focus {
+// 						background-color: #fff;
+// 					}
+// 				}
+
+// 				.modal-header{
+// 					border-bottom: none;
+// 				}
+
+// 				.modal-footer {
+// 					border-top: none;
+// 				}
+
+// 				.modal-dialog {
+// 				    width: 100%;
+// 				    padding: 0;
+// 				    margin: 0;
+// 				}
+// 				.modal-content {
+// 				    height: 100%;
+// 				    // min-height: 100%;
+// 				    height: auto;
+// 				    border-radius: 0;
+// 				}
+
+// 				.modalTitle {
+// 					padding-top: 50px;
+// 					padding-bottom: 50px;
+// 				}
+
+// 				.modalSubTitle {
+// 					color:@grey-color;
+// 					font-size: 24px;
+// 					font-weight: @font-bold;
+
+// 				}
+
+// 				.line {
+// 				    margin-top: 33px;
+// 				}
+
+// 				.reviewField {
+// 					border: 1px solid #999;
+// 					border-radius: 0;
+// 				}
+
+// 				.commentField {
+// 					border: 2px solid #999;
+// 					border-radius: 0;	
+// 				}
+
+// 				textarea {
+// 				   resize: none;
+// 				}
+
+// 				.markSelect {
+// 					margin-top: 25px;
+// 					width:60px;
+
+// 				}
+
+// 				.markSelectInput {
+// 					width: 30px;
+// 				}
+
+
+// 				.mainSkillNumber {
+// 					font-size: 14px;
+// 					font-weight: @font-bold;
+// 					color: @grey-color;
+// 					padding-top: 50px;
+// 				}
+
+// 				.dropdown-menu {
+// 					min-width: 50px;
+// 					text-align: left;
+// 				}
+
+// 				#saveButton {
+// 					margin-right: 10px;
+// 				}
+
+// 				select.error, textarea.error{
+// 					border: 1px solid red;
+// 				}
+
+// 				label.error {
+// 					color:red;
+// 				}
+
+// 				.markSelect {
+// 					&:hover {
+// 						border: 1px solid @blue-color;
+						
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }			

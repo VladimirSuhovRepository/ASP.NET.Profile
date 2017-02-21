@@ -1,0 +1,141 @@
+@import "var.less";
+
+html {
+    height: 100%;
+    overflow-y: scroll;
+    min-width: 320px;
+}
+
+body {
+    height: 100%;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding: 0 !important;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+li {
+    list-style: none;
+}
+
+input, button, select {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+html {
+    body {
+        *:focus {
+            outline: none;
+            border: 0;
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+
+.button {
+    padding: 0.3em 0.8em;
+    background: none;
+    border-radius: 0;
+    border: 2px solid @main;
+    color: @main;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 1em;
+    cursor: pointer;
+    .trans();
+
+    &:hover {
+        background: @main;
+        color: white;
+        border: 2px solid @main;
+    }
+
+    &:focus {
+        background: none;
+        border: 2px solid @main;
+        box-shadow: none;
+        color: @main;
+
+        &:active {
+            background: @forEffects;
+            border: 2px solid @forEffects;
+            box-shadow: none;
+        }
+
+        &:hover {
+            background: @main;
+            color: white;
+            border: 2px solid @main;
+        }
+    }
+
+    &:active {
+        background: @forEffects;
+        border: 2px solid @forEffects;
+        box-shadow: none;
+
+        &:focus {
+            background: none;
+            border: 2px solid @forEffects;
+            box-shadow: none;
+        }
+    }
+
+    &.disabled {
+        border: 2px solid @mainDecorative;
+        color: @mainDecorative;
+        cursor: default;
+
+        &:hover {
+            background: none;
+            color: @mainDecorative;
+            border: 2px solid @mainDecorative;
+        }
+
+        &:active {
+            background: none;
+            color: @mainDecorative;
+        }
+
+        &:focus:active {
+            background: none;
+            color: @mainDecorative;
+            border: 2px solid @mainDecorative;
+        }
+    }
+}
+
+.pageTitle {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: @decorative;
+        margin-top: 0;
+    }
+}
+
+.hidden {
+    display: none;
+}

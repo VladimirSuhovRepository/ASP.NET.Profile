@@ -1,0 +1,71 @@
+﻿@model Profile.UI.Models.Review.ProfileTeamReviewViewModel
+
+@{
+    int skillTabIndex = 1;
+    int skillTableIndex = 1;
+}
+
+@if (Model.Skills.Count > 0)
+{
+    <ul class="row skillsTabs">
+
+        @for (int i = 0; i < Model.Skills.Count; i++)
+        {
+            var skill = Model.Skills[i];
+
+            if (skill.HasMark)
+            {
+                <li class="skillTab @(i == 0 ? "active" : string.Empty)">
+                    <a href="@string.Format("#teamreview&skill{0}", skillTabIndex++)">@skill.Name</a>
+                </li>
+            }
+        }
+
+        <li class="skillNav">
+            <a href="@string.Format("#teamreview&skill{0}", skillTabIndex++)">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+        </li>
+
+        <li class="skillNav">
+            <a href="@string.Format("#teamreview&skill{0}", skillTabIndex++)">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+
+    for (int i = 0; i < Model.Skills.Count; i++)
+    {
+        var skill = Model.Skills[i];
+
+        <table id="@string.Format("skill{0}", skillTableIndex++)" class="row skillReviewList"
+            @if (i == 0)
+            {
+                @: style="display: table;"
+            }>
+
+            <caption>
+                <p class="col-sm-@(skill.HasMark ? 10 : 11) col-xs-12 col-sm-offset-1"><span>@skill.Description</span></p>
+            </caption>
+
+            @for (int j = 0; j < skill.SkillReviews.Count; j++)
+            {
+                var review = skill.SkillReviews[j];
+                <tr>
+                    <td class="col-xs-1 counter">@(j + 1)</td>
+                    <td class="col-xs-@(review.Mark.HasValue ? 10 : 11) reviewItem">
+                        <p>@review.Comment</p>
+                    </td>
+
+                    @if (review.Mark.HasValue)
+                    {
+                        <td class="col-xs-1 mark">
+                                <span>@review.Mark</span>
+                        </td>
+                    }
+                </tr>
+            }
+
+        </table>
+    }
+}

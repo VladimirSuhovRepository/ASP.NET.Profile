@@ -1,0 +1,40 @@
+﻿@model Profile.UI.Models.Profile.ProfileMainInfoViewModel
+
+<!-- Full Name -->
+<div class="col-xs-11  col-sm-5  prf-name-tr">
+    <p class="">@Html.DisplayFor(model => model.TraineeFullName)</p>
+</div>
+<!-- end of Full Name -->
+<!-- Project and Direction -->
+<div class="col-xs-6  col-sm-3">
+    <div class="prf-direction">
+        <p>@Html.ActionLink("Проект: " + Model.ProjectName, "List", "Project")</p>
+        <p>@Html.ActionLink("Направление: " + Model.SpecializationName, "List", "Trainee", new { filter = Model.SpecializationName }, null)</p>
+    </div>
+</div>
+<!-- end of Project and Direction -->
+<!-- Nume of team and Rating -->
+<div class="col-xs-6  col-sm-3">
+    <div class="prf-rating" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Рейтинг рассчитывается на основании отзывов, оставленных о стажере.">
+    @if (Model.Rating == 0)
+    {
+        <text>-</text> 
+    }
+    else
+    {
+        @Model.Rating
+    }
+    </div>
+    <div class="prf-direction  prf-team">
+        <p>@Html.ActionLink("Команда " + Model.GroupNumber, "List", "Trainee", new { filter = Model.GroupNumber }, null)</p>
+        <p>
+            <a href="#" title="Скачать в pdf">
+                <span class="glyphicon glyphicon-save"></span>
+            </a>
+            <a id="callPrint" title="Распечатать анкету">
+                <span class="glyphicon glyphicon-print"></span>
+            </a>
+        </p>
+    </div>
+</div>
+<!-- end of Nume of team and Rating -->

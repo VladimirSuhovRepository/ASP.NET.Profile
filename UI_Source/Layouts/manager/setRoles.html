@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Проекты - Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=cyrillic" rel="stylesheet">
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet">
+    <link href="../../Content/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="prf-wrapper">
+        <header class="prf-main-header">
+            <nav class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="../../images/logo2_1.png" alt="IT-Academy">
+                        </a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                        <ul class="nav navbar-nav"></ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle header-avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../images/avatar-big.gif" width="45" height="45" alt="User"></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Контактные данные</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Мои стажеры</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Выйти</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="prf-main">
+                <section class="prf-main-content">
+                    <section class="prf-main-section setRoles">
+                        <ul class="row mainTabs">
+                            <li id="tab1" class="col-sm-3 col-xs-6 col-sm-offset-2 tabItem"><a class="active" href="#">Редактор прав</a></li>
+                            <li id="tab2" class="col-sm-3 col-xs-6 tabItem"><a class="disabled" href="#">Редактор проектов</a></li>
+                        </ul>
+                        <ul class="row rights">
+                            <li class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-2">
+                                <div class="rightItem">
+                                    <a href="#set">Назначить права</a>
+                                </div>
+                            </li>
+                            <li class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0">
+                                <div class="rightItem active">
+                                    <a href="#edit">Изменить права</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <section class="classTab set">
+                            <div class="row thead">
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="">
+                                                <div class="col-xs-6 col-xs-offset-1 th"><span>Имя</span></div>
+                                                <div class="col-xs-5 th"><span>Почта</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <article class="row setRights">
+                                <div class="col-xs-12 col-sm-8 accountsList">
+                                    <div class="container-fluid">
+                                        <div class="table-responsive row">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="col-xs-1">
+                                                            <input class="checkInput" type="checkbox" id="k15" value="traineeID1" data-name="Петров Петр-Петровский" class="accountsChecker" />
+                                                            <label class="checkAcc" for="k15"><i class="material-icons">done</i></label>
+
+                                                        </td>
+                                                        <td class="col-xs-6">
+                                                            <a href="#">Петров Петр-Петровский</a>
+                                                        </td>
+                                                        <td class="col-xs-5">
+                                                            <a href="mailto:expample@example.com">expample@example.com</a>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-xs-1">
+                                                            <input class="checkInput" type="checkbox" id="k12" value="traineeID2" data-name="Петров Петр-Петровский" class="accountsChecker" />
+                                                            <label class="checkAcc" for="k12"><i class="material-icons">done</i></label>
+
+                                                        </td>
+                                                        <td class="col-xs-6">
+                                                            <a href="#">Петров Петр-Петровский</a>
+                                                        </td>
+                                                        <td class="col-xs-5">
+                                                            <a href="mailto:expample@example.com">expample@example.com</a>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-xs-1">
+                                                            <input class="checkInput" type="checkbox" id="k13" value="traineeID3" data-name="Петров Петр-Петровский" class="accountsChecker" />
+                                                            <label class="checkAcc" for="k13"><i class="material-icons">done</i></label>
+
+                                                        </td>
+                                                        <td class="col-xs-6">
+                                                            <a href="#">Петров Петр-Петровский</a>
+                                                        </td>
+                                                        <td class="col-xs-5">
+                                                            <a href="mailto:expample@example.com">expample@example.com</a>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-xs-1">
+                                                            <input class="checkInput" type="checkbox" id="k14" value="traineeID4" data-name="Петров Петр-Петровский" class="accountsChecker" />
+                                                            <label class="checkAcc" for="k14"><i class="material-icons">done</i></label>
+
+                                                        </td>
+                                                        <td class="col-xs-6">
+                                                            <a href="#">Петров Петр-Петровский</a>
+                                                        </td>
+                                                        <td class="col-xs-5">
+                                                            <a href="mailto:expample@example.com">expample@example.com</a>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-xs-1">
+                                                            <input class="checkInput" type="checkbox" id="k16" value="traineeID5" data-name="Петров Петр-Петровский" class="accountsChecker" />
+                                                            <label class="checkAcc" for="k16"><i class="material-icons">done</i></label>
+
+                                                        </td>
+                                                        <td class="col-xs-6">
+                                                            <a href="#">Петров Петр-Петровский</a>
+                                                        </td>
+                                                        <td class="col-xs-5">
+                                                            <a href="mailto:expample@example.com">expample@example.com</a>
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0 buttonsSets">
+                                    <div class="container-fluid">
+                                        <div class="row delete">
+                                            <div class="col-xs-12">
+                                                <span>
+                                                    <i class="material-icons">delete</i> Удалить
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <form class="row roleButtons">
+                                            <h3 class="col-xs-12">
+                                                <span>Роль</span>
+                                            </h3>
+                                            <div class="col-xs-6 check">
+                                                <input id="role1" name="checkRoleButton" type="radio" data-roleName="Стажер" value="Trainee" />
+                                                <label class="checkButton" for="role1">
+                                                    <span>Стажер</span>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="role2" name="checkRoleButton" type="radio" data-roleName="Ментор" value="Mentor" />
+                                                <label class="checkButton" for="role2">
+                                                    <span>Ментор</span>
+                                                </label>
+
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="role3" name="checkRoleButton" type="radio" data-roleName="Ментор/CM" value="MentorSM" />
+                                                <label class="checkButton" for="role3">
+                                                    <span>Ментор/СМ</span>
+                                                </label>
+
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="role4" name="checkRoleButton" type="radio" data-roleName="СМ" value="SM" />
+                                                <label class="checkButton nospec" for="role4">
+                                                    <span>СМ</span>
+                                                </label>
+
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="role5" name="checkRoleButton" type="radio" data-roleName="HR" value="HR" />
+                                                <label class="checkButton nospec" for="role5">
+                                                    <span>HR</span>
+                                                </label>
+
+                                            </div>
+                                        </form>
+                                        <form class="row specButtons">
+                                            <h3 class="col-xs-12">
+                                                <span>Специализация</span>
+                                            </h3>
+                                            <div class="col-xs-6 check">
+                                                <input id="spec1" disabled="disabled" name="checkSpecButton" data-specName="FD" type="radio" value="FD" />
+                                                <label class="checkButton disabled" for="spec1">
+                                                    <span>FD</span>
+                                                </label>
+
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="spec2" disabled="disabled" name="checkSpecButton" type="radio" data-specName="BE.Net" value="BENet" />
+                                                <label class="checkButton disabled" for="spec2">
+                                                    <span>BE.Net</span>
+                                                </label>
+
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="spec3" disabled="disabled" name="checkSpecButton" type="radio" data-specName="BE Java" value="BEJava" />
+                                                <label class="checkButton disabled" for="spec3">
+                                                    <span>BE Java</span>
+                                                </label>
+
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="spec4" disabled="disabled" name="checkSpecButton" type="radio" data-specName="BE PHP" value="BEPHP" />
+                                                <label class="checkButton disabled" for="spec4">
+                                                    <span>BE PHP</span>
+                                                </label>
+
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="spec5" disabled="disabled" name="checkSpecButton" type="radio" data-specName="BE Android" value="BEAndroid" />
+                                                <label class="checkButton disabled" for="spec5">
+                                                    <span>BE Android</span>
+                                                </label>
+
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="spec6" disabled="disabled" name="checkSpecButton" type="radio" data-specName="QA" value="QA" />
+                                                <label class="checkButton disabled" for="spec6">
+                                                    <span>QA</span>
+                                                </label>
+
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="spec7" disabled="disabled" name="checkSpecButton" type="radio" data-specName="BA" value="BA" />
+                                                <label class="checkButton disabled" for="spec7">
+                                                    <span>BA</span>
+                                                </label>
+
+                                            </div>
+                                            <div class="col-xs-6 check">
+                                                <input id="spec8" disabled="disabled" name="checkSpecButton" type="radio" data-specName="UI/UX" value="UIUX" />
+                                                <label class="checkButton disabled" for="spec8">
+                                                    <span>UI/UX</span>
+                                                </label>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <div class="row buttons">
+                                <div class="col-sm-2 col-sm-offset-8 col-xs-4 col-xs-offset-2"><button class="button disabled" id="ready">Готово</button></div>
+                                <div class="col-sm-2 col-xs-4 col-xs-offset-0 col-sm-offset-0"><button class="button" id="cancel">Отмена</button></div>
+                            </div>
+                            <div class="modal fade" tabindex="-1" id="deleteTrainee" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Выбранные аккаунты будут удалены. Продолжить ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                            <button type="button" id="saveDeleting" class="btn btn-primary">Да</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" tabindex="-1" id="saveTrainee" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Присвоить роль - <span class="roleSave"></span>, cпециализация - <span class="specSave"></span></p>
+                                            <ul class="listSave"></ul>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                            <button type="button" id="saveRole" class="btn btn-primary">Да</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" tabindex="-1" id="saveOk" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Данные были успешно добавлены</p>
+                                            <ul class="listSave"></ul>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">ОК</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="classTab edit">
+                            <div class="currentRoleBlock">
+                                <div class="row">
+                                    <label class="col-xs-10 col-sm-5 col-sm-offset-2 selectWrapper">
+                                        <p>Текущая Роль</p>
+                                        <select class="currentRole">
+                                            <option class="default" selected hidden></option>
+                                            <option value="mentor">Ментор</option>
+                                            <option value="SM">SM</option>
+                                            <option value="SM/mentor">SM/Mentor</option>
+                                            <option value="HR">HR</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <label class="col-xs-10 col-sm-5 col-sm-offset-2 selectWrapper">
+                                        <p>Аккаунт</p>
+                                        <select class="currentAcc">
+                                            <option class="default" selected hidden></option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-offset-2 col-sm-3">
+                                        <button id="changeRole" class="button disabled">Изменить</button>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-2">
+                                        <button id="deleteRole" class="button disabled">Удалить</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newRoleBlock disabled">
+                                <div class="row">
+                                    <label class="col-xs-10 col-sm-5 col-sm-offset-2 selectWrapper">
+                                        <p>Новая Роль</p>
+                                        <select class="newRole" disabled>
+                                            <option class="default" selected hidden></option>
+                                            <option class="specialization" value="mentor">Ментор</option>
+                                            <option value="SM">SM</option>
+                                            <option class="specialization" value="SM/mentor">SM/Mentor</option>
+                                            <option value="HR">HR</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <label class="col-xs-10 col-sm-5 col-sm-offset-2 selectWrapper">
+                                        <p>Специальность</p>
+                                        <select class="newSpec" disabled>
+                                            <option class="default" selected hidden></option>
+                                            <option value="FD">FD</option>
+                                            <option value="BE.Net">BE.NET</option>
+                                            <option value="BEAndroid">BE Android</option>
+                                            <option value="BEJava">BE JAVA</option>
+                                            <option value="BEPhp">BE PHP</option>
+                                            <option value="BA">BA</option>
+                                            <option value="QA">QA</option>
+                                            <option value="UI/UX">UI/UX</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-offset-2 col-sm-3">
+                                        <button id="sendNewRole" class="button disabled">Готово</button>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-2">
+                                        <button id="clear" class="button disabled">Очистить</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" tabindex="-1" id="deleteModal" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Аккаунт будет удален из списка. Продолжить ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Нет</button>
+                                            <button type="button" class="btn btn-primary saveModal">Да</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" tabindex="-1" id="saveModal" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Роль была успешно изменена</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default closeModal" data-dismiss="modal">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        
+                    </section>
+                </section>
+            </div>
+        </div>
+        <div class="prf-main-footer">
+            <div class="container">
+                <div class="row"><p class="col-xs-12">&copy; 2016 - Образовательный центр Парка высоких технологий</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/Custom/manager/rightsEdit/setRoles.js"></script>
+    <script src="../../Scripts/Custom/manager/rightsEdit/editRoles.js"></script>
+    <script src="../../Scripts/Custom/manager/rightsEdit/mainRoles.js"></script>
+
+</body>
+</html>

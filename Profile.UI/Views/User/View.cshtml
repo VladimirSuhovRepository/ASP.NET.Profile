@@ -1,0 +1,89 @@
+﻿@model Profile.UI.Models.User.UserProfile
+
+@{
+    ViewBag.Title = "Личный кабинет";
+
+    var contacts = Model.Contacts;
+}
+
+<div class="container">
+    <div class="prf-main">
+        <section class="prf-main-content">
+            <section class="prf-main-section cabinet">
+                <div class="row headline">
+                    <div class="col-xs-12 pageTitle">
+                        <h1>Личный кабинет</h1>
+                    </div>
+                </div>
+                <div class="row dataPlace">
+                    <div class="col-sm-3 col-sm-offset-0 col-xs-8 col-xs-offset-2 cabinetPhoto">
+                        <div class="photoWrapper">
+                            <img id="truePhoto" src="@Url.Content("~/images/noname.jpg")" alt="">
+                        </div>
+                    </div>
+                    <div class="col-sm-offset-0 col-xs-9 col-xs-offset-2 cabinetName">
+                        <div class="infoInput name">
+                            <span>@Model.FullName</span>
+                        </div>
+
+                        @foreach (var details in Model.Details)
+                        {
+                            @Html.Partial(details.PartialViewName, details)
+                        }
+                    </div>
+
+                    @if (Model.IsOwner)
+                    {
+                        <div class="changePassword">
+                            <button href="#" class="button">Изменить пароль</button>
+                        </div>
+                    }
+                </div>
+                <div class="row infoPlace">
+                    <div class="col-md-5 col-sm-7 col-xs-12 cabinetContact">
+                        @if (Model.HasPhone)
+                        { 
+                            <label>
+                                <i class="material-icons">phone</i>
+                                <input type="text" id="phone" class="infoInput" maxlength="15" disabled="disabled" value="@contacts.Phone">
+                            </label>
+                        }
+
+                        @if (Model.HasEmail)
+                        {
+                            <label>
+                                <i class="material-icons">email</i>
+                                <input type="text" id="email" class="infoInput" disabled="disabled" value="@contacts.Email" maxlength="40">
+                            </label>
+                        }
+
+                        @if (Model.HasSkype)
+                        {
+                            <label>
+                                <i class="fa fa-skype fa-2x"></i>
+                                <input type="text" id="skype" class="infoInput" disabled="disabled" value="@contacts.Skype" maxlength="30">
+                            </label>
+                        }
+
+                        @if (Model.HasLinkedIn)
+                        {
+                            <label>
+                                <i class="fa fa-linkedin-square fa-2x"></i>
+                                <input type="text" id="linkedin" class="infoInput" disabled="disabled" value="@contacts.LinkedIn" maxlength="30">
+                            </label>
+                        }
+                    </div>
+                </div>
+
+                @if (Model.IsOwner)
+                {
+                    <div class="row">
+                        <div class="col-md-5 col-sm-7 col-xs-12 changeButtons">
+                            <button class="button" id="change">Редактировать данные</button>
+                        </div>
+                    </div>
+                }
+            </section>
+        </section>
+    </div>
+</div>

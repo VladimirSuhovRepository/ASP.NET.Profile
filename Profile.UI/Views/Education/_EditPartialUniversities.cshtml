@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Profile.UI.Models.Profile.UniversityViewModel>
+
+@foreach (var university in Model)
+{
+    <div class="row prf-add-inform prf-underline-decoration prf-university" data-university-id="@university.Id">
+        <div class="col-sm-4 col-sm-offset-1 prf-study">
+            <div class="prf-relative">
+                <button type="button" class="btn btn-danger prf-delete-btn prf-delete-university" title="Удалить">
+                    <span>
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </span>
+                </button>
+                <div class="form-group prf-required prf-deletable">
+                    <input class="form-control prf-time-period" data-university="timePeriod" type="text" placeholder="Период обучения" value="@university.TrainingPeriod" maxlength="40" required>
+                    <span title="Обязательно для заполнения">*</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6  prf-study">
+            <div class="form-group prf-required">
+                <input class="form-control" data-university="universityEstablishment" type="text" placeholder="Наименование учебного заведения" value="@university.EducationalInstitution" maxlength="150" required>
+                <span title="Обязательно для заполнения">*</span>
+            </div>
+            <div class="form-group prf-required">
+                <input class="form-control" data-university="specialization" type="text" placeholder="Специализация" value="@university.Specialization" maxlength="150" required>
+                <span title="Обязательно для заполнения">*</span>
+            </div>
+            <div class="form-group prf-required">
+                <input class="form-control" data-university="specialty" type="text" placeholder="Специальность" value="@university.Specialty" maxlength="150" required>
+                <span title="Обязательно для заполнения">*</span>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control prf-not-required" data-university="additionalInformation" placeholder="Дополнительная информация" rows="6" maxlength="300" required>@university.AdditionalInformation</textarea>
+            </div>
+        </div>
+    </div>
+}
